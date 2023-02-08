@@ -6,8 +6,14 @@ website:
   title: Analiza danych w czasie rzeczywistym
   navbar:
     left: 
-          - href: index.qmd
-            text: Home
+          - href: indexD.qmd
+            text: 222890-D
+          - href: indexS.qmd
+            text: 222890-S
+          - href: sylabus.qmd
+            text: Sylabus
+          - href: ksiazki.qmd
+            text: Książki
 
 format:
   html:
