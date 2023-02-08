@@ -1,0 +1,9 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Quarto Basics",
+    "section": "",
+    "text": "introduction in R\nR code example\n\n1+1 \n\n[1] 2\n\na = c(1,2,3,4)\n\n\n\nIntroduction in python\nsimple example in python code\n\nprint(\"to jest kod pythonowy\")\n\nto jest kod pythonowy\n\n2+4 \n\n6\n\nimport numpy as np\nd = np.array([1,2,3])\nd.mean()\n\n2.0\n\n\n\n\nintroduction in Julia\nSimple code in Julia language\n\nprintln(\"test\")\n\ntest"
+  }
+]

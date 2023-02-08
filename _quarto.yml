@@ -1,0 +1,17 @@
+project: 
+  type: website
+  output-dir: docs
+
+website: 
+  title: Analiza danych w czasie rzeczywistym
+  navbar:
+    left: 
+          - href: index.qmd
+            text: Home
+
+format:
+  html:
+    theme: cosmo
+    css: style.css
+    toc: true
+    self-contained-math: true

@@ -1,0 +1,34 @@
+---
+title: "Quarto Basics"
+---
+
+# introduction in R
+ 
+R code example
+
+```{r}
+1+1 
+a = c(1,2,3,4)
+
+```
+
+# Introduction in python
+
+simple example in python code
+
+```{python}
+print("to jest kod pythonowy")
+2+4 
+import numpy as np
+d = np.array([1,2,3])
+d.mean()
+```
+
+# introduction in Julia 
+
+Simple code in Julia language
+
+```{julia}
+println("test")
+```
+
