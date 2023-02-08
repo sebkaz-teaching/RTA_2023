@@ -72,9 +72,9 @@
   {
     "objectID": "ksiazki.html",
     "href": "ksiazki.html",
-    "title": "Książki",
+    "title": "Książki i strony WWW",
     "section": "",
-    "text": "G. Maas, F. Garillot Stream Processing with Apache Spark Zobacz opis lub Kup e-book\nF. Hueske, V. Kalavri Stream Processing with Apache Flink Zobacz opis lub Kup e-book"
+    "text": "G. Maas, F. Garillot Stream Processing with Apache Spark Zobacz opis lub Kup e-book\nF. Hueske, V. Kalavri Stream Processing with Apache Flink Zobacz opis lub Kup e-book\n\n\n\n\n\nW. McKinney Python w analizie danych. Przetwarzanie danych za pomocą pakietów Pandas i NumPy oraz środowiska IPython. Wydanie II Zobacz opis lub Kup książkę, Kup e-book\nD. McIlwraith, H. Marmanis, D. Babenko Inteligentna sieć. Algorytmy przyszłości. Wydanie II (ebook) Zobacz opis lub Kup książkę, Kup e-book\nJoel Grus Data science od podstaw. Analiza danych w Pythonie. Wydanie II. Zobacz opis lub Kup książkę, Kup e-book.\nJohn W. Foreman Mistrz analizy danych. Od danych do wiedzy. Zobacz opis lub Kup książkę, Kup e-book.\nA. Geron Uczenie maszynowe z użyciem Scikit-Learn i TensorFlow. Wydanie II. Zobacz opis lub Kup książkę, Kup e-book.\nAlberto Boschetti, Luca Massaron Python. Podstawy nauki o danych. Zobacz opis lub Kup książkę.\nSebastian Raschka Python. Uczenie maszynowe. Wydanie II. Zobacz opis lub Kup książkę.\nR. Schutt, C. O’Neil Badanie danych. Raport z pierwszej lini działań. Zobacz opis lub Kup książkę.\nT. Segaran Nowe usługi 2.0. Przewodnik po analizie zbiorów danych Zobacz opis lub Kup książkę, Kup e-book\nT. Morzy Eksploracja Danych. Metody i algorytmy, PWN, 2013.\nKrzyśko, Wołyński, Górecki, Skorzybut, Systemy uczące się . WNT, 2008\n\n\n\n\n\nF. Chollet Deep Learning. Praca z językiem Python i biblioteką Keras. Zobacz opis lub Kup książkę, Kup e-book\nJ. Patterson, A. Gibson Deep Learning. Praktyczne wprowadzenie (ebook) Zobacz opis lub Kup e-book\nV. Zocca, G. Spacagna, D. Slater, P. Roelants. Deep Learning. Uczenie głębokie z językiem Python. Sztuczna inteligencja i sieci neuronowe Zobacz opis lub Kup ebook\nD. Osinga Deep Learning. Receptury Zobacz opis lub Kup książkę, Kup e-book\nS. Weidman Uczenie głębokie od zera. Podstawy implementacji w Pythonie Zobacz opis lub Kup książkę, Kup e-book\nD. Foster Deep learning i modelowanie generatywne. Jak nauczyć komputer malowania, pisania, komponowania i grania Zobacz opis lub Kup książkę, Kup e-book\nJ. Howard, S. Gugger Deep learning dla programistów. Budowanie aplikacji AI za pomocą fastai i PyTorch Zobacz opis lub Kup książkę, Kup e-book\n\n\n\n\n\nSpark. Zaawansowana analiza danych (ebook) Zobacz opis lub Kup e-book\nB. Chambers, M. Zaharia Spark: The Definitive Guide. Big Data Processing Made Simple (ebook) Zobacz opis lub Kup e-book\nJ. Quddus Machine Learning with Apache Spark Quick Start Guide (ebook) Zobacz opis lub Kup e-book\n\n\n\n\n\nG. Coldwind Zrozumieć programowanie Zobacz opis lub Kup książkę, Kup e-book\nA. Allain C++. Przewodnik dla początkujących Zobacz opis lub Kup książkę, Kup e-book\nS. Dasgupta, C. Papadimitriou, U. Vazirani Algorytmy PWN.\n\n\n\n\n\nJ. Krochmalski Docker. Projektowanie i wdrażanie aplikacji Zobacz opis lub Kup książkę, Kup e-book\nR. McKendrick, S. Gallagher Docker. Programowanie aplikacji dla zaawansowanych. Wydanie II Zobacz opis lub Kup książkę, Kup e-book\n\n\n\n\n\nP. Bell, B. Beer GitHub. Przyjazny przewodnik (ebook) Zobacz opis lub Kup e-book\n\n\n\n\n\nC. Althoff, Programista Samouk. Profesjonalny przewodnik do samodzielnej nauki kodowania. Zobacz opis lub Kup teraz, Kup e-book\nA. Sweigart, Automatyzacja nudnych zadań z pythonem. Zobacz opis lub Kup książkę, Kup e-book\nK. Reitz, T. Schlusser Przewodnik po Pythonie. Dobre praktyki i praktyczne narzędzia. Zobacz opis lub Kup teraz, Kup e-book\n\n\n\n\n\nB.Tate, L. Carslon, C. Hiibs, Ruby on Rails. Wprowadzenie. Wydanie II Zobacz opis lub Kup e-book\nB. Frain, Responsive Web Design. Projektowanie elastycznych witryn w HTML5 i CSS3, Zobacz opis lub Kup e-book\nK. Beck, TDD. Sztuda tworzenia, Zobacz opis lub Kup teraz, Kup e-book\nB. Dayley, Node.js, MongoDB, AngularJS. Kompendium wiedzy, Zobacz opis lub Kup teraz, Kup e-book"
   },
   {
     "objectID": "ksiazki.html#machine-learning-with-pyton",
@@ -137,7 +137,7 @@
     "href": "indexD.html",
     "title": "Informacje ogólne",
     "section": "",
-    "text": "Kod: 222890-D, 222890-S\nSemestr zimowy 2022/2023, SGH Szkoła Główna Handlowa w Warszawie\nSzczegółowy opis znajdziesz w sylabusie. Znajdziesz w nim opis wszystkich wykładów i ćwiczeń oraz proponowaną literaturę.\nInne książki zamieszczone zostały w zakładce książki"
+    "text": "Kod: 222890-D\nSemestr zimowy 2022/2023, SGH Szkoła Główna Handlowa w Warszawie\nSzczegółowy opis znajdziesz w sylabusie. Znajdziesz w nim opis wszystkich wykładów i ćwiczeń oraz proponowaną literaturę.\nInne książki zamieszczone zostały w zakładce książki"
   },
   {
     "objectID": "indexD.html#kalendarz",
@@ -284,7 +284,7 @@
     "href": "indexS.html#kalendarz",
     "title": "Informacje ogólne",
     "section": "Kalendarz",
-    "text": "Kalendarz\n\n25-02-2023 (sobota) 08:00-09:30 - Wykład 1\n11-03-2023 (sobota) 08:00-09:30 - Wykład 2\n20-03-2022 (poniedziałek) 08:00-13:30 - Cwiczenia 1, 3 grupy\n\n…\n\nMiejsce\nWykłady 1-5: G-Aula I Laboratorium 1-9: C-4D\n\n\nZaliczenie i Egzamin\nOd pierwszych zajęc studenci organizują grupy projektowe (max. 5 osób) do realizacji projektu w ramach przedmiotu.\nTutaj dodać dokładniejszy opis…"
+    "text": "Kalendarz\n\n25-02-2023 (sobota) 08:00-09:30 - Wykład 1\n11-03-2023 (sobota) 08:00-09:30 - Wykład 2\n20-03-2022 (poniedziałek) 08:00-13:30 - Cwiczenia 1, 3 grupy\n\n…\n\nMiejsce\nWykłady 1-2: G-Aula IV Laboratorium 1-5: 116 G\n\n\nZaliczenie i Egzamin\nOd pierwszych zajęc studenci organizują grupy projektowe (max. 5 osób) do realizacji projektu w ramach przedmiotu.\nTutaj dodać dokładniejszy opis…"
   },
   {
     "objectID": "indexS.html#technologie",
@@ -292,5 +292,26 @@
     "title": "Informacje ogólne",
     "section": "Technologie",
     "text": "Technologie\n\nGIT\nPython, Jupyter notebook, Jupyter lab, Colab\nDocker\nApache Spark, Apache Flink, Apache Kafka, Apache Beam\nDatabricks Community edition Web page."
+  },
+  {
+    "objectID": "info.html",
+    "href": "info.html",
+    "title": "Narzędzia",
+    "section": "",
+    "text": "Tekst na podstawie strony\n\n\n\nFinal\n\n\nPracując nad projektem np. praca magisterska, (samodzielnie lub w zespole) często potrzebujesz sprawdzić jakie zmiany, kiedy i przez kogo zostały wprowadzone do projektu. W zadaniu tym świetnie sprawdza się system kontroli wersji czyli GIT.\nGit możesz pobrać i zainstalować jak zwykły program na dowolnym komputerze. Jednak najczęściej (małe projekty) korzysta się z serwisów z jakimś systemem git. Jednym z najbardziej rozpoznawanych jest GitHub dzięki któremu możesz korzystać z systemu git bez jego instalacji na swoim komputerze.\nW darmowej wersji serwisu GitHub swoje pliki możesz przechowywać w publicznych (dostęp mają wszyscy) repozytoriach.\nSkupimy się wyłącznie na darmowej wersji serwisu GitHub.\ngit --version\n\n\nNa najwyższym poziomie znajdują się konta indywidualne (np http://github.com/sebkaz, bądź zakładane przez organizacje. Użytkownicy indywidualni mogą tworzyć repozytoria publiczne (public ) bądź prywatne (private).\nJeden plik nie powinien przekraczać 100 MB.\nRepo (skrót do repozytorium) tworzymy za pomocą Create a new repository. Każde repo powinno mieć swoją indywidualną nazwę.\n\n\n\nGłówna (tworzona domyślnie) gałąź rapozytorium ma nazwę master.\n\n\n\n\nściąganie repozytorium z sieci\n\ngit clone https://adres_repo.git\n\nW przypadku githuba możesz pobrać repozytorium jako plik zip.\n\n\nTworzenie repozytorium dla lokalnego katalogu\n\n# tworzenie nowego katalogu\nmkdir datamining\n# przejście do katalogu\ncd datamining\n# inicjalizacja repozytorium w katalogu\ngit init\n# powinien pojawić się ukryty katalog .git\n# dodajmy plik\necho \"Info \" >> README.md\n\nPołącz lokalne repozytorium z kontem na githubie\n\ngit remote add origin https://github.com/<twojGit>/nazwa.git\n\nObsługa w 3 krokach\n\n# sprawdź zmiany jakie zostały dokonane\ngit status\n# 1. dodaj wszystkie zmiany\ngit add .\n# 2. zapisz bierzący stan wraz z informacją co zrobiłeś\ngit commit -m \" opis \"\n# 3. potem już zostaje tylko\ngit push origin master\nWarto obejrzeć Youtube course."
+  },
+  {
+    "objectID": "info.html#zacznij-korzystać-z-dockera",
+    "href": "info.html#zacznij-korzystać-z-dockera",
+    "title": "Narzędzia",
+    "section": "Zacznij korzystać z Dockera",
+    "text": "Zacznij korzystać z Dockera\nW celu pobrania oprogramowania docker na swój system przejdź do strony.\nJeżli wszystko zainstalowało się prawidłowo wykonaj następujące polecenia:\n\nSprawdź zainstalowaną wersję\n\ndocker --version\n\nŚciągnij i uruchom obraz Hello World i\n\ndocker run hello-world\n\nPrzegląd ściągnietych obrazów:\n\ndocker image ls\n\ndocker images\n\nPrzegląd uruchomionych kontenerów:\n\ndocker ps \n\ndocker ps -all\n\nZatrzymanie uruchomionego kontenera:\n\ndocker stop <CONTAINER ID>\n\nUsunięcie kontenera\n\ndocker rm -f <CONTAINER ID>\nPolecam również krótkie intro"
+  },
+  {
+    "objectID": "ksiazki.html#strony-www",
+    "href": "ksiazki.html#strony-www",
+    "title": "Książki i strony WWW",
+    "section": "Strony WWW",
+    "text": "Strony WWW\n\nSoftware\n\nGithub\nGit-instrukcja\nwww.python.org\nPyPI python libraries\nAnaconda\nDocker\n\n\n\nPakiety python dla analiz danych\n\nNumPy\nSciPy\nPandas\nScikit-learn\nJupyter\nMatplotlib\nBeautiful Soup\nTheano\nKeras\nTensorFlow\nVirtual ENV\n\n\n\nEdytory tekstu\n\nNotepad++\nSublime Text\nVisual Studio Code\n\n\n\nMarkdown\n\nMD\n\n\n\nJupyter notebook\n\nGaleria ciekawych notatników\nIntro\nKernels\nBringing the best out of jupyter for data science\nJupyter extensions\nI don’t like notebooks\nJupyter lab\nSpeed up jupyter notebook\n\n\n\nPrzetwarzanie danych\n\ndata cookbook\n\n\n\nZbiory danych\n\nInternet Archive\nReddit\nKDnuggets\nKaggle\nList of datasets for machine learning research\nUCI Machine Learning Repo\nPublic API\nGoogle Datatset Search\n\n\n\nPython\n\nChris Albon Technical Notes on Using Data Science & AI\n40+ Python Statistics For Data Science Resources\nPractical Business Python\n\n\n\nkursy ML\n\nKurs Machine Learning - Andrew Ng, Stanford"
   }
 ]

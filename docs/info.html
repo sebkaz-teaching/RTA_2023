@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Analiza danych w czasie rzeczywistym - Informacje ogólne</title>
+<title>Analiza danych w czasie rzeczywistym - Narzędzia</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./indexD.html" aria-current="page">
+    <a class="nav-link" href="./indexD.html">
  <span class="menu-text">222890-D</span></a>
   </li>  
   <li class="nav-item">
@@ -92,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Sylabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./info.html">
+    <a class="nav-link active" href="./info.html" aria-current="page">
  <span class="menu-text">Narzędzia</span></a>
   </li>  
   <li class="nav-item">
@@ -114,9 +114,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#analiza-danych-w-czasie-rzeczywistym" id="toc-analiza-danych-w-czasie-rzeczywistym" class="nav-link active" data-scroll-target="#analiza-danych-w-czasie-rzeczywistym">Analiza danych w czasie rzeczywistym</a></li>
-  <li><a href="#kalendarz" id="toc-kalendarz" class="nav-link" data-scroll-target="#kalendarz">Kalendarz</a></li>
-  <li><a href="#technologie" id="toc-technologie" class="nav-link" data-scroll-target="#technologie">Technologie</a></li>
+  <li><a href="#zacznij-korzystać-z-serwisu-github" id="toc-zacznij-korzystać-z-serwisu-github" class="nav-link active" data-scroll-target="#zacznij-korzystać-z-serwisu-github">Zacznij korzystać z serwisu GitHub</a>
+  <ul class="collapse">
+  <li><a href="#struktura-githuba" id="toc-struktura-githuba" class="nav-link" data-scroll-target="#struktura-githuba">Struktura GitHuba</a></li>
+  <li><a href="#branche" id="toc-branche" class="nav-link" data-scroll-target="#branche">Branche</a></li>
+  <li><a href="#najważniejsze-polecnia-do-zapamiętania" id="toc-najważniejsze-polecnia-do-zapamiętania" class="nav-link" data-scroll-target="#najważniejsze-polecnia-do-zapamiętania">Najważniejsze polecnia do zapamiętania</a></li>
+  </ul></li>
+  <li><a href="#zacznij-korzystać-z-dockera" id="toc-zacznij-korzystać-z-dockera" class="nav-link" data-scroll-target="#zacznij-korzystać-z-dockera">Zacznij korzystać z Dockera</a></li>
   </ul>
 </nav>
     </div>
@@ -125,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Informacje ogólne</h1>
+<h1 class="title">Narzędzia</h1>
 </div>
 
 
@@ -140,49 +144,102 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="analiza-danych-w-czasie-rzeczywistym" class="level2">
-<h2 class="anchored" data-anchor-id="analiza-danych-w-czasie-rzeczywistym">Analiza danych w czasie rzeczywistym</h2>
-<p>Kod: 222890-D</p>
-<p>Semestr zimowy 2022/2023, SGH Szkoła Główna Handlowa w Warszawie</p>
-<p>Szczegółowy opis znajdziesz w <a href="./RTA_2023/sylabus">sylabusie</a>. Znajdziesz w nim opis wszystkich wykładów i ćwiczeń oraz proponowaną literaturę.</p>
-<p>Inne książki zamieszczone zostały w zakładce <a href="./RTA_2023/ksiazki">książki</a></p>
+<section id="zacznij-korzystać-z-serwisu-github" class="level2">
+<h2 class="anchored" data-anchor-id="zacznij-korzystać-z-serwisu-github">Zacznij korzystać z serwisu GitHub</h2>
+<p>Tekst na podstawie <a href="http://pbiecek.github.io/Przewodnik/Programowanie/jak_korzystac_z_serwisu_github_i_waffle.html">strony</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/final.gif" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Final</figcaption><p></p>
+</figure>
+</div>
+<p>Pracując nad projektem np. praca magisterska, (samodzielnie lub w zespole) często potrzebujesz sprawdzić jakie zmiany, kiedy i przez kogo zostały wprowadzone do projektu. W zadaniu tym świetnie sprawdza się <code>system kontroli wersji</code> czyli <a href="https://git-scm.com">GIT</a>.</p>
+<p>Git możesz pobrać i zainstalować jak zwykły program na dowolnym komputerze. Jednak najczęściej (małe projekty) korzysta się z serwisów z jakimś systemem git. Jednym z najbardziej rozpoznawanych jest <a href="www.github.com">GitHub</a> dzięki któremu możesz korzystać z systemu git bez jego instalacji na swoim komputerze.</p>
+<p>W darmowej wersji serwisu <code>GitHub</code> swoje pliki możesz przechowywać w publicznych (dostęp mają wszyscy) repozytoriach.<br>
+Skupimy się wyłącznie na darmowej wersji serwisu GitHub.</p>
+<pre class="{bash}"><code>git --version</code></pre>
+<section id="struktura-githuba" class="level3">
+<h3 class="anchored" data-anchor-id="struktura-githuba">Struktura GitHuba</h3>
+<p>Na najwyższym poziomie znajdują się konta indywidualne (np <a href="http://github.com/sebkaz">http://github.com/sebkaz</a>, bądź zakładane przez organizacje. Użytkownicy indywidualni mogą tworzyć <strong>repozytoria</strong> publiczne (<code>public</code> ) bądź prywatne (<code>private</code>).</p>
+<p>Jeden plik nie powinien przekraczać 100 MB.</p>
+<p><strong>Repo</strong> (skrót do repozytorium) tworzymy za pomocą <code>Create a new repository</code>. Każde repo powinno mieć swoją indywidualną nazwę.</p>
 </section>
-<section id="kalendarz" class="level2">
-<h2 class="anchored" data-anchor-id="kalendarz">Kalendarz</h2>
+<section id="branche" class="level3">
+<h3 class="anchored" data-anchor-id="branche">Branche</h3>
+<p>Główna (tworzona domyślnie) gałąź rapozytorium ma nazwę <code>master</code>.</p>
+</section>
+<section id="najważniejsze-polecnia-do-zapamiętania" class="level3">
+<h3 class="anchored" data-anchor-id="najważniejsze-polecnia-do-zapamiętania">Najważniejsze polecnia do zapamiętania</h3>
+<ul>
+<li><em>ściąganie repozytorium z sieci</em></li>
+</ul>
+<pre class="{bash}"><code>git clone https://adres_repo.git</code></pre>
+<blockquote class="blockquote">
+<p>W przypadku githuba możesz pobrać repozytorium jako plik zip.</p>
+</blockquote>
+<ul>
+<li><em>Tworzenie repozytorium dla lokalnego katalogu</em></li>
+</ul>
+<pre class="{bash}"><code># tworzenie nowego katalogu
+mkdir datamining
+# przejście do katalogu
+cd datamining
+# inicjalizacja repozytorium w katalogu
+git init
+# powinien pojawić się ukryty katalog .git
+# dodajmy plik
+echo "Info " &gt;&gt; README.md</code></pre>
+<ul>
+<li>Połącz lokalne repozytorium z kontem na githubie</li>
+</ul>
+<pre class="{bash}"><code>git remote add origin https://github.com/&lt;twojGit&gt;/nazwa.git</code></pre>
+<ul>
+<li>Obsługa w 3 krokach</li>
+</ul>
+<pre class="{bash}"><code># sprawdź zmiany jakie zostały dokonane
+git status
+# 1. dodaj wszystkie zmiany
+git add .
+# 2. zapisz bierzący stan wraz z informacją co zrobiłeś
+git commit -m " opis "
+# 3. potem już zostaje tylko
+git push origin master</code></pre>
+<p>Warto obejrzeć <a href="https://www.youtube.com/watch?v=HVsySz-h9r4">Youtube course</a>.</p>
+</section>
+</section>
+<section id="zacznij-korzystać-z-dockera" class="level2">
+<h2 class="anchored" data-anchor-id="zacznij-korzystać-z-dockera">Zacznij korzystać z Dockera</h2>
+<p>W celu pobrania oprogramowania docker na swój system przejdź do <a href="https://docs.docker.com/get-docker/">strony</a>.</p>
+<p>Jeżli wszystko zainstalowało się prawidłowo wykonaj następujące polecenia:</p>
 <ol type="1">
-<li><p>20-02-2023 (poniedziałek) 09:50-11:30 - Wykład 1</p></li>
-<li><p>27-02-2023 (poniedziałek) 09:50-11:30 - Wykład 2</p></li>
-<li><p>06-03-2023 (poniedziałek) 09:50-11:30 - Wykład 3</p></li>
-<li><p>13-03-2023 (poniedziałek) 09:50-11:30 - Wykład 4</p></li>
-<li><p>20-03-2023 (poniedziałek) 09:50-11:30 - Wykład 5</p></li>
-<li><p>20-03-2022 (poniedziałek) 08:00-13:30 - Cwiczenia 1, 3 grupy</p></li>
-<li><p>21-03-2022 (wtorek) 11:40-17:00 - Cwiczenia 1, 3 grupy<br>
-</p></li>
-<li><p>27-03-2022 (poniedziałek) 08:00-13:30 - Cwiczenia 2, 3 grupy</p></li>
-<li><p>28-03-2022 (wtorek) 11:40-17:00 - Cwiczenia 2, 3 grupy</p></li>
-<li><p>03-04-2022 (poniedziałek) 08:00-13:30 - Cwiczenia 3, 3 grupy</p></li>
-<li><p>04-04-2022 (wtorek) 11:40-17:00 - Cwiczenia 3, 3 grupy</p></li>
+<li>Sprawdź zainstalowaną wersję</li>
 </ol>
-<p>…</p>
-<section id="miejsce" class="level4">
-<h4 class="anchored" data-anchor-id="miejsce">Miejsce</h4>
-<p>Wykłady 1-5: G-Aula I Laboratorium 1-9: C-4D</p>
-</section>
-<section id="zaliczenie-i-egzamin" class="level4">
-<h4 class="anchored" data-anchor-id="zaliczenie-i-egzamin">Zaliczenie i Egzamin</h4>
-<p>Od pierwszych zajęc studenci organizują grupy projektowe (max. 5 osób) do realizacji projektu w ramach przedmiotu.</p>
-<p>Tutaj dodać dokładniejszy opis…</p>
-</section>
-</section>
-<section id="technologie" class="level2">
-<h2 class="anchored" data-anchor-id="technologie">Technologie</h2>
-<ol type="1">
-<li><a href="https://sebkaz-teaching.github.io/RTA_2023/GIT/">GIT</a></li>
-<li>Python, Jupyter notebook, Jupyter lab, Colab</li>
-<li><a href="https://sebkaz-teaching.github.io/RTA_2023/Docker/">Docker</a></li>
-<li><strong>Apache Spark</strong>, Apache Flink, <strong>Apache Kafka</strong>, Apache Beam</li>
-<li>Databricks Community edition <a href="https://community.cloud.databricks.com/login.html">Web page</a>.</li>
+<pre class="{bash}"><code>docker --version</code></pre>
+<ol start="2" type="1">
+<li>Ściągnij i uruchom obraz <code>Hello World</code> i</li>
 </ol>
+<pre class="{bash}"><code>docker run hello-world</code></pre>
+<ol start="3" type="1">
+<li>Przegląd ściągnietych obrazów:</li>
+</ol>
+<pre class="{bash}"><code>docker image ls
+
+docker images</code></pre>
+<ol start="4" type="1">
+<li>Przegląd uruchomionych kontenerów:</li>
+</ol>
+<pre class="{bash}"><code>docker ps 
+
+docker ps -all</code></pre>
+<ol start="5" type="1">
+<li>Zatrzymanie uruchomionego kontenera:</li>
+</ol>
+<pre class="{bash}"><code>docker stop &lt;CONTAINER ID&gt;</code></pre>
+<ol start="6" type="1">
+<li>Usunięcie kontenera</li>
+</ol>
+<pre class="{bash}"><code>docker rm -f &lt;CONTAINER ID&gt;</code></pre>
+<p>Polecam również <a href="https://medium.com/codingthesmartway-com-blog/docker-beginners-guide-part-1-images-containers-6f3507fffc98">krótkie intro</a></p>
 
 
 </section>
