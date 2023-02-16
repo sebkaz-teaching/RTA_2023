@@ -16,20 +16,52 @@ Inne książki zamieszczone zostały w zakładce [książki](/RTA_2023/ksiazki)
 
 ## Kalendarz
 
+#### Wykład 
+
+Wykład odbywa się w Auli I bud G
+
 1. 20-02-2023 (poniedziałek) 09:50-11:30 - Wykład 1
 2. 27-02-2023 (poniedziałek) 09:50-11:30 - Wykład 2
 3. 06-03-2023 (poniedziałek) 09:50-11:30 - Wykład 3
 4. 13-03-2023 (poniedziałek) 09:50-11:30 - Wykład 4
 5. 20-03-2023 (poniedziałek) 09:50-11:30 - Wykład 5
 
-6. 20-03-2022 (poniedziałek) 08:00-13:30 - Cwiczenia 1, 3 grupy
-6. 21-03-2022 (wtorek) 11:40-17:00 - Cwiczenia 1, 3 grupy  
-7. 27-03-2022 (poniedziałek) 08:00-13:30 - Cwiczenia 2, 3 grupy
-7. 28-03-2022 (wtorek) 11:40-17:00 - Cwiczenia 2, 3 grupy
-8. 03-04-2022 (poniedziałek) 08:00-13:30 - Cwiczenia 3, 3 grupy
-8. 04-04-2022 (wtorek) 11:40-17:00 - Cwiczenia 3, 3 grupy 
+Wykłady kończą się Testem: 10 pytań - 20 minut. 
+Test przeprowadzany jest za pośrednictwem MS Teams.
 
-...
+#### Laboratoria
+
+1. 20-03-2023 (poniedziałek) 08:00-13:30 - C4D 3 grupy
+1. 21-03-2023 (wtorek) 11:40-17:00 - C4D 3 grupy
+
+2. 27-03-2023 (poniedziałek) 08:00-13:30 - C4D, 3 grupy
+2. 28-03-2023 (wtorek) 11:40-17:00 - C4D, 3 grupy
+
+3. 03-04-2023 (poniedziałek) 08:00-13:30 - C4D, 3 grupy
+3. 04-04-2023 (wtorek) 11:40-17:00 - C4D, 3 grupy 
+
+4. 17-04-2023 (poniedziałek) 08:00-13:30 - C4D, 3 grupy
+4. 18-04-2023 (wtorek) 11:40-17:00 - C4D, 3 grupy 
+
+5. 24-04-2023 (poniedziałek) 08:00-13:30 - C4D, 3 grupy
+5. 25-04-2023 (wtorek) 11:40-17:00 - C4D, 3 grupy 
+
+6. 08-05-2023 (poniedziałek) 08:00-13:30 - C4D, 3 grupy
+6. 09-05-2023 (wtorek) 11:40-17:00 - C4D, 3 grupy 
+
+7. 15-05-2023 (poniedziałek) 08:00-13:30 - C4D, 3 grupy
+7. 16-05-2023 (wtorek) 11:40-17:00 - C4D, 3 grupy 
+
+8. 22-05-2023 (poniedziałek) 08:00-13:30 - C4D, 3 grupy
+8. 23-05-2023 (wtorek) 11:40-17:00 - C4D, 3 grupy 
+
+9. 29-05-2023 (poniedziałek) 08:00-13:30 - C4D, 3 grupy
+9. 30-05-2023 (wtorek) 11:40-17:00 - C4D, 3 grupy
+
+10. 05-06-2023 (poniedziałek) 08:00-13:30 - C4D, 3 grupy
+10. 06-06-2023 (wtorek) 11:40-17:00 - C4D, 3 grupy 
+
+
 
 #### Miejsce
 
@@ -38,9 +70,22 @@ Laboratorium 1-9: C-4D
 
 #### Zaliczenie i Egzamin
 
-Od pierwszych zajęc studenci organizują grupy projektowe (max. 5 osób) do realizacji projektu w ramach przedmiotu.
+Wykłady zakończone zostaną teste (ostatnie zajęcia).
+Pozytywna ocena z testu (powyżej 13 pkt) upoważnia do realizacji ćwiczeń. 
 
-Tutaj dodać dokładniejszy opis...
+Na ćwiczeniach realizowane będą zadania do wykonania - za pośrednictwem platformy teams. 
+Zaliczenie wszystkich ćwiczeń upoważnia do realizacji projektu. 
+
+Projekt powinien być realizowany w grupach max 5 osobowych. 
+
+Wymagania projektu: 
+
+- Projekt powinien przedstawiać BIZNESOWY PROBLEM, który można realizować wykorzystując informacje podawane w trybie online. (Nie oznacza to, że nie można korzystać z procesowania batchowego np w celu wygenerowania modelu).
+- Dane powinny być przesyłane do Apache Kafki i stamtąd poddawane dalszemu procesowaniu i analizie. 
+- Język programowania jest dowolny - dotyczy każdego komponentu projektu. 
+- można wykorzystać narzędzia BI 
+- żródłem danych może być tabela, sztucznie generowane dane, IoT itp.
+
 
 ## Technologie
 

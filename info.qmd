@@ -3,7 +3,7 @@ title: Narzędzia
 ---
 ## Zacznij korzystać z serwisu GitHub
 
-Tekst na podstawie [strony](http://pbiecek.github.io/Przewodnik/Programowanie/jak_korzystac_z_serwisu_github_i_waffle.html)
+Tekst na podstawie strony [jak korzystać z serwisu github](http://pbiecek.github.io/Przewodnik/Programowanie/jak_korzystac_z_serwisu_github_i_waffle.html)
 
 
 Pracując nad projektem np. praca magisterska, (samodzielnie lub w zespole) często potrzebujesz sprawdzić jakie zmiany, kiedy i przez kogo zostały wprowadzone do projektu.
