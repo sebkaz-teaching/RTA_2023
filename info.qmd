@@ -1,6 +1,50 @@
 ---
 title: Narzędzia
 ---
+
+## Python
+
+W terminalu (Windows CMD) wpisz
+```{bash}
+python
+```
+Jeśli nie odnaleziono komendy uruchom:
+```{bash}
+python3
+```
+
+Zwróć uwagę, aby Twoja wersja nie była niższa niż 3.X
+Aby wyjść z powłoki pythona użyj funkcji `exit()`
+```bash
+Python 3.10.9 (main, Dec 15 2022, 17:11:09) [Clang 14.0.0 (clang-1400.0.29.202)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()
+```
+### Nowe środowisko pythona
+
+```bash
+python3 -m venv <name of env>
+
+source <name of env>/bin/activate
+# . env/bin/activate
+
+(venv)$ 
+```
+
+Szybka instalacja podstawowych bibliotek i jupyterlab.
+```bash
+pip install --no-cache --upgrade pip setuptools
+
+pip install jupyterlab numpy pandas matplotlib scipy
+# jeśli masz plik requirements.txt z potrzebnymi bibliotekami
+pip install -r requirements.txt
+# uruchom 
+jupyterlab
+```
+W przeglądarce internetowej wpisz: _localhost:8888_
+
+Po ponownym uruchomieniu 
+
 ## Zacznij korzystać z serwisu GitHub
 
 Tekst na podstawie strony [jak korzystać z serwisu github](http://pbiecek.github.io/Przewodnik/Programowanie/jak_korzystac_z_serwisu_github_i_waffle.html)

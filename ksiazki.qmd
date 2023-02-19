@@ -98,6 +98,9 @@ title: Książki i strony WWW
 
 4. B. Dayley, _Node.js, MongoDB, AngularJS. Kompendium wiedzy_, [Zobacz opis](http://helion.pl/view/111546/tddszv) lub [Kup teraz](http://helion.pl/add111546~tddszv), [Kup e-book](http://helion.pl/add111546~tddszv_ebook)
 
+### Qauntum Computing
+
+1. A. Jacquier, O. Kondratyev, _Quantum Machine Learning and Optimisation in Finance. On the Road to Quantum Advantage_.
 
 ## Strony WWW
 
