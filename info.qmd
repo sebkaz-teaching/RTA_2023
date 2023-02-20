@@ -8,7 +8,7 @@ W terminalu (Windows CMD) wpisz
 ```{bash}
 python
 ```
-Jeśli nie odnaleziono komendy uruchom:
+Jeśli nie odnaleziono komendy uruchom polecenie:
 ```{bash}
 python3
 ```
@@ -43,7 +43,25 @@ jupyterlab
 ```
 W przeglądarce internetowej wpisz: _localhost:8888_
 
-Po ponownym uruchomieniu 
+Po ponownym uruchomieniu przejdź do katalogu w którym utworzyłeś środowisko, 
+następnie uruchom środowisko i jupyterlab.
+
+```bash
+source <name of env>/bin/activate
+jupyterlab
+```
+### Naucz się Pythona w 2 godziny
+
+Utwórz konto na [Kaggle](https://kaggle.com), przejdź do zakładki `Courses` i przerób cały moduł Pythona. Zawiera on: 
+
+- wyrażenia i zmienne
+- funkcje
+- warunki i flow programu
+- listy
+- pętle
+- stringi i słowniki
+- dodawanie i używanie zewnętrznych bibliotek
+
 
 ## Zacznij korzystać z serwisu GitHub
 
