@@ -20,7 +20,11 @@ Ciekawe książki i strony internetowe zamieszczone zostały w zakładce [ksią�
 Wykład jest realizowany w trybie hybrydowym.
 Jest on NIEOBOWIĄZKOWY i odbywa się w Auli I bud G
 
-1. 20-02-2023 (poniedziałek) 09:50-11:30 - Wykład 1
+1. <del> 20-02-2023 (poniedziałek) 09:50-11:30 - Wykład 1 </del>
+    - Dane ustrukturyzowane i nieustrukturyzowane
+    - Źródła danych 
+    - Big Data
+    - Modele przetwarzania danych OLTP, OLAP
 2. 27-02-2023 (poniedziałek) 09:50-11:30 - Wykład 2
 3. 06-03-2023 (poniedziałek) 09:50-11:30 - Wykład 3
 4. 13-03-2023 (poniedziałek) 09:50-11:30 - Wykład 4

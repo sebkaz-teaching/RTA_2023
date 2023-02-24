@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Analiza danych w czasie rzeczywistym - Wykład 1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Analiza danych w czasie rzeczywistym</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text">222890-D</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./indexS.html">
+ <span class="menu-text">222890-S</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./wyklad1.html">
+ <span class="menu-text">Wykład 1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./wyklad1S.html" aria-current="page">
+ <span class="menu-text">Wykład SN1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./sylabus.html">
+ <span class="menu-text">Sylabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./info.html">
+ <span class="menu-text">Narzędzia</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./ksiazki.html">
+ <span class="menu-text">Książki</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#data---small-data--" id="toc-data---small-data--" class="nav-link active" data-scroll-target="#data---small-data--">Data -&gt; Small Data -&gt; …</a></li>
+  <li><a href="#źródła-danych" id="toc-źródła-danych" class="nav-link" data-scroll-target="#źródła-danych">Źródła danych</a></li>
+  <li><a href="#not-to-big-data" id="toc-not-to-big-data" class="nav-link" data-scroll-target="#not-to-big-data">not to Big Data</a>
+  <ul class="collapse">
+  <li><a href="#one-two-four-v" id="toc-one-two-four-v" class="nav-link" data-scroll-target="#one-two-four-v">one, two, … four V</a></li>
+  </ul></li>
+  <li><a href="#modele-przetwarzania-danych" id="toc-modele-przetwarzania-danych" class="nav-link" data-scroll-target="#modele-przetwarzania-danych">Modele przetwarzania danych</a>
+  <ul class="collapse">
+  <li><a href="#model-tradycyjny" id="toc-model-tradycyjny" class="nav-link" data-scroll-target="#model-tradycyjny">Model Tradycyjny</a></li>
+  <li><a href="#model-olap" id="toc-model-olap" class="nav-link" data-scroll-target="#model-olap">Model OLAP</a></li>
+  </ul></li>
+  <li><a href="#analiza-strumieni-danych" id="toc-analiza-strumieni-danych" class="nav-link" data-scroll-target="#analiza-strumieni-danych">Analiza strumieni danych</a>
+  <ul class="collapse">
+  <li><a href="#źródła-danych-przesyłanych-strumieniowo-obejmują" id="toc-źródła-danych-przesyłanych-strumieniowo-obejmują" class="nav-link" data-scroll-target="#źródła-danych-przesyłanych-strumieniowo-obejmują">Źródła danych przesyłanych strumieniowo obejmują:</a>
+  <ul class="collapse">
+  <li><a href="#analiza-danych-w-czasie-rzeczywistym-a-przetwarzanie-strumienia-zdarzeń" id="toc-analiza-danych-w-czasie-rzeczywistym-a-przetwarzanie-strumienia-zdarzeń" class="nav-link" data-scroll-target="#analiza-danych-w-czasie-rzeczywistym-a-przetwarzanie-strumienia-zdarzeń">Analiza danych w czasie rzeczywistym a przetwarzanie strumienia zdarzeń</a></li>
+  </ul></li>
+  <li><a href="#uzasadnienie-biznesowe" id="toc-uzasadnienie-biznesowe" class="nav-link" data-scroll-target="#uzasadnienie-biznesowe">Uzasadnienie biznesowe</a></li>
+  <li><a href="#definicje" id="toc-definicje" class="nav-link" data-scroll-target="#definicje">Definicje</a></li>
+  <li><a href="#aplikacje-dla-strumieniowania-danych" id="toc-aplikacje-dla-strumieniowania-danych" class="nav-link" data-scroll-target="#aplikacje-dla-strumieniowania-danych">Aplikacje dla strumieniowania danych</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Wykład 1</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="data---small-data--" class="level2">
+<h2 class="anchored" data-anchor-id="data---small-data--">Data -&gt; Small Data -&gt; …</h2>
+<p>Rozwój technologii informatycznych spowodował dostęp do niewyobrażalnych ilości nowego zasobu jakim są <strong>ustrukturyzowane</strong> jak i <strong>nieustrukturyzowane</strong> dane.</p>
+<p>Wszystkie algorytmy uczenia maszynowego wymagają <strong>danych ustrukturyzowanych</strong> zapisanych w~tabelarycznej postaci.<br>
+Zorganizowane są one w~kolumnach cech charakteryzujących każdą obserwację (wiersze). Przykładem mogą być takie cechy jak: <strong>płeć</strong>, <strong>wzrost</strong> czy <strong>ilość posiadanych samochodów</strong>, na podstawie których można przewidywać czy klient będzie spłacał kredyt czy też nie. Takie przewidywanie również oznaczane jest jako cecha. Zmienne te dobierane są tak, by łatwo można je było pozyskać. Dzięki tak otrzymanym tabelom cech możemy stosować algorytmy XGBoost lub regresji logistycznej w celu wyznaczenia odpowiedniej kombinacji zmiennych wpływających na prawdopodobieństwo dobrego albo i złego klienta.</p>
+<p><strong>Dane nieustrukturyzowane</strong> to takie, które nie są ułożone w~tabelarycznej postaci. Przykładem może być dźwięk, obraz czy tekst. W~procesie przetwarzania zawsze przetworzone zostają one na jakąś formę wektorową. Jednak poszczególne litery, częstotliwości~czy piksele nie niosą ze sobą żadnych informacji. Nie tworzą osobnych cech, co jest kluczowe dla odróżnienia ich od danych ustrukturyzowanych.</p>
+<blockquote class="blockquote">
+<p>Podaj przykład danych ustrukturyzowanych i nieustrukturyzowanych. Załaduj przykładowe dane w jupyter notebooku.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Zna typy danych ustrukturyzowanych jak i nieustrukturyzowanych (K2A_W02, K2A_W04, O2_W04, O2_W07)</p>
+</blockquote>
+</section>
+<section id="źródła-danych" class="level2">
+<h2 class="anchored" data-anchor-id="źródła-danych">Źródła danych</h2>
+<p>Do trzech największych ,,generatorów’’ danych należą:</p>
+<ul>
+<li><strong>dane społeczne</strong> w formie tekstów (tweety, wpisy w~portalach społecznościowych, komentarze), zdjęć czy plików wideo. Dane te są bardzo istotne ze względu na ich szerokie możliwości analizy pod względem zachowań i nastrojów konsumentów w analizach marketingowych.</li>
+<li><strong>Dane związane są z~technologią IoT</strong> (</li>
+<li><strong>Dane transakcyjne</strong> czyli ogólnie to co w~każdej chwili generowane jest jako transakcje pojawiające się zarówno w~trybie online jak i<sub>w</sub>trybie offline. Aktualnie ten typ danych przetwarzany jest w~celu, nie tylko wykonywania transakcji, ale również i~bogatej analityki wspomagającej praktycznie każdą dziedzinę życia codziennego.</li>
+</ul>
+<blockquote class="blockquote">
+<p>firma to organizacja, która generuje i odpowiada na ciągły strumień danych.</p>
+</blockquote>
+</section>
+<section id="not-to-big-data" class="level2">
+<h2 class="anchored" data-anchor-id="not-to-big-data">not to Big Data</h2>
+<blockquote class="blockquote">
+<p><em>,,Big Data is like teenage sex: everyone talks about it, nobody really knows how to do it, everyone thinks everyone else is doing it, so every one claims they are doing it.’’</em> — Dan Ariely, Professor of Psychology and Behavioral Economics, Duke University</p>
+</blockquote>
+<section id="one-two-four-v" class="level3">
+<h3 class="anchored" data-anchor-id="one-two-four-v">one, two, … four V</h3>
+<ol type="1">
+<li>Volume - Objętość - rozmiar danych produkowanych na całym świecie przyrasta w tempie wykładniczym. Huge amounts of data are being genereted every second - the email you send, Twitter, Facebook, or other social media, videos, pictures, SMS messages, call records and data from varied devices and sensors.</li>
+<li>Velocity - Szybkość - tempo produkowania danych, szybkości ich przesyłania i przetwarzania.</li>
+<li>Variety - Zróżnicowanie - tradycyjne dane kojarzą się nam z postacią alfanumeryczną złożoną z liter i cyfr. Obecnie mamy do dyspozycji obrazy, dźwięki, pliki wideo, strumienie danych z IoT</li>
+<li>Veracity - Wiarygodność - Czy dane są kompletne i poprawne ? Czy obiektywnie odzwierciedlają rzeczywistość ? Czy są podstawą do podejmowania decyzji ?</li>
+<li>Value - The value that the data actually holds. In the end, it’s all about cost and benefits.</li>
+</ol>
+<blockquote class="blockquote">
+<p><em>Celem obliczeń nie są liczby, lecz ich zrozumienie</em> R.W. Hamming 1962.</p>
+</blockquote>
+</section>
+</section>
+<section id="modele-przetwarzania-danych" class="level2">
+<h2 class="anchored" data-anchor-id="modele-przetwarzania-danych">Modele przetwarzania danych</h2>
+<p>Dane w biznesie przetwarzane są praktycznie od zawsze. W ciągu ostatnich dziesięcioleci ilość przetwarzanych danych systematycznie rośnie co wpływa na proces przygotowania i przetwarzania danych.</p>
+<p>Sposób wykorzystania i realizacji procesu dostępu do bazy danych nazywamy <strong>modelem przetwarzania</strong>. Najczęściej używane są dwie implementacje:</p>
+<section id="model-tradycyjny" class="level3">
+<h3 class="anchored" data-anchor-id="model-tradycyjny">Model Tradycyjny</h3>
+<p><strong>Model tradycyjny</strong> - przetwarzanie transakcyjne w trybie on-line, OLTP (on-line transaction processing). Świetnie sprawdza się w przypadku obsługi bieżącej np. obsługa klienta, rejestr zamówień, obsługa sprzedaży itp. Wykorzystywany w systemach Enterprise Resource Planning (ERP) Systems, Customer Relationship Management (CRM) software, and web-based applications.</p>
+<p>Model ten dostarcza efektywnych rozwiązań do:</p>
+<ul>
+<li>efektywne i bezpieczne przechowywanie danych,</li>
+<li>transakcyjne odtwarzanie danych po awarii,</li>
+<li>optymalizacja dostępu do danych,</li>
+<li>zarządzanie współbieżnością,</li>
+<li>przetwarzanie zdarzeń -&gt; odczyt -&gt; zapis</li>
+</ul>
+<p>Aktualnie wiele działających aplikacji (nawet w jednym obszarze) realizuje się jako mikroserwisy, czyli małe i niezależne aplikacje (filozofia programowania LINUX - rób mało ale dobrze).</p>
+<p>A co w przypadku gdy mamy do czynienia z:</p>
+<ul>
+<li>agregacjami danych z wielu systemów (np. dla wielu sklepów),</li>
+<li>raportowanie i podsumowania danych,</li>
+<li>optymalizacja złożonych zapytań,</li>
+<li>wspomaganie decyzji biznesowych.</li>
+</ul>
+<p>Realizacja potrzeb biznesowych i analitycznych doprowadziła do sformułowania nowego modelu przetwarzania danych oraz nowego typu baz danych - <strong>Hurtownie Danych</strong> <em>(Data warehouse)</em>.</p>
+</section>
+<section id="model-olap" class="level3">
+<h3 class="anchored" data-anchor-id="model-olap">Model OLAP</h3>
+<p><strong>Przetwarzanie analityczne on-line OLAP (on-line analytic processing).</strong></p>
+<p>Wspieranie procesów analizy i dostarczanie narzędzi umożliwiających analizę wielowymiarową (<code>czas</code>, <code>miejsce</code>, <code>produkt</code>).</p>
+<p>Proces zrzucania danych z różnych systemów do jednej bazy nazywamy Extract-Transform-Load (ETL) (normalizacja i encoding and schema transaction).</p>
+<p>Analiza danych z hurtowni to przede wszystkim obliczanie <strong>agregatów</strong> (podsumowań) dotyczących wymiarów hurtowni. Proces ten jest całkowicie sterowany przez użytkownika.</p>
+<p><strong>Przykład</strong></p>
+<p>Załóżmy, że mamy dostęp do hurtowni danych gdzie przechowywane są informacje dotyczące sprzedaży produktów w supermarkecie. Jak przeanalizować zapytania:</p>
+<ol type="1">
+<li>Jaka jest łączna sprzedaż produktów w kolejnych kwartałach, miesiącach, tygodniach ?</li>
+<li>Jaka jest sprzedaż produktów z podziałem na rodzaje produktów ?</li>
+<li>Jaka jest sprzedaż produktów z podziałem na oddziały supermarketu ?</li>
+</ol>
+<p>Odpowiedzi na te pytania pozwalają określić <code>wąskie gardła</code> sprzedaży produktów przynoszących deficyt, zaplanować zapasy w magazynach czy porównać sprzedaż różnych grup w różnych oddziałach supermarketu.</p>
+<p>W ramach Hurtowni Danych najczęściej wykonuje się dwa rodzaje zapytań: 1. Wykonywane okresowo w czasie zapytania raportowe obliczające biznesowe statystyki 2. Wykonywane ad-hoc zapytania wspomagające krytyczne decyzje biznesowe.</p>
+<p>Oba wykonywane w trybie batchowym. Dziś ściśle wykonywane z użyciem technologii Hadoop.</p>
+</section>
+</section>
+<section id="analiza-strumieni-danych" class="level1">
+<h1>Analiza strumieni danych</h1>
+<p>Analiza strumieni danych to ciągłe przetwarzanie i analiza dużych zbiorów danych w ruchu.</p>
+<p><a href="https://aws.amazon.com/streaming-data/">dodatkowe informacje</a></p>
+<section id="źródła-danych-przesyłanych-strumieniowo-obejmują" class="level2">
+<h2 class="anchored" data-anchor-id="źródła-danych-przesyłanych-strumieniowo-obejmują">Źródła danych przesyłanych strumieniowo obejmują:</h2>
+<ul>
+<li>czujniki sprzętu,</li>
+<li>strumienie kliknięć,</li>
+<li>śledzenie lokalizacji</li>
+<li>interackcja z użytkownikiem: co robią użytkownicy Twojej witryny?</li>
+<li>kanały mediów społecznościowych,</li>
+<li>notowania giełdowe,</li>
+<li>aktywność w aplikacjach</li>
+<li>inne.</li>
+</ul>
+<p>Firmy wykorzystują analitykę strumieniową do odkrywania i interpretowania wzorców, tworzenia wizualizacji, przekazywania spostrzeżeń i alertów oraz uruchamiania procesów w czasie rzeczywistym lub zbliżonym do rzeczywistego.</p>
+<section id="analiza-danych-w-czasie-rzeczywistym-a-przetwarzanie-strumienia-zdarzeń" class="level3">
+<h3 class="anchored" data-anchor-id="analiza-danych-w-czasie-rzeczywistym-a-przetwarzanie-strumienia-zdarzeń">Analiza danych w czasie rzeczywistym a przetwarzanie strumienia zdarzeń</h3>
+<p>Łatwo jest połączyć analizę w czasie rzeczywistym i analizę strumieniową (lub przetwarzanie strumienia zdarzeń). Ale chociaż technologie analizy strumieniowej mogą umożliwiać analizę w czasie rzeczywistym, to nie to samo!</p>
+<p>Analiza strumieniowa polega na przetwarzaniu danych w ruchu. Analityka w czasie rzeczywistym to dowolna metoda przetwarzania danych, która skutkuje okresem opóźnienia określanym jako „w czasie rzeczywistym”.</p>
+<p>Zazwyczaj systemy analizy czasu rzeczywistego są definiowane jako twarde i miękkie systemy czasu rzeczywistego. Niedotrzymanie terminu w twardych systemach czasu rzeczywistego, takich jak samolot, jest katastrofalne, a w miękkich systemach czasu rzeczywistego, takich jak stacja pogodowa, niedotrzymanie terminów może prowadzić do bezużytecznych danych.</p>
+<p>Ponadto, podczas gdy analiza strumieniowa implikuje istnienie architektury strumieniowej, analiza w czasie rzeczywistym nie implikuje żadnej konkretnej architektury.</p>
+<p>Wszystko, co implikuje analityka w czasie rzeczywistym, polega na tym, że tworzenie i przetwarzanie danych odbywa się w dowolnym czasie, który firma definiuje jako „w czasie rzeczywistym”.</p>
+</section>
+</section>
+<section id="uzasadnienie-biznesowe" class="level2">
+<h2 class="anchored" data-anchor-id="uzasadnienie-biznesowe">Uzasadnienie biznesowe</h2>
+<p>Analityka służy do znajdowania znaczących wzorców w danych i odkrywania nowej wiedzy. Dotyczy to zarówno transmisji strumieniowych, jak i tradycyjnych analiz.</p>
+<p>Ale w dzisiejszym świecie natura „znajdowania sensownych wzorców w danych” uległa zmianie, ponieważ zmienił się charakter danych. Szybkość, objętość i rodzaje danych eksplodowały.</p>
+<p>Twitter produkuje ponad 500 milionów tweetów dziennie. IDC przewiduje, że do 2025 roku urządzenia Internetu rzeczy (IoT) będą w stanie wygenerować 79,4 zettabajtów (ZB) danych. I te trendy nie wykazują oznak spowolnienia.</p>
+<p>Biorąc pod uwagę nowy charakter danych, główną zaletą analizy strumieniowej jest to, że pomaga ona firmom znajdować znaczące wzorce w danych i odkrywać nową wiedzę ,,w czasie rzeczywistym” lub zbliżonym do rzeczywistego.</p>
+<ul>
+<li>który pojazd firmowej floty ma prawie pusty bak i~gdzie wysłać prowadzącego pojazd do tankowania.</li>
+<li>Który pojazd floty zużywa najwięcej paliwa i~dlaczego?</li>
+<li>Które urządzenia w~zakładzie czy fabryce mogą ulec awarii w~ciągu najbliższych dni?</li>
+<li>Jakie części zamienne trzeba będzie wymienić i<sub>w</sub>których maszynach w~najbliższym czasie ?</li>
+<li>Ilu klientów aktualnie robi zakupy w~sklepie i~czy można im coś zaproponować ?</li>
+<li>Czy klient dzwoni w~celu zerwania umowy ?</li>
+<li>i wiele wiele innych.</li>
+</ul>
+<p><a href="https://www.linkedin.com/pulse/8-best-examples-real-time-data-analytics-bernard-marr/">8 najlepszych przykładów</a></p>
+<p><a href="https://www.forbes.com/sites/forbestechcouncil/2021/10/26/how-to-build-a-strong-business-case-for-streaming-analytics/?sh=eee8eaa465d0">Biznesowe zastosowania</a></p>
+</section>
+<section id="definicje" class="level2">
+<h2 class="anchored" data-anchor-id="definicje">Definicje</h2>
+<p>Zapoznaj się z tematem <a href="https://medium.com/cuelogic-technologies/analyzing-data-streaming-using-spark-vs-kafka-bcfdc33ac828">danych strumieniowych</a></p>
+<blockquote class="blockquote">
+<p>Definicja 1 - <em>Zdarzenie</em> czyli wszystko co możemy zaobserwować w pewnej chwili czasu. Definicja 2 - W przypadku danych <em>zdarzenie</em> rozumiemy jako <strong>niezmienialny</strong> rekord w strumieniu danych zakodowany jako JSON, XML, CSV lub binarnie. Definicja 3 - Ciągły strumień zdarzeń to nieskończony zbiór pojedynczych zdarzeń uporządkowanych w czasie np. logi z urządzenia.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Przedsiębiorstwo to organizacja, która generuje i odpowiada na ciągły strumień zdarzeń</strong>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Definicja 4 - Strumień danych to dane tworzone przyrostowo w czasie, generowane ze statycznych danych (baza danych, czytanie lini z pliku) bądź w sposób dynamiczny (logi, sensory, funkcje).</p>
+</blockquote>
+<p>Analityka strumieniowa (ang. <em>stream analytics</em>) nazywana jest również przetwarzaniem strumieniowym zdarzen (ang. <em>event stream processing</em>) - przetwarzanie dużej ilości danych już na etapie ich generowania.</p>
+<p>Generowane są jako bezpośredni skutek działania.</p>
+<p>Niezależnie od zastosowanej technologi wszystkie dane powstają jako ciągły strumień zdarzeń (działania użytkowników na stronie www, logi systemowe, pomiary z sensorów).</p>
+</section>
+<section id="aplikacje-dla-strumieniowania-danych" class="level2">
+<h2 class="anchored" data-anchor-id="aplikacje-dla-strumieniowania-danych">Aplikacje dla strumieniowania danych</h2>
+<p>Aplikacja przetwarzająca strumień zdarzeń powinna umożliwiać przetworzenie i zapisanie zdarzenia oraz dostęp (w tym samym czasie) do innych danych tak by móc dane zdarzenie przetworzyć (wykonać na nim dowolne przeliczenie) i zapisać jako <code>stan lokalny</code>. Stan ten może być zapisywany w wielu miejscach np. zmienne w programie, pliki lokalne, wew i zew bazy danych. Jedną z najbardziej znanych aplikacji tego typu jest Apache Kafka, którą można łączyć np. z Apache Spark bądź Apache Flink.</p>
+<p><a href="https://riverml.xyz/dev/examples/batch-to-online/">Porównanie z aplikacją w trybie batch</a></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
