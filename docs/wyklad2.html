@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Analiza danych w czasie rzeczywistym - Wykład 1</title>
+<title>Analiza danych w czasie rzeczywistym - Analiza strumieni danych</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -92,11 +92,11 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Wykład 1</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./wyklad2.html">
+    <a class="nav-link active" href="./wyklad2.html" aria-current="page">
  <span class="menu-text">Wykład 2</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./wyklad1S.html" aria-current="page">
+    <a class="nav-link" href="./wyklad1S.html">
  <span class="menu-text">Wykład SN1</span></a>
   </li>  
   <li class="nav-item">
@@ -126,18 +126,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data---small-data--" id="toc-data---small-data--" class="nav-link active" data-scroll-target="#data---small-data--">Data -&gt; Small Data -&gt; …</a></li>
-  <li><a href="#źródła-danych" id="toc-źródła-danych" class="nav-link" data-scroll-target="#źródła-danych">Źródła danych</a></li>
-  <li><a href="#not-to-big-data" id="toc-not-to-big-data" class="nav-link" data-scroll-target="#not-to-big-data">not to Big Data</a>
+  <li><a href="#batch-vs-stream-processing" id="toc-batch-vs-stream-processing" class="nav-link active" data-scroll-target="#batch-vs-stream-processing">Batch vs Stream Processing</a>
   <ul class="collapse">
-  <li><a href="#one-two-four-v" id="toc-one-two-four-v" class="nav-link" data-scroll-target="#one-two-four-v">one, two, … four V</a></li>
+  <li><a href="#rodzaj-danych" id="toc-rodzaj-danych" class="nav-link" data-scroll-target="#rodzaj-danych">Rodzaj danych</a></li>
+  <li><a href="#czas-uruchomienia-przetwarzania" id="toc-czas-uruchomienia-przetwarzania" class="nav-link" data-scroll-target="#czas-uruchomienia-przetwarzania">Czas uruchomienia przetwarzania</a></li>
+  <li><a href="#ponowne-przetwarzanie" id="toc-ponowne-przetwarzanie" class="nav-link" data-scroll-target="#ponowne-przetwarzanie">Ponowne przetwarzanie</a></li>
+  <li><a href="#etl" id="toc-etl" class="nav-link" data-scroll-target="#etl">ETL</a></li>
   </ul></li>
-  <li><a href="#modele-przetwarzania-danych" id="toc-modele-przetwarzania-danych" class="nav-link" data-scroll-target="#modele-przetwarzania-danych">Modele przetwarzania danych</a>
+  <li><a href="#big-data" id="toc-big-data" class="nav-link" data-scroll-target="#big-data">Big Data</a></li>
+  <li><a href="#hadoop-map-reduce" id="toc-hadoop-map-reduce" class="nav-link" data-scroll-target="#hadoop-map-reduce">Hadoop Map Reduce</a>
   <ul class="collapse">
-  <li><a href="#model-tradycyjny" id="toc-model-tradycyjny" class="nav-link" data-scroll-target="#model-tradycyjny">Model Tradycyjny</a></li>
-  <li><a href="#model-olap" id="toc-model-olap" class="nav-link" data-scroll-target="#model-olap">Model OLAP</a></li>
+  <li><a href="#apache-spark" id="toc-apache-spark" class="nav-link" data-scroll-target="#apache-spark">APACHE SPARK</a></li>
   </ul></li>
-  <li><a href="#analiza-strumieni-danych" id="toc-analiza-strumieni-danych" class="nav-link" data-scroll-target="#analiza-strumieni-danych">Analiza strumieni danych</a>
+  <li><a href="#strumienie-danych" id="toc-strumienie-danych" class="nav-link" data-scroll-target="#strumienie-danych">Strumienie danych</a>
   <ul class="collapse">
   <li><a href="#źródła-danych-przesyłanych-strumieniowo-obejmują" id="toc-źródła-danych-przesyłanych-strumieniowo-obejmują" class="nav-link" data-scroll-target="#źródła-danych-przesyłanych-strumieniowo-obejmują">Źródła danych przesyłanych strumieniowo obejmują:</a>
   <ul class="collapse">
@@ -155,7 +156,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Wykład 1</h1>
+<h1 class="title">Analiza strumieni danych</h1>
 </div>
 
 
@@ -170,95 +171,77 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="data---small-data--" class="level2">
-<h2 class="anchored" data-anchor-id="data---small-data--">Data -&gt; Small Data -&gt; …</h2>
-<p>Rozwój technologii informatycznych spowodował dostęp do niewyobrażalnych ilości nowego zasobu jakim są <strong>ustrukturyzowane</strong> jak i <strong>nieustrukturyzowane</strong> dane.</p>
-<p>Wszystkie algorytmy uczenia maszynowego wymagają <strong>danych ustrukturyzowanych</strong> zapisanych w~tabelarycznej postaci.<br>
-Zorganizowane są one w~kolumnach cech charakteryzujących każdą obserwację (wiersze). Przykładem mogą być takie cechy jak: <strong>płeć</strong>, <strong>wzrost</strong> czy <strong>ilość posiadanych samochodów</strong>, na podstawie których można przewidywać czy klient będzie spłacał kredyt czy też nie. Takie przewidywanie również oznaczane jest jako cecha. Zmienne te dobierane są tak, by łatwo można je było pozyskać. Dzięki tak otrzymanym tabelom cech możemy stosować algorytmy XGBoost lub regresji logistycznej w celu wyznaczenia odpowiedniej kombinacji zmiennych wpływających na prawdopodobieństwo dobrego albo i złego klienta.</p>
-<p><strong>Dane nieustrukturyzowane</strong> to takie, które nie są ułożone w~tabelarycznej postaci. Przykładem może być dźwięk, obraz czy tekst. W~procesie przetwarzania zawsze przetworzone zostają one na jakąś formę wektorową. Jednak poszczególne litery, częstotliwości~czy piksele nie niosą ze sobą żadnych informacji. Nie tworzą osobnych cech, co jest kluczowe dla odróżnienia ich od danych ustrukturyzowanych.</p>
-<blockquote class="blockquote">
-<p>Podaj przykład danych ustrukturyzowanych i nieustrukturyzowanych. Załaduj przykładowe dane w jupyter notebooku.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>Zna typy danych ustrukturyzowanych jak i nieustrukturyzowanych (K2A_W02, K2A_W04, O2_W04, O2_W07)</p>
-</blockquote>
-</section>
-<section id="źródła-danych" class="level2">
-<h2 class="anchored" data-anchor-id="źródła-danych">Źródła danych</h2>
-<p>Do trzech największych ,,generatorów’’ danych należą:</p>
-<ul>
-<li><strong>dane społeczne</strong> w formie tekstów (tweety, wpisy w~portalach społecznościowych, komentarze), zdjęć czy plików wideo. Dane te są bardzo istotne ze względu na ich szerokie możliwości analizy pod względem zachowań i nastrojów konsumentów w analizach marketingowych.</li>
-<li><strong>Dane związane są z~technologią IoT</strong> (</li>
-<li><strong>Dane transakcyjne</strong> czyli ogólnie to co w~każdej chwili generowane jest jako transakcje pojawiające się zarówno w~trybie online jak i<sub>w</sub>trybie offline. Aktualnie ten typ danych przetwarzany jest w~celu, nie tylko wykonywania transakcji, ale również i~bogatej analityki wspomagającej praktycznie każdą dziedzinę życia codziennego.</li>
-</ul>
-<blockquote class="blockquote">
-<p>firma to organizacja, która generuje i odpowiada na ciągły strumień danych.</p>
-</blockquote>
-</section>
-<section id="not-to-big-data" class="level2">
-<h2 class="anchored" data-anchor-id="not-to-big-data">not to Big Data</h2>
-<blockquote class="blockquote">
-<p><em>,,Big Data is like teenage sex: everyone talks about it, nobody really knows how to do it, everyone thinks everyone else is doing it, so every one claims they are doing it.’’</em> — Dan Ariely, Professor of Psychology and Behavioral Economics, Duke University</p>
-</blockquote>
-<section id="one-two-four-v" class="level3">
-<h3 class="anchored" data-anchor-id="one-two-four-v">one, two, … four V</h3>
+<section id="batch-vs-stream-processing" class="level2">
+<h2 class="anchored" data-anchor-id="batch-vs-stream-processing">Batch vs Stream Processing</h2>
+<p>Oczekiwania vs Rzeczywistość</p>
+<p><img alt="Batch Processing" src="img/batch00.png" class="center"></p>
+<p>Kiedy podjąć decyzję biznesową ?</p>
+<p><img alt="Batch Processing" src="img/batch0.png" class="center"></p>
+<section id="rodzaj-danych" class="level3">
+<h3 class="anchored" data-anchor-id="rodzaj-danych">Rodzaj danych</h3>
 <ol type="1">
-<li>Volume - Objętość - rozmiar danych produkowanych na całym świecie przyrasta w tempie wykładniczym. Huge amounts of data are being genereted every second - the email you send, Twitter, Facebook, or other social media, videos, pictures, SMS messages, call records and data from varied devices and sensors.</li>
-<li>Velocity - Szybkość - tempo produkowania danych, szybkości ich przesyłania i przetwarzania.</li>
-<li>Variety - Zróżnicowanie - tradycyjne dane kojarzą się nam z postacią alfanumeryczną złożoną z liter i cyfr. Obecnie mamy do dyspozycji obrazy, dźwięki, pliki wideo, strumienie danych z IoT</li>
-<li>Veracity - Wiarygodność - Czy dane są kompletne i poprawne ? Czy obiektywnie odzwierciedlają rzeczywistość ? Czy są podstawą do podejmowania decyzji ?</li>
-<li>Value - The value that the data actually holds. In the end, it’s all about cost and benefits.</li>
+<li>Batch = Duże, historyczne zbiory</li>
+<li>Stream = Strumień danych, on line, przesyłane w trybie ciągłym</li>
 </ol>
-<blockquote class="blockquote">
-<p><em>Celem obliczeń nie są liczby, lecz ich zrozumienie</em> R.W. Hamming 1962.</p>
-</blockquote>
 </section>
-</section>
-<section id="modele-przetwarzania-danych" class="level2">
-<h2 class="anchored" data-anchor-id="modele-przetwarzania-danych">Modele przetwarzania danych</h2>
-<p>Dane w biznesie przetwarzane są praktycznie od zawsze. W ciągu ostatnich dziesięcioleci ilość przetwarzanych danych systematycznie rośnie co wpływa na proces przygotowania i przetwarzania danych.</p>
-<p>Sposób wykorzystania i realizacji procesu dostępu do bazy danych nazywamy <strong>modelem przetwarzania</strong>. Najczęściej używane są dwie implementacje:</p>
-<section id="model-tradycyjny" class="level3">
-<h3 class="anchored" data-anchor-id="model-tradycyjny">Model Tradycyjny</h3>
-<p><strong>Model tradycyjny</strong> - przetwarzanie transakcyjne w trybie on-line, OLTP (on-line transaction processing). Świetnie sprawdza się w przypadku obsługi bieżącej np. obsługa klienta, rejestr zamówień, obsługa sprzedaży itp. Wykorzystywany w systemach Enterprise Resource Planning (ERP) Systems, Customer Relationship Management (CRM) software, and web-based applications.</p>
-<p>Model ten dostarcza efektywnych rozwiązań do:</p>
-<ul>
-<li>efektywne i bezpieczne przechowywanie danych,</li>
-<li>transakcyjne odtwarzanie danych po awarii,</li>
-<li>optymalizacja dostępu do danych,</li>
-<li>zarządzanie współbieżnością,</li>
-<li>przetwarzanie zdarzeń -&gt; odczyt -&gt; zapis</li>
-</ul>
-<p>Aktualnie wiele działających aplikacji (nawet w jednym obszarze) realizuje się jako mikroserwisy, czyli małe i niezależne aplikacje (filozofia programowania LINUX - rób mało ale dobrze).</p>
-<p>A co w przypadku gdy mamy do czynienia z:</p>
-<ul>
-<li>agregacjami danych z wielu systemów (np. dla wielu sklepów),</li>
-<li>raportowanie i podsumowania danych,</li>
-<li>optymalizacja złożonych zapytań,</li>
-<li>wspomaganie decyzji biznesowych.</li>
-</ul>
-<p>Realizacja potrzeb biznesowych i analitycznych doprowadziła do sformułowania nowego modelu przetwarzania danych oraz nowego typu baz danych - <strong>Hurtownie Danych</strong> <em>(Data warehouse)</em>.</p>
-</section>
-<section id="model-olap" class="level3">
-<h3 class="anchored" data-anchor-id="model-olap">Model OLAP</h3>
-<p><strong>Przetwarzanie analityczne on-line OLAP (on-line analytic processing).</strong></p>
-<p>Wspieranie procesów analizy i dostarczanie narzędzi umożliwiających analizę wielowymiarową (<code>czas</code>, <code>miejsce</code>, <code>produkt</code>).</p>
-<p>Proces zrzucania danych z różnych systemów do jednej bazy nazywamy Extract-Transform-Load (ETL) (normalizacja i encoding and schema transaction).</p>
-<p>Analiza danych z hurtowni to przede wszystkim obliczanie <strong>agregatów</strong> (podsumowań) dotyczących wymiarów hurtowni. Proces ten jest całkowicie sterowany przez użytkownika.</p>
-<p><strong>Przykład</strong></p>
-<p>Załóżmy, że mamy dostęp do hurtowni danych gdzie przechowywane są informacje dotyczące sprzedaży produktów w supermarkecie. Jak przeanalizować zapytania:</p>
+<section id="czas-uruchomienia-przetwarzania" class="level3">
+<h3 class="anchored" data-anchor-id="czas-uruchomienia-przetwarzania">Czas uruchomienia przetwarzania</h3>
 <ol type="1">
-<li>Jaka jest łączna sprzedaż produktów w kolejnych kwartałach, miesiącach, tygodniach ?</li>
-<li>Jaka jest sprzedaż produktów z podziałem na rodzaje produktów ?</li>
-<li>Jaka jest sprzedaż produktów z podziałem na oddziały supermarketu ?</li>
+<li>Batch = minuty, godziny, dni (patrz Hurtownie danych)</li>
+<li>Stream = Real-time/near-real-time</li>
 </ol>
-<p>Odpowiedzi na te pytania pozwalają określić <code>wąskie gardła</code> sprzedaży produktów przynoszących deficyt, zaplanować zapasy w magazynach czy porównać sprzedaż różnych grup w różnych oddziałach supermarketu.</p>
-<p>W ramach Hurtowni Danych najczęściej wykonuje się dwa rodzaje zapytań: 1. Wykonywane okresowo w czasie zapytania raportowe obliczające biznesowe statystyki 2. Wykonywane ad-hoc zapytania wspomagające krytyczne decyzje biznesowe.</p>
-<p>Oba wykonywane w trybie batchowym. Dziś ściśle wykonywane z użyciem technologii Hadoop.</p>
+</section>
+<section id="ponowne-przetwarzanie" class="level3">
+<h3 class="anchored" data-anchor-id="ponowne-przetwarzanie">Ponowne przetwarzanie</h3>
+<ol type="1">
+<li>Batch = możliwe i stosowane bardzo czesto</li>
+<li>Stream = ,,niemożliwe’’</li>
+</ol>
+<p><img alt="Batch Processing" src="img/batch1.png" class="center"></p>
+</section>
+<section id="etl" class="level3">
+<h3 class="anchored" data-anchor-id="etl">ETL</h3>
+<p>Extract, Transform, Load is a basic pattern for data processing, commonly known in data warehousing. It’s all about <em>extracting</em> data from a source, <em>transforming</em> the data (business rules) and at the end <em>writing/loading</em> everything to a target (Hadoop, Relational Database, Data Warehouse etc.)</p>
 </section>
 </section>
-<section id="analiza-strumieni-danych" class="level1">
-<h1>Analiza strumieni danych</h1>
+<section id="big-data" class="level2">
+<h2 class="anchored" data-anchor-id="big-data">Big Data</h2>
+<p>Systemy Big data mogą być częścią (źródłem) dla hurtowni danych (np. Data Lake, Enterprise Data Hub)</p>
+<p>Ale Hurtownie danych nie są systemami Big Data!</p>
+<ol type="1">
+<li>Hurtownie danych</li>
+</ol>
+<ul>
+<li>przetrzymywanie danych wysoko strukturyzowanych</li>
+<li>skupione na analizach i procesie raportowania</li>
+<li>100% accuracy</li>
+</ul>
+<ol start="2" type="1">
+<li>Big Data</li>
+</ol>
+<ul>
+<li>dane o dowolnej strukturze</li>
+<li>służy do różnorodnych celów opartych na danych (analityka, data science …)</li>
+<li>poniżej 100% accuracy</li>
+</ul>
+<p><img alt="Batch Processing" src="img/batch2.png" class="center"></p>
+</section>
+<section id="hadoop-map-reduce" class="level2">
+<h2 class="anchored" data-anchor-id="hadoop-map-reduce">Hadoop Map Reduce</h2>
+<p><img alt="Batch Processing" src="img/batch3.png" class="center"></p>
+<blockquote class="blockquote">
+<p>Znajdź prosty algorytm map reduce w dowolnym języku programowania i uruchom go.</p>
+</blockquote>
+<p><img alt="Batch Processing" src="img/batch4.png" class="center"></p>
+<p>Jak poprawić ?</p>
+<section id="apache-spark" class="level3">
+<h3 class="anchored" data-anchor-id="apache-spark">APACHE SPARK</h3>
+<p><img alt="Batch Processing" src="img/batch5.png" class="center"></p>
+<p><br> <img alt="Batch Processing" src="img/batch6.png" class="center"></p>
+</section>
+</section>
+<section id="strumienie-danych" class="level1">
+<h1>Strumienie danych</h1>
 <p>Analiza strumieni danych to ciągłe przetwarzanie i analiza dużych zbiorów danych w ruchu.</p>
 <p><a href="https://aws.amazon.com/streaming-data/">dodatkowe informacje</a></p>
 <section id="źródła-danych-przesyłanych-strumieniowo-obejmują" class="level2">

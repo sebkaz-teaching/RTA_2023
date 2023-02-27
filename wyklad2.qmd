@@ -1,0 +1,160 @@
+---
+title: "Analiza strumieni danych "
+--- 
+
+
+## Batch vs Stream Processing
+
+Oczekiwania vs Rzeczywistość
+
+<img alt="Batch Processing" src="img/batch00.png" class="center" />
+
+
+Kiedy podjąć decyzję biznesową ?
+
+
+<img alt="Batch Processing" src="img/batch0.png" class="center" />
+
+
+### Rodzaj danych
+
+1. Batch = Duże, historyczne zbiory
+2. Stream = Strumień danych, on line, przesyłane w trybie ciągłym
+
+### Czas uruchomienia przetwarzania
+
+1. Batch = minuty, godziny, dni (patrz Hurtownie danych)
+2. Stream = Real-time/near-real-time
+
+### Ponowne przetwarzanie
+
+1. Batch = możliwe i stosowane bardzo czesto
+2. Stream = ,,niemożliwe''
+
+
+<img alt="Batch Processing" src="img/batch1.png" class="center" />
+
+
+### ETL
+
+Extract, Transform, Load is a basic pattern for data processing,
+commonly known in data warehousing. It's all about *extracting* data from
+a source, *transforming* the data (business rules) and at the end *writing/loading*
+everything to a target (Hadoop, Relational Database, Data Warehouse etc.)
+
+## Big Data
+
+Systemy Big data mogą być częścią (źródłem) dla hurtowni danych (np. Data Lake, Enterprise Data Hub)
+
+Ale Hurtownie danych nie są systemami Big Data!
+
+1. Hurtownie danych
+- przetrzymywanie danych wysoko strukturyzowanych
+- skupione na analizach i procesie raportowania
+- 100\% accuracy
+
+2. Big Data
+- dane o dowolnej strukturze
+- służy do różnorodnych celów opartych na danych (analityka, data science ...)
+- poniżej 100\% accuracy
+
+
+<img alt="Batch Processing" src="img/batch2.png" class="center" />
+
+
+## Hadoop Map Reduce
+
+<img alt="Batch Processing" src="img/batch3.png" class="center" />
+
+> Znajdź prosty algorytm map reduce w dowolnym języku programowania i uruchom go.
+
+<img alt="Batch Processing" src="img/batch4.png" class="center" />
+
+Jak poprawić ?
+
+### APACHE SPARK
+
+<img alt="Batch Processing" src="img/batch5.png" class="center" />
+
+<br/>
+<img alt="Batch Processing" src="img/batch6.png" class="center" />
+
+
+# Strumienie danych
+
+Analiza strumieni danych to ciągłe przetwarzanie i analiza dużych zbiorów danych w ruchu.
+
+[dodatkowe informacje](https://aws.amazon.com/streaming-data/)
+
+## Źródła danych przesyłanych strumieniowo obejmują:
+
+- czujniki sprzętu, 
+- strumienie kliknięć,
+- śledzenie lokalizacji
+- interackcja z użytkownikiem: co robią użytkownicy Twojej witryny?
+- kanały mediów społecznościowych, 
+- notowania giełdowe, 
+- aktywność w aplikacjach
+- inne. 
+
+Firmy wykorzystują analitykę strumieniową do odkrywania i interpretowania wzorców, tworzenia wizualizacji, przekazywania spostrzeżeń i alertów oraz uruchamiania procesów w czasie rzeczywistym lub zbliżonym do rzeczywistego.
+
+### Analiza danych w czasie rzeczywistym a przetwarzanie strumienia zdarzeń
+
+Łatwo jest połączyć analizę w czasie rzeczywistym i analizę strumieniową (lub przetwarzanie strumienia zdarzeń). Ale chociaż technologie analizy strumieniowej mogą umożliwiać analizę w czasie rzeczywistym, to nie to samo!
+
+Analiza strumieniowa polega na przetwarzaniu danych w ruchu. Analityka w czasie rzeczywistym to dowolna metoda przetwarzania danych, która skutkuje okresem opóźnienia określanym jako „w czasie rzeczywistym”.
+
+Zazwyczaj systemy analizy czasu rzeczywistego są definiowane jako twarde i miękkie systemy czasu rzeczywistego. Niedotrzymanie terminu w twardych systemach czasu rzeczywistego, takich jak samolot, jest katastrofalne, a w miękkich systemach czasu rzeczywistego, takich jak stacja pogodowa, niedotrzymanie terminów może prowadzić do bezużytecznych danych.
+
+Ponadto, podczas gdy analiza strumieniowa implikuje istnienie architektury strumieniowej, analiza w czasie rzeczywistym nie implikuje żadnej konkretnej architektury. 
+
+Wszystko, co implikuje analityka w czasie rzeczywistym, polega na tym, że tworzenie i przetwarzanie danych odbywa się w dowolnym czasie, który firma definiuje jako „w czasie rzeczywistym”.
+
+## Uzasadnienie biznesowe
+
+Analityka służy do znajdowania znaczących wzorców w danych i odkrywania nowej wiedzy. Dotyczy to zarówno transmisji strumieniowych, jak i tradycyjnych analiz.
+
+Ale w dzisiejszym świecie natura „znajdowania sensownych wzorców w danych” uległa zmianie, ponieważ zmienił się charakter danych. Szybkość, objętość i rodzaje danych eksplodowały.
+
+Twitter produkuje ponad 500 milionów tweetów dziennie. IDC przewiduje, że do 2025 roku urządzenia Internetu rzeczy (IoT) będą w stanie wygenerować 79,4 zettabajtów (ZB) danych.
+I te trendy nie wykazują oznak spowolnienia.
+
+Biorąc pod uwagę nowy charakter danych, główną zaletą analizy strumieniowej jest to, że pomaga ona firmom znajdować znaczące wzorce w danych i odkrywać nową wiedzę ,,w czasie rzeczywistym" lub zbliżonym do rzeczywistego.
+
+- który pojazd firmowej floty ma prawie pusty bak i~gdzie wysłać prowadzącego pojazd do tankowania.
+- Który pojazd floty zużywa najwięcej paliwa i~dlaczego? 
+- Które urządzenia w~zakładzie czy fabryce mogą ulec awarii w~ciągu najbliższych dni?
+- Jakie części zamienne trzeba będzie wymienić i~w~których maszynach w~najbliższym czasie ? 
+- Ilu klientów aktualnie robi zakupy w~sklepie i~czy można im coś zaproponować ? 
+- Czy klient dzwoni w~celu zerwania umowy ? 
+- i wiele wiele innych.
+
+[8 najlepszych przykładów](https://www.linkedin.com/pulse/8-best-examples-real-time-data-analytics-bernard-marr/)
+
+[Biznesowe zastosowania](https://www.forbes.com/sites/forbestechcouncil/2021/10/26/how-to-build-a-strong-business-case-for-streaming-analytics/?sh=eee8eaa465d0)
+
+## Definicje
+
+Zapoznaj się z tematem [danych strumieniowych](https://medium.com/cuelogic-technologies/analyzing-data-streaming-using-spark-vs-kafka-bcfdc33ac828)
+
+> Definicja 1 - *Zdarzenie* czyli wszystko co możemy zaobserwować w pewnej chwili czasu.
+> Definicja 2 - W przypadku danych *zdarzenie* rozumiemy jako **niezmienialny** rekord w strumieniu danych zakodowany jako JSON, XML, CSV lub binarnie.
+> Definicja 3 - Ciągły strumień zdarzeń to nieskończony zbiór pojedynczych zdarzeń uporządkowanych w czasie np. logi z urządzenia.
+
+> **Przedsiębiorstwo to organizacja, która generuje i odpowiada na ciągły strumień zdarzeń**.
+
+> Definicja 4 - Strumień danych to dane tworzone przyrostowo w czasie, generowane ze statycznych danych (baza danych, czytanie lini z pliku) bądź w sposób dynamiczny (logi, sensory, funkcje).
+
+Analityka strumieniowa (ang. _stream analytics_) nazywana jest również przetwarzaniem strumieniowym zdarzen (ang. _event stream processing_) - przetwarzanie dużej ilości danych już na etapie ich generowania. 
+
+Generowane są jako bezpośredni skutek działania.
+
+Niezależnie od zastosowanej technologi wszystkie dane powstają jako ciągły strumień zdarzeń (działania użytkowników na stronie www, logi systemowe, pomiary z sensorów).
+
+## Aplikacje dla strumieniowania danych
+
+Aplikacja przetwarzająca strumień zdarzeń powinna umożliwiać przetworzenie i zapisanie zdarzenia oraz dostęp (w tym samym czasie) do innych danych tak by móc dane zdarzenie przetworzyć (wykonać na nim dowolne przeliczenie) i zapisać jako `stan lokalny`. 
+Stan ten może być zapisywany w wielu miejscach np. zmienne w programie, pliki lokalne, wew i zew bazy danych. Jedną z najbardziej znanych aplikacji tego typu jest Apache Kafka, którą można łączyć np. z Apache Spark bądź Apache Flink.  
+
+[Porównanie z aplikacją w trybie batch](https://riverml.xyz/dev/examples/batch-to-online/)
