@@ -10,6 +10,10 @@ title: Książki i strony WWW
 
 2. F. Hueske, V. Kalavri _Stream Processing with Apache Flink_ [Zobacz opis](http://helion.pl/view/111546/e_13f8.html) lub [Kup e-book](http://helion.pl/add111546~e_13f8_ebook)
 
+<div id="bellemare">
+3. A. Bellemare _Mikrousługi oparte na zdarzeniach. Wykorzystanie danych w organizacji na dużą skalę_ [Zobacz opis](http://helion.pl/view/111546/miopzd) lub [Kup](http://helion.pl/add111546~miopzd)
+</div>
+
 ### Machine Learning with Pyton
 
 1. W. McKinney _Python w analizie danych. Przetwarzanie danych za pomocą pakietów Pandas i NumPy oraz środowiska IPython. Wydanie II_  [Zobacz opis](http://helion.pl/view/111546/pytand.html) lub [Kup książkę](http://helion.pl/add111546~pytand), [Kup e-book](http://helion.pl/add111546~pytand_ebook)
@@ -31,10 +35,6 @@ title: Książki i strony WWW
 9. T. Segaran _Nowe usługi 2.0. Przewodnik po analizie zbiorów danych_
 [Zobacz opis](http://helion.pl/view/111546/noweus.html) lub [Kup książkę](http://helion.pl/add111546~noweus), [Kup e-book](http://helion.pl/add111546~noweus_ebook)
 
-10. T. Morzy _Eksploracja Danych. Metody i algorytmy_, PWN, 2013.
-
-11. Krzyśko, Wołyński, Górecki, Skorzybut, _Systemy uczące się_ . WNT, 2008
-
 ### Deep Learning
 
 1. F. Chollet _Deep Learning. Praca z językiem Python i biblioteką Keras._ [Zobacz opis](http://helion.pl/view/111546/delepy.html) lub [Kup książkę](http://helion.pl/add111546~delepy), [Kup e-book](http://helion.pl/add111546~delepy_ebook)
@@ -53,6 +53,8 @@ title: Książki i strony WWW
 
 
 ### Apache SPARK
+
+1. J. S. Damji, B. Wenig, T. Das, D. Lee _Spark. Błyskawiczna analiza danych_ [Zobacz opis](http://helion.pl/view/111546/sparb2.html) lub [Kup](http://helion.pl/add111546~sparb2)
 
 1. _Spark. Zaawansowana analiza danych (ebook)_ [Zobacz opis](http://helion.pl/view/111546/sparkz.html) lub [Kup e-book](http://helion.pl/add111546~sparkz_ebook)
 

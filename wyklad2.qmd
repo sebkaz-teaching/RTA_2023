@@ -2,7 +2,6 @@
 title: "Analiza strumieni danych "
 --- 
 
-
 ## Batch vs Stream Processing
 
 Oczekiwania vs Rzeczywistość

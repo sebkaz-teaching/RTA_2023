@@ -1,0 +1,13 @@
+---
+title: "Mikroserwisy "
+--- 
+
+Komunikacja sieciowa, relacyjne bazy danych, rozwiązania chmurowe i big data znacząco zmieniły sposób budowania systemów informatycznych i wykonywnia na niach pradki 
+
+Mikrousługi istieją od lat w mnogich formach i pod wieloma odmiennymi nazwami. 
+
+
+## REST API 
+
+## Systemy kolejkowe
+ 

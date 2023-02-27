@@ -21,13 +21,28 @@ Wykład jest realizowany w trybie hybrydowym.
 Jest on NIEOBOWIĄZKOWY i odbywa się w Auli I bud G
 
 1. <del> 20-02-2023 (poniedziałek) 09:50-11:30 - Wykład 1 </del>
+Tematy zrealizowane na wykładzie:
     - Dane ustrukturyzowane i nieustrukturyzowane
-    - Źródła danych 
+    - Procesy generowania danych
     - Big Data
     - Modele przetwarzania danych OLTP, OLAP
-2. 27-02-2023 (poniedziałek) 09:50-11:30 - Wykład 2
+2. <del>27-02-2023 (poniedziałek) 09:50-11:30 - Wykład 2</del>
+Tematy zrealizowane na wykładzie:
+    - Przetwarzanie wsadowe vs Przetwarzanie strumieni danych
+    - ETL 
+    - Wzorzec MapReduce
+    - Biznesowe wymagania dla strumieni danych
+    - Definicje: Zdarzenie, strumień zdarzeń, analiza i przetwarzanie strumieni zdarzeń, 
+    - Narzędzie i aplikacje przetwarzania strumieniowego
 3. 06-03-2023 (poniedziałek) 09:50-11:30 - Wykład 3
+Tematy reazlizowane na wykładzie: 
+    - Działanie systemu klient-serwer: REST API
+    - Działanie systemu pub-sub: Apache Kafka
 4. 13-03-2023 (poniedziałek) 09:50-11:30 - Wykład 4
+    - TEST 10 pytań!    
+Tematy realizowane na wykładzie:
+    
+
 
 Wykłady kończą się TESTEM: 10 pytań - 20 minut. 
 Test przeprowadzany jest za pośrednictwem MS Teams.
