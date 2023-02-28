@@ -126,10 +126,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data---small-data--" id="toc-data---small-data--" class="nav-link active" data-scroll-target="#data---small-data--">Data -&gt; Small Data -&gt; …</a></li>
-  <li><a href="#źródła-danych" id="toc-źródła-danych" class="nav-link" data-scroll-target="#źródła-danych">Źródła danych</a></li>
+  <li><a href="#od-plikow-płaskich-do-data-lake" id="toc-od-plikow-płaskich-do-data-lake" class="nav-link active" data-scroll-target="#od-plikow-płaskich-do-data-lake">Od plików płaskich do Data Lake</a></li>
+  <li><a href="#źródła-danych" id="toc-źródła-danych" class="nav-link" data-scroll-target="#źródła-danych">Źródła danych</a>
+  <ul class="collapse">
   <li><a href="#rzeczywisty-proces-generowania-danych" id="toc-rzeczywisty-proces-generowania-danych" class="nav-link" data-scroll-target="#rzeczywisty-proces-generowania-danych">Rzeczywisty proces generowania danych</a></li>
-  <li><a href="#not-to-big-data" id="toc-not-to-big-data" class="nav-link" data-scroll-target="#not-to-big-data">not to Big Data</a>
+  </ul></li>
+  <li><a href="#big-data" id="toc-big-data" class="nav-link" data-scroll-target="#big-data">Big Data</a>
   <ul class="collapse">
   <li><a href="#one-two-four-v" id="toc-one-two-four-v" class="nav-link" data-scroll-target="#one-two-four-v">one, two, … four V</a></li>
   </ul></li>
@@ -162,13 +164,16 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="data---small-data--" class="level2">
-<h2 class="anchored" data-anchor-id="data---small-data--">Data -&gt; Small Data -&gt; …</h2>
+<section id="od-plikow-płaskich-do-data-lake" class="level2">
+<h2 class="anchored" data-anchor-id="od-plikow-płaskich-do-data-lake">Od plików płaskich do Data Lake</h2>
 <p>Rozwój technologii informatycznych spowodował dostęp do niewyobrażalnych ilości nowego zasobu jakim są <strong>ustrukturyzowane</strong> jak i <strong>nieustrukturyzowane</strong> dane.</p>
+<p><img src="img/main.jpeg" class="center img-fluid"></p>
 <p>Dane przyczyniły się do powstania tysięcy nowych narzędzi do <code>generowania</code>, <code>zbierania</code>, <code>przechowywania</code> i <code>przetwarzania</code> informacji na niespotykaną dotąd skalę.</p>
 <p>Zasób ten nie jest nowością i dostępny jest od bardzo dawna. Jednak dopiero po wprowadzeniu systemu pisma można było zacząć prowadzić zapis i przetwarzanie w postaci rachunkowości czy rejestrów różnych rzeczy takich jak: zaludnienie w krajach, spisy rzek, jezior, najgłębsze miejsca itp.</p>
 <p>Pojawienie się nowych wyzwań naukowych czy biznesowych staje się możliwe do realizacji dzięki budowie systemów opartych na <code>otwartym oprogramowaniu</code>, jak również dzięki wykorzystaniu domowych komputerów do wspomagania przetwarzania ogromnych ilości danych.</p>
-<p>Nowe wyzwania to między innymi:</p>
+<p>Dziś systemy takie jak <a href="https://www.sas.com/pl_pl/home.html">SAS</a>, <a href="https://hadoop.apache.org">Apache Hadoop</a>, <a href="https://spark.apache.org">Apache Spark</a>, <a href="https://flink.apache.org">Apache Flink</a> dzięki rozwiązaniom chmurowym używane są na szeroką skalę w wielu instytucjach i firmach niemal w każdej dziedzinie. Narzędzia te wykorzystywane są w bankowości, opiece zdrowotnej, naukach przyrodniczych, produkcji, sektorze publicznym czy sprzedaży.</p>
+<p>Epoka danych stawia przed nami coraz to nowsze wyzwania związane nie tylko z ilością, ale i z czasem przetwarzania danych.</p>
+<p>Nowe wyzwania biznesowe to między innymi:</p>
 <ul>
 <li>inteligentna reklama tysięcy produktów dla milionów klientów,</li>
 <li>przetwarzanie danych o genach, RNA czy też białkach <a href="http://genus.fuw.edu.pl">genus</a>,</li>
@@ -176,53 +181,48 @@ ul.task-list li input[type="checkbox"] {
 <li>symulacje giełdowe oparte o tysiące instrumentów finansowych</li>
 <li>…</li>
 </ul>
-<p>Epoka danych stawia przed nami coraz to nowsze wyzwania związane nie tylko z ilością, ale i z czasem przetwarzania danych.</p>
-<p>Wszystkie algorytmy uczenia maszynowego wymagają <strong>danych ustrukturyzowanych</strong> zapisanych w~tabelarycznej postaci.<br>
-Zorganizowane są one w~kolumnach cech charakteryzujących każdą obserwację (wiersze). Przykładem mogą być takie cechy jak: <strong>płeć</strong>, <strong>wzrost</strong> czy <strong>ilość posiadanych samochodów</strong>, na podstawie których można przewidywać czy klient będzie spłacał kredyt czy też nie. Takie przewidywanie również oznaczane jest jako cecha. Zmienne te dobierane są tak, by łatwo można je było pozyskać. Dzięki tak otrzymanym tabelom cech możemy stosować algorytmy XGBoost lub regresji logistycznej w celu wyznaczenia odpowiedniej kombinacji zmiennych wpływających na prawdopodobieństwo dobrego albo i złego klienta.</p>
-<p><strong>Dane nieustrukturyzowane</strong> to takie, które nie są ułożone w~tabelarycznej postaci. Przykładem może być dźwięk, obraz czy tekst. W~procesie przetwarzania zawsze przetworzone zostają one na jakąś formę wektorową. Jednak poszczególne litery, częstotliwości~czy piksele nie niosą ze sobą żadnych informacji. Nie tworzą osobnych cech, co jest kluczowe dla odróżnienia ich od danych ustrukturyzowanych.</p>
-<blockquote class="blockquote">
-<p>Podaj przykład danych ustrukturyzowanych i nieustrukturyzowanych. Załaduj przykładowe dane w jupyter notebooku.</p>
-</blockquote>
+<p>Wszystkie algorytmy uczenia maszynowego wymagają <strong>danych ustrukturyzowanych</strong> zapisanych w tabelarycznej postaci (tensory).<br>
+Zorganizowane są one w kolumnach cech charakteryzujących każdą obserwację (wiersze). Przykładem mogą być takie cechy jak: <strong>płeć</strong>, <strong>wzrost</strong> czy <strong>ilość posiadanych samochodów</strong>, na podstawie których można przewidywać czy klient będzie spłacał kredyt czy też nie. Takie przewidywanie również oznaczane jest jako cecha. Zmienne te dobierane są tak, by łatwo można je było pozyskać. Dzięki tak otrzymanym tabelom cech możemy stosować algorytmy tj. <code>XGBoost</code> lub <code>regresji logistycznej</code> w celu wyznaczenia odpowiedniej kombinacji zmiennych wpływających na prawdopodobieństwo dobrego albo i złego klienta.</p>
+<p>Podstawowe systemy bazodanowe związane z językiem SQL również realizują modele danych, w których dane ładnowane są do (ustrukturyzowanych) tabel.</p>
+<p><strong>Dane nieustrukturyzowane</strong> to takie, które nie są ułożone w~tabelarycznej postaci. &gt; !Uwaga - nie oznacza to, iż dane nie możemy przetworzyć do jakiejś postaci tabelarzycnzej.</p>
+<p>Przykładem może być <code>dźwięk</code>, <code>obraz</code>czy <code>tekst</code>. Poszczególne litery, częstotliwości~czy piksele nie niosą ze sobą żadnych informacji. Nie tworzą osobnych cech, co jest kluczowe dla odróżnienia ich od danych ustrukturyzowanych.</p>
 <blockquote class="blockquote">
 <p>Zna typy danych ustrukturyzowanych jak i nieustrukturyzowanych (K2A_W02, K2A_W04, O2_W04, O2_W07)</p>
 </blockquote>
 </section>
 <section id="źródła-danych" class="level2">
 <h2 class="anchored" data-anchor-id="źródła-danych">Źródła danych</h2>
-<p><a href="https://www.internetlivestats.com">Przepływ Big Data</a></p>
+<p>Do trzech największych “generatorów” danych należą:</p>
 <ul>
-<li>Działalność przedsiębiorstw i instytucji (banki, ubezpieczalnie, sieci handlowe, urzędy …).</li>
+<li><code>dane społeczne</code> w formie tekstów (tweety, wpisy w~portalach społecznościowych, komentarze), zdjęć czy plików wideo. Przydatne do problemów biznesowych realizujących ocenę zachowań i nastrojów konsumentów w analizach marketingowych.</li>
+<li><code>IoT</code>: dane pochodzące z czujników, czy też logi działania urządzeń i użytkowników (np. na stronie www).</li>
+<li><code>Dane transakcyjne</code>: czyli ogólnie to co w każdej chwili generowane jest jako transakcje pojawiające się zarówno w trybie online jak i w trybie offline.</li>
 </ul>
-<p>Do trzech największych ,,generatorów’’ danych należą:</p>
-<ul>
-<li>dane społeczne w formie tekstów (tweety, wpisy w~portalach społecznościowych, komentarze), zdjęć czy plików wideo. Dane te są bardzo istotne ze względu na ich szerokie możliwości analizy pod względem zachowań i nastrojów konsumentów w analizach marketingowych.</li>
-<li>dane pochodzące ze wszelkiego rodzaju czujników czy też logi działania urządzeń i~użytkowników (np. na stronie www). Dane te związane są z~technologią IoT (</li>
-<li>Dane transakcyjne czyli ogólnie to co w~każdej chwili generowane jest jako transakcje pojawiające się zarówno w~trybie online jak i<sub>w</sub>trybie offline. Aktualnie ten typ danych przetwarzany jest w~celu, nie tylko wykonywania transakcji, ale również i~bogatej analityki wspomagającej praktycznie każdą dziedzinę życia codziennego.</li>
-</ul>
-</section>
-<section id="rzeczywisty-proces-generowania-danych" class="level2">
-<h2 class="anchored" data-anchor-id="rzeczywisty-proces-generowania-danych">Rzeczywisty proces generowania danych</h2>
-<p>Dane generowane są w postaci nieograniczonej - pojawiają się na skutek ciągłych działań systemów. W swoim telefonie wygenerowałeś dziś (a nawet na tych zajęciach !) wiele danych. Czy na następnych zajęciach lub tez jutro nie będziesz ich generował ? Przetwarzanie wsadowe dzieli dane na porcje o stałej długości czasu i uruchamia procesy przetwarzania w określonym przez uzytkownika czasie. Jednak znacznik czasowy nie zawsze jest istotny.</p>
-<p>Z wieloma systemami, które obsługują strumienie danych miałeś już do czynienia. Są to np: - hurtownie danych - systemy monitorujące działania urządzeń (IoT) - systemy transakcyjne - systemy analityczne stron www - reklamy on-line - media społecznościowe - systemy logowania - ….</p>
+<section id="rzeczywisty-proces-generowania-danych" class="level3">
+<h3 class="anchored" data-anchor-id="rzeczywisty-proces-generowania-danych">Rzeczywisty proces generowania danych</h3>
+<p>Dane generowane są w postaci <code>nieograniczonej</code> - pojawiają się na skutek ciągłych działań systemów. W swoim telefonie wygenerowałeś dziś (a nawet na tych zajęciach!) wiele danych. Czy na następnych zajęciach lub tez jutro nie będziesz ich generował?</p>
+<p>Dane zawsze generowane są jako jakaś forma strumienia danych.</p>
+<p>Systemy obsługujące strumienie danych: - hurtownie danych - systemy monitorujące działania urządzeń (IoT) - systemy transakcyjne - systemy analityczne stron www - reklamy on-line - media społecznościowe - systemy logowania - ….</p>
 <blockquote class="blockquote">
-<p>firma to organizacja, która generuje i odpowiada na ciągły strumień danych.</p>
+<p>firma to organizacja, która generuje i odpowiada na ciągły strumień danych. <a href="./RTA_2023/ksiazki#bellemare">Zobacz</a></p>
 </blockquote>
-<p>W przetwarzaniu wsadowym źródłem (ale i~wynikiem przetwarzania) danych jest <strong>plik</strong>. Jest on zapisywany raz i~można się do niego odwołać (może na nim działać wiele procesów - zadań). Nazwa pliku to element identyfikujący zbiór rekordów.</p>
-<p>W~przypadku strumienia zdarzenie jest generowane tylko raz przez tzw. <em>producenta</em> (zwanego też nadawcą lub dostawcą). Powstałe zdarzenie przetwarzane może być przez wielu tzw. <em>konsumentów</em> (odbiorców). Zdarzenia strumieniowe grupowane są w~tzw. <strong>temat</strong> (ang. <strong>topic</strong>).</p>
+<p>W przetwarzaniu wsadowym źródłem (ale i wynikiem przetwarzania) danych jest <strong>plik</strong>. Jest on zapisywany raz i można się do niego odwołać (może na nim działać wiele procesów - zadań). Nazwa pliku to element identyfikujący zbiór rekordów.</p>
+<p>W przypadku strumienia zdarzenie jest generowane tylko raz przez tzw. <em>producenta</em> (zwanego też nadawcą lub dostawcą). Powstałe zdarzenie przetwarzane może być przez wielu tzw. <em>konsumentów</em> (odbiorców). Zdarzenia strumieniowe grupowane są w tzw. <strong>tematy</strong> (ang. <strong>topics</strong>).</p>
 </section>
-<section id="not-to-big-data" class="level2">
-<h2 class="anchored" data-anchor-id="not-to-big-data">not to Big Data</h2>
+</section>
+<section id="big-data" class="level2">
+<h2 class="anchored" data-anchor-id="big-data">Big Data</h2>
 <blockquote class="blockquote">
 <p><em>,,Big Data is like teenage sex: everyone talks about it, nobody really knows how to do it, everyone thinks everyone else is doing it, so every one claims they are doing it.’’</em> — Dan Ariely, Professor of Psychology and Behavioral Economics, Duke University</p>
 </blockquote>
 <section id="one-two-four-v" class="level3">
 <h3 class="anchored" data-anchor-id="one-two-four-v">one, two, … four V</h3>
 <ol type="1">
-<li>Volume - Objętość - rozmiar danych produkowanych na całym świecie przyrasta w tempie wykładniczym. Huge amounts of data are being genereted every second - the email you send, Twitter, Facebook, or other social media, videos, pictures, SMS messages, call records and data from varied devices and sensors.</li>
-<li>Velocity - Szybkość - tempo produkowania danych, szybkości ich przesyłania i przetwarzania.</li>
-<li>Variety - Zróżnicowanie - tradycyjne dane kojarzą się nam z postacią alfanumeryczną złożoną z liter i cyfr. Obecnie mamy do dyspozycji obrazy, dźwięki, pliki wideo, strumienie danych z IoT</li>
-<li>Veracity - Wiarygodność - Czy dane są kompletne i poprawne ? Czy obiektywnie odzwierciedlają rzeczywistość ? Czy są podstawą do podejmowania decyzji ?</li>
-<li>Value - The value that the data actually holds. In the end, it’s all about cost and benefits.</li>
+<li><strong>Volume</strong> (Objętość) - rozmiar danych produkowanych na całym świecie przyrasta w tempie wykładniczym.</li>
+<li><strong>Velocity</strong> (Szybkość) - tempo produkowania danych, szybkości ich przesyłania i przetwarzania.</li>
+<li><strong>Variety</strong> (Zróżnicowanie) - tradycyjne dane kojarzą się nam z postacią alfanumeryczną złożoną z liter i cyfr. Obecnie mamy do dyspozycji obrazy, dźwięki, pliki wideo, strumienie danych z IoT</li>
+<li><strong>Veracity</strong> (Wiarygodność) - Czy dane są kompletne i poprawne? Czy obiektywnie odzwierciedlają rzeczywistość? Czy są podstawą do podejmowania decyzji?</li>
+<li><strong>Value</strong> - The value that the data actually holds. In the end, it’s all about cost and benefits.</li>
 </ol>
 <blockquote class="blockquote">
 <p><em>Celem obliczeń nie są liczby, lecz ich zrozumienie</em> R.W. Hamming 1962.</p>
@@ -244,27 +244,24 @@ Zorganizowane są one w~kolumnach cech charakteryzujących każdą obserwację (
 <li>Później : NoSQL, Hadoop, SPARK, data lake</li>
 <li>2002 : AWS , 2005: Hadoop, Cloud computing</li>
 </ul>
-<blockquote class="blockquote">
-<p>Zna historię i filozofię modeli przetwarzania danych.</p>
-</blockquote>
-<p>Większość danych przechowywana jest w bazach lub hurtowniach danych. Standardowo dostęp do danych sprowadza się najczęściej do realizacji zapytań poprzez aplikację. Sposób wykorzystania i realizacji procesu dostępu do bazy danych nazywamy <strong>modelem przetwarzania</strong>. Najczęściej używane są dwie implementacje:</p>
+<p>Większość danych przechowywana jest w bazach lub hurtowniach danych. Standardowo dostęp do danych sprowadza się najczęściej do realizacji zapytań poprzez aplikację.</p>
+<p>Sposób wykorzystania i realizacji procesu dostępu do bazy danych nazywamy <strong>modelem przetwarzania</strong>. Najczęściej używane są dwie implementacje:</p>
 </section>
 <section id="model-tradycyjny" class="level3">
 <h3 class="anchored" data-anchor-id="model-tradycyjny">Model Tradycyjny</h3>
 <p><strong>Model tradycyjny</strong> - przetwarzanie transakcyjne w trybie on-line, OLTP (on-line transaction processing). Świetnie sprawdza się w przypadku obsługi bieżącej np. obsługa klienta, rejestr zamówień, obsługa sprzedaży itp. Wykorzystywany w systemach Enterprise Resource Planning (ERP) Systems, Customer Relationship Management (CRM) software, and web-based applications.</p>
-<p>Model ten dostarcza efektywnych rozwiązań do:</p>
+<p><img src="img/baza1.png" class="center img-fluid"></p>
+<p>Model ten dostarcza efektywnych rozwiązań m.in do:</p>
 <ul>
-<li>efektywne i bezpieczne przechowywanie danych,</li>
-<li>transakcyjne odtwarzanie danych po awarii,</li>
-<li>optymalizacja dostępu do danych,</li>
-<li>zarządzanie współbieżnością,</li>
-<li>przetwarzanie zdarzeń -&gt; odczyt -&gt; zapis</li>
+<li>efektywnego i bezpiecznego przechowywania danych,</li>
+<li>transakcyjnego odtwarzanie danych po awarii,</li>
+<li>optymalizacji dostępu do danych,</li>
+<li>zarządzania współbieżnością,</li>
+<li>przetwarzania zdarzeń -&gt; odczyt -&gt; zapis</li>
 </ul>
-<p>Aktualnie wiele działających aplikacji (nawet w jednym obszarze) realizuje się jako mikroserwisy, czyli małe i niezależne aplikacje (filozofia programowania LINUX - rób mało ale dobrze).</p>
-<p>A co w przypadku gdy mamy do czynienia z:</p>
+<p>Co w przypadku gdy mamy do czynienia z:</p>
 <ul>
 <li>agregacjami danych z wielu systemów (np. dla wielu sklepów),</li>
-<li>wspomaganie analizy danych,</li>
 <li>raportowanie i podsumowania danych,</li>
 <li>optymalizacja złożonych zapytań,</li>
 <li>wspomaganie decyzji biznesowych.</li>
@@ -285,8 +282,7 @@ Zorganizowane są one w~kolumnach cech charakteryzujących każdą obserwację (
 <li>Jaka jest sprzedaż produktów z podziałem na oddziały supermarketu ?</li>
 </ol>
 <p>Odpowiedzi na te pytania pozwalają określić <code>wąskie gardła</code> sprzedaży produktów przynoszących deficyt, zaplanować zapasy w magazynach czy porównać sprzedaż różnych grup w różnych oddziałach supermarketu.</p>
-<p>W ramach Hurtowni Danych najczęściej wykonuje się dwa rodzaje zapytań: 1. Wykonywane okresowo w czasie zapytania raportowe obliczające biznesowe statystyki 2. Wykonywane ad-hoc zapytania wspomagające krytyczne decyzje biznesowe.</p>
-<p>Oba wykonywane w trybie batchowym. Dziś ściśle wykonywane z użyciem technologii Hadoop.</p>
+<p>W ramach Hurtowni Danych najczęściej wykonuje się dwa rodzaje zapytań(oba w trybie batchowym): 1. Wykonywane okresowo w czasie zapytania raportowe obliczające biznesowe statystyki 2. Wykonywane ad-hoc zapytania wspomagające krytyczne decyzje biznesowe.</p>
 
 
 </section>
