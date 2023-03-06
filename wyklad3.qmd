@@ -2,12 +2,35 @@
 title: "Mikroserwisy "
 --- 
 
-Komunikacja sieciowa, relacyjne bazy danych, rozwiązania chmurowe i big data znacząco zmieniły sposób budowania systemów informatycznych i wykonywnia na niach pradki 
+Komunikacja sieciowa, relacyjne bazy danych, rozwiązania chmurowe i big data znacząco zmieniły sposób budowania systemów informatycznych i wykonywnia na niach pracy. 
 
-Mikrousługi istieją od lat w mnogich formach i pod wieloma odmiennymi nazwami. 
+Porównaj to jak "narzędzia" do  realizacji przekazu (gazeta, radio, telewizja, internet, komunikatory, media społecznościowe) zmieniły interakcje międzyludzkie i struktury społeczne.
+
+> Każde nowe informatyczne medium zmieniło stosunek ludzi do informatyki.  
+
+Koncepcja mikrousługi (mikroserwisu) jest bardzo popularnym sposobem budowania systemów informatycznych jak i koncepcją przy tworzeniu oprogramowania czy realizacji firmy w duch Data-Driven. 
+Koncepcja ta pozwala zachować wydajność (rób jedną rzecz ale dobrze), elastyczność i jasną postać całej struktury.
+
 
 
 ## REST API 
 
+
+
+
 ## Systemy kolejkowe
+
+> Wiedza: 
+> 
+> - Zna możliwości i obszary zastosowania procesowania danych w czasie rzeczywistym
+> - Umie wybrać strukturę IT dla danego problemu biznesowego
+> - Rozumie potrzeby biznesowe podejmowania decyzji w bardzo krótkim czasie
+
+> Umiejętności:
+>
+> - Rozróżnia typy danych strukturyzowanych jak i niestrukturyzowanych
+
+> Kompetencje: 
+>
+> - Utrwala umiejętność samodzielnego uzupełniania wiedzy teoretycznej jak i praktycznej w zakresie programowania, modelowania, nowych technologii informatycznych z wykorzystaniem analizy w czasie rzeczywistym. 
  

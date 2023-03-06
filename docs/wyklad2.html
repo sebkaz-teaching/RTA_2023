@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -96,6 +96,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Wykład 2</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./wyklad3.html">
+ <span class="menu-text">Wykład 3</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./wyklad1S.html">
  <span class="menu-text">Wykład SN1</span></a>
   </li>  
@@ -132,22 +136,23 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#czas-uruchomienia-przetwarzania" id="toc-czas-uruchomienia-przetwarzania" class="nav-link" data-scroll-target="#czas-uruchomienia-przetwarzania">Czas uruchomienia przetwarzania</a></li>
   <li><a href="#ponowne-przetwarzanie" id="toc-ponowne-przetwarzanie" class="nav-link" data-scroll-target="#ponowne-przetwarzanie">Ponowne przetwarzanie</a></li>
   <li><a href="#etl" id="toc-etl" class="nav-link" data-scroll-target="#etl">ETL</a></li>
-  </ul></li>
   <li><a href="#big-data" id="toc-big-data" class="nav-link" data-scroll-target="#big-data">Big Data</a></li>
-  <li><a href="#hadoop-map-reduce" id="toc-hadoop-map-reduce" class="nav-link" data-scroll-target="#hadoop-map-reduce">Hadoop Map Reduce</a>
-  <ul class="collapse">
+  <li><a href="#hadoop-map-reduce" id="toc-hadoop-map-reduce" class="nav-link" data-scroll-target="#hadoop-map-reduce">Hadoop Map-Reduce</a></li>
   <li><a href="#apache-spark" id="toc-apache-spark" class="nav-link" data-scroll-target="#apache-spark">APACHE SPARK</a></li>
   </ul></li>
   <li><a href="#strumienie-danych" id="toc-strumienie-danych" class="nav-link" data-scroll-target="#strumienie-danych">Strumienie danych</a>
   <ul class="collapse">
-  <li><a href="#źródła-danych-przesyłanych-strumieniowo-obejmują" id="toc-źródła-danych-przesyłanych-strumieniowo-obejmują" class="nav-link" data-scroll-target="#źródła-danych-przesyłanych-strumieniowo-obejmują">Źródła danych przesyłanych strumieniowo obejmują:</a>
-  <ul class="collapse">
   <li><a href="#analiza-danych-w-czasie-rzeczywistym-a-przetwarzanie-strumienia-zdarzeń" id="toc-analiza-danych-w-czasie-rzeczywistym-a-przetwarzanie-strumienia-zdarzeń" class="nav-link" data-scroll-target="#analiza-danych-w-czasie-rzeczywistym-a-przetwarzanie-strumienia-zdarzeń">Analiza danych w czasie rzeczywistym a przetwarzanie strumienia zdarzeń</a></li>
+  <li><a href="#źródła-danych-przesyłanych-strumieniowo-obejmują" id="toc-źródła-danych-przesyłanych-strumieniowo-obejmują" class="nav-link" data-scroll-target="#źródła-danych-przesyłanych-strumieniowo-obejmują">Źródła danych przesyłanych strumieniowo obejmują:</a></li>
   </ul></li>
-  <li><a href="#uzasadnienie-biznesowe" id="toc-uzasadnienie-biznesowe" class="nav-link" data-scroll-target="#uzasadnienie-biznesowe">Uzasadnienie biznesowe</a></li>
+  <li><a href="#uzasadnienie-biznesowe" id="toc-uzasadnienie-biznesowe" class="nav-link" data-scroll-target="#uzasadnienie-biznesowe">Uzasadnienie biznesowe</a>
+  <ul class="collapse">
+  <li><a href="#przykładowe-biznesowe-zastosowania" id="toc-przykładowe-biznesowe-zastosowania" class="nav-link" data-scroll-target="#przykładowe-biznesowe-zastosowania">Przykładowe biznesowe zastosowania</a></li>
+  </ul></li>
   <li><a href="#definicje" id="toc-definicje" class="nav-link" data-scroll-target="#definicje">Definicje</a></li>
+  <li><a href="#czas-w-analizie-danych-w-czasie-rzeczywistym" id="toc-czas-w-analizie-danych-w-czasie-rzeczywistym" class="nav-link" data-scroll-target="#czas-w-analizie-danych-w-czasie-rzeczywistym">Czas w analizie danych w czasie rzeczywistym</a></li>
+  <li><a href="#okna-czasowe" id="toc-okna-czasowe" class="nav-link" data-scroll-target="#okna-czasowe">okna czasowe</a></li>
   <li><a href="#aplikacje-dla-strumieniowania-danych" id="toc-aplikacje-dla-strumieniowania-danych" class="nav-link" data-scroll-target="#aplikacje-dla-strumieniowania-danych">Aplikacje dla strumieniowania danych</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -203,9 +208,8 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="etl">ETL</h3>
 <p>Extract, Transform, Load is a basic pattern for data processing, commonly known in data warehousing. It’s all about <em>extracting</em> data from a source, <em>transforming</em> the data (business rules) and at the end <em>writing/loading</em> everything to a target (Hadoop, Relational Database, Data Warehouse etc.)</p>
 </section>
-</section>
-<section id="big-data" class="level2">
-<h2 class="anchored" data-anchor-id="big-data">Big Data</h2>
+<section id="big-data" class="level3">
+<h3 class="anchored" data-anchor-id="big-data">Big Data</h3>
 <p>Systemy Big data mogą być częścią (źródłem) dla hurtowni danych (np. Data Lake, Enterprise Data Hub)</p>
 <p>Ale Hurtownie danych nie są systemami Big Data!</p>
 <ol type="1">
@@ -226,26 +230,44 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p><img alt="Batch Processing" src="img/batch2.png" class="center"></p>
 </section>
-<section id="hadoop-map-reduce" class="level2">
-<h2 class="anchored" data-anchor-id="hadoop-map-reduce">Hadoop Map Reduce</h2>
+<section id="hadoop-map-reduce" class="level3">
+<h3 class="anchored" data-anchor-id="hadoop-map-reduce">Hadoop Map-Reduce</h3>
+<p>Gdy mówimy o skali (nie o języku Scala), najczęściej przychodzi nam na myśl przeglądarka Google. Przeszukuje ona ogromne zbiory danychz dużą prędkością. Sama nazwa Goolge wskasuje na skalę (colowo przyjęto błędną nazwę w zapisie <code>googol</code> co oznacza 1 i 100 zer).</p>
+<blockquote class="blockquote">
+<p>Sprawdź czy do końca zajęć uda Ci się zapisać liczbę googol na kartce.</p>
+</blockquote>
+<p>Powinno być dla Ciebie jasne, że żadne tradycyjne systemy, np relacyjne systemy baz danych, ani programowanie imperatywne nie są w stanie obłużyć przeszukiwania takiej ilości danych. Problemy te doprowadziły do budowy rozproszonych systemów plików <code>Google File System</code>, <code>MapReduce</code> (paradygmat programowania równoległego), czy <code>Bigtable</code> (skalowalna pamięć masowa ustrukturyzowanych danych znajdujących się na GFS).</p>
 <p><img alt="Batch Processing" src="img/batch3.png" class="center"></p>
 <blockquote class="blockquote">
 <p>Znajdź prosty algorytm map reduce w dowolnym języku programowania i uruchom go.</p>
 </blockquote>
 <p><img alt="Batch Processing" src="img/batch4.png" class="center"></p>
 <p>Jak poprawić ?</p>
+</section>
 <section id="apache-spark" class="level3">
 <h3 class="anchored" data-anchor-id="apache-spark">APACHE SPARK</h3>
 <p><img alt="Batch Processing" src="img/batch5.png" class="center"></p>
 <p><br> <img alt="Batch Processing" src="img/batch6.png" class="center"></p>
 </section>
 </section>
-<section id="strumienie-danych" class="level1">
-<h1>Strumienie danych</h1>
+<section id="strumienie-danych" class="level2">
+<h2 class="anchored" data-anchor-id="strumienie-danych">Strumienie danych</h2>
+<p>Strumieniowanie możesz kojarzyć z serwisów przesyłających video w trybie online. Gdy oglądasz swój ulubiony serial (tak jak teraz na zajęciach) serwis odpowiadający za strumieniowanie w nieprzerwany sposób przesyła do ciebie kolejne “porcje” video. Identycznie koncepcja ta realizowana jest w przypadku danych strumieniowych. Format przesyłanych porcji nie musi być plikiem video, wszystko zależy od celu realizowanego biznesowo. Np. ciągły pomiar z różnego rodzaju czujników w farbykach, elektrowniach itp. Warto odnotować, że masz do czynienia z ciągłym strumieniem danych, które przetwarzać musisz w czasie rzeczywistym. Nie możesz czekać do zatrzymania linii produkcyjnych w celu wykonania analizy, wszystkie pojawiające się problemy chcesz rejestrować natychmiast i jak najszybciej na nie reagować.</p>
+<blockquote class="blockquote">
 <p>Analiza strumieni danych to ciągłe przetwarzanie i analiza dużych zbiorów danych w ruchu.</p>
-<p><a href="https://aws.amazon.com/streaming-data/">dodatkowe informacje</a></p>
-<section id="źródła-danych-przesyłanych-strumieniowo-obejmują" class="level2">
-<h2 class="anchored" data-anchor-id="źródła-danych-przesyłanych-strumieniowo-obejmują">Źródła danych przesyłanych strumieniowo obejmują:</h2>
+</blockquote>
+<p>Porównuj to do wsakazanych powyżej elementów Big Data. Przetwarzanie Batchowe jest przeciwieństwem do przetwarzania strumieniowego. Najpierw zbierasz duże ilości danych a potem realizujesz analizy. Możesz oczywiście zawsze pobrać video w całości zanim je obejrzysz, ale czy miałoby to sens? Istnieją przypadki gdy takie podejście nie stanowi problemu, ale już tu widzisz, że przetwarzanie strumieniowe może przynieść dla biznesu dodatkowe wartości dodane, których trudno oczekiwać przy wsadowym przetwarzaniu.</p>
+<p><a href="https://aws.amazon.com/streaming-data/">ciekawe informacje</a></p>
+<section id="analiza-danych-w-czasie-rzeczywistym-a-przetwarzanie-strumienia-zdarzeń" class="level3">
+<h3 class="anchored" data-anchor-id="analiza-danych-w-czasie-rzeczywistym-a-przetwarzanie-strumienia-zdarzeń">Analiza danych w czasie rzeczywistym a przetwarzanie strumienia zdarzeń</h3>
+<p>Łatwo jest połączyć analizę w czasie rzeczywistym i analizę strumieniową (lub przetwarzanie strumienia zdarzeń). Ale chociaż technologie analizy strumieniowej mogą umożliwiać analizę w czasie rzeczywistym, <strong>to nie to samo!</strong></p>
+<p>Analiza strumieniowa polega na przetwarzaniu danych w ruchu. Analityka w czasie rzeczywistym to dowolna metoda przetwarzania danych, która skutkuje okresem opóźnienia określanym jako „w czasie rzeczywistym”.</p>
+<p>Zazwyczaj systemy analizy czasu rzeczywistego są definiowane jako twarde i miękkie systemy czasu rzeczywistego. Niedotrzymanie terminu w twardych systemach czasu rzeczywistego, takich jak samolot, jest katastrofalne, a w miękkich systemach czasu rzeczywistego, takich jak stacja pogodowa, niedotrzymanie terminów może prowadzić do bezużytecznych danych.</p>
+<p>Ponadto, podczas gdy analiza strumieniowa implikuje istnienie architektury strumieniowej, analiza w czasie rzeczywistym nie implikuje żadnej konkretnej architektury.</p>
+<p>Wszystko, co implikuje analityka w czasie rzeczywistym, polega na tym, że tworzenie i przetwarzanie danych odbywa się w dowolnym czasie, który firma definiuje jako „w czasie rzeczywistym”.</p>
+</section>
+<section id="źródła-danych-przesyłanych-strumieniowo-obejmują" class="level3">
+<h3 class="anchored" data-anchor-id="źródła-danych-przesyłanych-strumieniowo-obejmują">Źródła danych przesyłanych strumieniowo obejmują:</h3>
 <ul>
 <li>czujniki sprzętu,</li>
 <li>strumienie kliknięć,</li>
@@ -257,13 +279,6 @@ ul.task-list li input[type="checkbox"] {
 <li>inne.</li>
 </ul>
 <p>Firmy wykorzystują analitykę strumieniową do odkrywania i interpretowania wzorców, tworzenia wizualizacji, przekazywania spostrzeżeń i alertów oraz uruchamiania procesów w czasie rzeczywistym lub zbliżonym do rzeczywistego.</p>
-<section id="analiza-danych-w-czasie-rzeczywistym-a-przetwarzanie-strumienia-zdarzeń" class="level3">
-<h3 class="anchored" data-anchor-id="analiza-danych-w-czasie-rzeczywistym-a-przetwarzanie-strumienia-zdarzeń">Analiza danych w czasie rzeczywistym a przetwarzanie strumienia zdarzeń</h3>
-<p>Łatwo jest połączyć analizę w czasie rzeczywistym i analizę strumieniową (lub przetwarzanie strumienia zdarzeń). Ale chociaż technologie analizy strumieniowej mogą umożliwiać analizę w czasie rzeczywistym, to nie to samo!</p>
-<p>Analiza strumieniowa polega na przetwarzaniu danych w ruchu. Analityka w czasie rzeczywistym to dowolna metoda przetwarzania danych, która skutkuje okresem opóźnienia określanym jako „w czasie rzeczywistym”.</p>
-<p>Zazwyczaj systemy analizy czasu rzeczywistego są definiowane jako twarde i miękkie systemy czasu rzeczywistego. Niedotrzymanie terminu w twardych systemach czasu rzeczywistego, takich jak samolot, jest katastrofalne, a w miękkich systemach czasu rzeczywistego, takich jak stacja pogodowa, niedotrzymanie terminów może prowadzić do bezużytecznych danych.</p>
-<p>Ponadto, podczas gdy analiza strumieniowa implikuje istnienie architektury strumieniowej, analiza w czasie rzeczywistym nie implikuje żadnej konkretnej architektury.</p>
-<p>Wszystko, co implikuje analityka w czasie rzeczywistym, polega na tym, że tworzenie i przetwarzanie danych odbywa się w dowolnym czasie, który firma definiuje jako „w czasie rzeczywistym”.</p>
 </section>
 </section>
 <section id="uzasadnienie-biznesowe" class="level2">
@@ -273,40 +288,90 @@ ul.task-list li input[type="checkbox"] {
 <p>Twitter produkuje ponad 500 milionów tweetów dziennie. IDC przewiduje, że do 2025 roku urządzenia Internetu rzeczy (IoT) będą w stanie wygenerować 79,4 zettabajtów (ZB) danych. I te trendy nie wykazują oznak spowolnienia.</p>
 <p>Biorąc pod uwagę nowy charakter danych, główną zaletą analizy strumieniowej jest to, że pomaga ona firmom znajdować znaczące wzorce w danych i odkrywać nową wiedzę ,,w czasie rzeczywistym” lub zbliżonym do rzeczywistego.</p>
 <ul>
-<li>który pojazd firmowej floty ma prawie pusty bak i~gdzie wysłać prowadzącego pojazd do tankowania.</li>
-<li>Który pojazd floty zużywa najwięcej paliwa i~dlaczego?</li>
-<li>Które urządzenia w~zakładzie czy fabryce mogą ulec awarii w~ciągu najbliższych dni?</li>
-<li>Jakie części zamienne trzeba będzie wymienić i<sub>w</sub>których maszynach w~najbliższym czasie ?</li>
-<li>Ilu klientów aktualnie robi zakupy w~sklepie i~czy można im coś zaproponować ?</li>
-<li>Czy klient dzwoni w~celu zerwania umowy ?</li>
+<li>który pojazd firmowej floty ma prawie pusty bak i gdzie wysłać prowadzącego pojazd do tankowania.</li>
+<li>Który pojazd floty zużywa najwięcej paliwa i dlaczego?</li>
+<li>Które urządzenia w zakładzie czy fabryce mogą ulec awarii w ciągu najbliższych dni?</li>
+<li>Jakie części zamienne trzeba będzie wymienić i w których maszynach w najbliższym czasie ?</li>
+<li>Ilu klientów aktualnie robi zakupy w sklepie i czy można im coś zaproponować ?</li>
+<li>Czy klient dzwoni w celu zerwania umowy ?</li>
 <li>i wiele wiele innych.</li>
 </ul>
-<p><a href="https://www.linkedin.com/pulse/8-best-examples-real-time-data-analytics-bernard-marr/">8 najlepszych przykładów</a></p>
+<section id="przykładowe-biznesowe-zastosowania" class="level3">
+<h3 class="anchored" data-anchor-id="przykładowe-biznesowe-zastosowania">Przykładowe biznesowe zastosowania</h3>
+<ol type="1">
+<li><p>Dane z sensorów IoT i detekcja anomalii</p></li>
+<li><p>Stock Trading (problemy regresyjne) - czas reagowania na zmiany i czas zakupy i sprzedaży akcji.</p></li>
+<li><p>Clickstream for websites (problem klasyfikacji) - śledzenie i analiza gości na stronie serwisu internetowego - personalizacja strony i treści.</p></li>
+</ol>
+<p><a href="https://www.linkedin.com/pulse/8-best-examples-real-time-data-analytics-bernard-marr/">8 najlepszych przykładów analizy w czasie rzeczywistym</a></p>
 <p><a href="https://www.forbes.com/sites/forbestechcouncil/2021/10/26/how-to-build-a-strong-business-case-for-streaming-analytics/?sh=eee8eaa465d0">Biznesowe zastosowania</a></p>
+</section>
 </section>
 <section id="definicje" class="level2">
 <h2 class="anchored" data-anchor-id="definicje">Definicje</h2>
 <p>Zapoznaj się z tematem <a href="https://medium.com/cuelogic-technologies/analyzing-data-streaming-using-spark-vs-kafka-bcfdc33ac828">danych strumieniowych</a></p>
 <blockquote class="blockquote">
-<p>Definicja 1 - <em>Zdarzenie</em> czyli wszystko co możemy zaobserwować w pewnej chwili czasu. Definicja 2 - W przypadku danych <em>zdarzenie</em> rozumiemy jako <strong>niezmienialny</strong> rekord w strumieniu danych zakodowany jako JSON, XML, CSV lub binarnie. Definicja 3 - Ciągły strumień zdarzeń to nieskończony zbiór pojedynczych zdarzeń uporządkowanych w czasie np. logi z urządzenia.</p>
+<p>Definicja 1 - <em>Zdarzenie</em> czyli wszystko co możemy zaobserwować w pewnej chwili czasu. Generowane są jako bezpośredni skutek działania.</p>
+<p>Definicja 2 - W przypadku danych <em>zdarzenie</em> rozumiemy jako <strong>niezmienialny</strong> rekord w strumieniu danych zakodowany jako JSON, XML, CSV lub binarnie.</p>
+<p>Definicja 3 - Ciągły strumień zdarzeń to nieskończony zbiór pojedynczych zdarzeń uporządkowanych w czasie np. logi z urządzenia.</p>
+<p>Definicja 4 - Strumień danych to dane tworzone przyrostowo w czasie, generowane ze statycznych danych (baza danych, czytanie lini z pliku) bądź w sposób dynamiczny (logi, sensory, funkcje).</p>
 </blockquote>
 <blockquote class="blockquote">
 <p><strong>Przedsiębiorstwo to organizacja, która generuje i odpowiada na ciągły strumień zdarzeń</strong>.</p>
 </blockquote>
-<blockquote class="blockquote">
-<p>Definicja 4 - Strumień danych to dane tworzone przyrostowo w czasie, generowane ze statycznych danych (baza danych, czytanie lini z pliku) bądź w sposób dynamiczny (logi, sensory, funkcje).</p>
-</blockquote>
-<p>Analityka strumieniowa (ang. <em>stream analytics</em>) nazywana jest również przetwarzaniem strumieniowym zdarzen (ang. <em>event stream processing</em>) - przetwarzanie dużej ilości danych już na etapie ich generowania.</p>
-<p>Generowane są jako bezpośredni skutek działania.</p>
+<p><strong>Analityka strumieniowa</strong> (ang. <em>stream analytics</em>) nazywana jest również przetwarzaniem strumieniowym zdarzeń (ang. <em>event stream processing</em>) - przetwarzanie dużej ilości danych już na etapie ich generowania.</p>
 <p>Niezależnie od zastosowanej technologi wszystkie dane powstają jako ciągły strumień zdarzeń (działania użytkowników na stronie www, logi systemowe, pomiary z sensorów).</p>
+</section>
+<section id="czas-w-analizie-danych-w-czasie-rzeczywistym" class="level2">
+<h2 class="anchored" data-anchor-id="czas-w-analizie-danych-w-czasie-rzeczywistym">Czas w analizie danych w czasie rzeczywistym</h2>
+<p>W przypadku przetwarzania wsadowego przetwarzamy dane historyczne i czas uruchomienia procesu przetwarzania nie ma nic wspólnego z czasem występowania analizowanych zdarzeń.</p>
+<p>Dla danych strumieniowych mamy dwie koncepcje czasu:</p>
+<ol type="1">
+<li>czas zdarzenia (<code>event time</code>) - czas w którym zdarzenie się wydarzyło.</li>
+<li>czas przetwarzania (<code>processing time</code>) - czas w którym system przetwarza zdarzenie.</li>
+</ol>
+<p>W przypadku idealnej sytuacji:</p>
+<p><img alt="Batch Processing" src="img/rys2_1.png" class="center"></p>
+<p>W rzeczywistości przetwarzanie danych zawsze odbywa się z pewnym opóźnieniem, co reprezentowane jest przez punkty pojawiające się poniżej funkcji dla sytuacji idealnej (poniżej diagonalnej).</p>
+<p><img alt="Batch Processing" src="img/rys2_2.png" class="center"></p>
+<p>W aplikacjach przetwarzania strumieniowego istotne okazują się różnice miedzy czasem powstania zdarzenia i jego procesowania. Do najczęstszych przyczyn opóźnienia wyszczególnia się przesyłanie danych przez sieć czy brak komunikacji między urządzeniem a siecią. Prostym przykładem jest tu przejazd samochodem przez tunel i śledzenie położenia przez aplikację GPS.</p>
+<p>Możesz oczywiście zliczać ilość takich pominiętych zdarzeń i uruchomić alarm w sytuacji gdy takich odrzutów będzie za dużo. Drugim (chyba częściej) wykorzystywanym sposobem jest zastosowanie korekty z wykorzystaniem tzw. <em>watermarkingu</em>.</p>
+<p>Proces przetwarzania zdarzeń w czasie rzeczywistym można przedstawić w postaci funkcji schodkowej, reprezentowanej na rysunku:<br> <img alt="Batch Processing" src="img/rys2_3.png" class="center"></p>
+<p>Jak można zauważyć nie wszystkie zdarzenia wnoszą wkład do analizy i przetwarzania. Realizację procesu przetwarzania wraz z uwzględnieniem dodatkowego czasu na pojawienie się zdarzeń (watermark) można przedstawić jako proces obejmujący wszystkie zdarzenia powyżej przerywanej linii. Dodatkowy czas pozwolił na przetworzenie dodatkowych zdarzeń, natomiast nadal mogą zdarzyć się punkty, które nie będą brane pod uwagę. <br> <img alt="Batch Processing" src="img/rys2_4.png" class="center"></p>
+<p>Przedstawione na wykresach sytuacje jawnie wskazują dlaczego pojęcie czasu jest istotnym czynnikiem i wymaga ścisłego określenia już na poziomie definiowania potrzeb biznesowych. Przypisywanie znaczników czasu do danych (zdarzeń) to trudne zadanie.</p>
+</section>
+<section id="okna-czasowe" class="level2">
+<h2 class="anchored" data-anchor-id="okna-czasowe">okna czasowe</h2>
+<p><strong>Okno rozłączne</strong> (ang. <em>tumbling window</em>) czyli okno o stałej długości. Jego cechą charakterystyczną jest to, iż każde zdarzenie należy tylko do jednego okna. <br> <img alt="Batch Processing" src="img/rys2_5.png" class="center"></p>
+<p><strong>Okno przesuwne</strong> (ang. <em>sliding window</em>) obejmuje wszystkie zdarzenia następujące w określonej długości między sobą. <br> <img alt="Batch Processing" src="img/rys2_6.png" class="center"></p>
+<p><strong>Okno skokowe</strong> (ang. <em>hopping window</em>) tak jak okno rozłączne ma stałą długość, ale pozwala się w nim na zachodzenie jednych okien na inne. Stosowane zazwyczaj do wygładzenia danych. <br> <img alt="Batch Processing" src="img/rys2_7.png" class="center"></p>
 </section>
 <section id="aplikacje-dla-strumieniowania-danych" class="level2">
 <h2 class="anchored" data-anchor-id="aplikacje-dla-strumieniowania-danych">Aplikacje dla strumieniowania danych</h2>
 <p>Aplikacja przetwarzająca strumień zdarzeń powinna umożliwiać przetworzenie i zapisanie zdarzenia oraz dostęp (w tym samym czasie) do innych danych tak by móc dane zdarzenie przetworzyć (wykonać na nim dowolne przeliczenie) i zapisać jako <code>stan lokalny</code>. Stan ten może być zapisywany w wielu miejscach np. zmienne w programie, pliki lokalne, wew i zew bazy danych. Jedną z najbardziej znanych aplikacji tego typu jest Apache Kafka, którą można łączyć np. z Apache Spark bądź Apache Flink.</p>
 <p><a href="https://riverml.xyz/dev/examples/batch-to-online/">Porównanie z aplikacją w trybie batch</a></p>
+<blockquote class="blockquote">
+<p>Wiedza:</p>
+<ul>
+<li>Zna możliwości i obszary zastosowania procesowania danych w czasie rzeczywistym</li>
+<li>Rozumie potrzeby biznesowe podejmowania decyzji w bardzo krótkim czasie</li>
+</ul>
+</blockquote>
+<blockquote class="blockquote">
+<p>Umiejętności:</p>
+<ul>
+<li>Rozumie ograniczenia wynikające z czasu przetwarzania przez urządzenia oraz systemy informatyczne</li>
+</ul>
+</blockquote>
+<blockquote class="blockquote">
+<p>Kompetencje:</p>
+<ul>
+<li>Utrwala umiejętność samodzielnego uzupełniania wiedzy teoretycznej jak i praktycznej w zakresie programowania, modelowania, nowych technologii informatycznych z wykorzystaniem analizy w czasie rzeczywistym.</li>
+<li>Formułuje problem analityczny wraz z jego informatycznym rozwiązaniem</li>
+</ul>
+</blockquote>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

@@ -37,7 +37,8 @@ Dzięki tak otrzymanym tabelom cech możemy stosować algorytmy  tj. `XGBoost` l
 
 Podstawowe systemy bazodanowe związane z językiem SQL również realizują modele danych, w których dane ładnowane są do (ustrukturyzowanych) tabel.
 
-**Dane nieustrukturyzowane** to takie, które nie są ułożone w~tabelarycznej postaci. 
+**Dane nieustrukturyzowane** to takie, które nie są ułożone w~tabelarycznej postaci.
+
 > !Uwaga - nie oznacza to, iż dane nie możemy przetworzyć do jakiejś postaci tabelarzycnzej.
 
 Przykładem może być `dźwięk`, `obraz`czy `tekst`.
@@ -53,7 +54,7 @@ Do trzech największych "generatorów" danych należą:
 - `dane społeczne` w formie tekstów (tweety, wpisy w~portalach społecznościowych, komentarze), zdjęć czy plików wideo.
     Przydatne do problemów biznesowych realizujących ocenę zachowań i nastrojów konsumentów w analizach marketingowych.
 - `IoT`: dane pochodzące z czujników, czy też logi działania urządzeń i użytkowników (np. na stronie www).
-- `Dane transakcyjne`: czyli ogólnie to co w każdej chwili generowane jest jako transakcje pojawiające się zarówno w trybie online jak i w trybie offline.
+- `dane transakcyjne`: czyli ogólnie to co w każdej chwili generowane jest jako transakcje pojawiające się zarówno w trybie online jak i w trybie offline.
 
 ### Rzeczywisty proces generowania danych
 
@@ -172,3 +173,17 @@ Odpowiedzi na te pytania pozwalają określić `wąskie gardła` sprzedaży prod
 W ramach Hurtowni Danych najczęściej wykonuje się dwa rodzaje zapytań(oba w trybie batchowym):
 1. Wykonywane okresowo w czasie zapytania raportowe obliczające biznesowe statystyki
 2. Wykonywane ad-hoc zapytania wspomagające krytyczne decyzje biznesowe.
+
+
+> Wiedza: 
+> 
+> - Zna historię i filozofię modeli przetwarzania danych.
+> - Zna typy danych ustrukturyzowanych jak i nieustrukturyzowanych
+
+> Umiejętności:
+>
+> - Rozróżnia typy danych strukturyzowanych jak i niestrukturyzowanych
+
+> Kompetencje: 
+>
+> - Utrwala umiejętność samodzielnego uzupełniania wiedzy teoretycznej jak i praktycznej w zakresie programowania, modelowania, nowych technologii informatycznych z wykorzystaniem analizy w czasie rzeczywistym. 
