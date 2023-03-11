@@ -34,7 +34,7 @@ Tematy zrealizowane na wykładzie:
     - Biznesowe wymagania dla strumieni danych
     - Definicje: Zdarzenie, strumień zdarzeń, analiza i przetwarzanie strumieni zdarzeń, 
     - Narzędzie i aplikacje przetwarzania strumieniowego
-3. <del>06-03-2023 (poniedziałek) 09:50-11:30 - Wykład 3</del
+3. <del>06-03-2023 (poniedziałek) 09:50-11:30 - Wykład 3</del>
 Tematy reazlizowane na wykładzie: 
     - Czas w przetwarzaniu danych strumieniowych  
     - Działanie systemu klient-serwer: REST API
