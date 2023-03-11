@@ -18,7 +18,7 @@ Możesz porównać tego typu zachowanie do "czystej funkcji" w programowaniu fun
 
 W celu umożliwienia komunikacji różnych mikroserwisów często wybieranym rozwiązaniem jest wykorzystanie `Application Programming Interfaces` **API**  .
 
-### Komunikacja przez API
+## Komunikacja przez API
 
 Centralnym elementem architektury mikrousług jest wykorzystanie interfejsów API. 
 API to część, która pozwala na połączenie dwóch mikroserwisów. 
@@ -30,7 +30,7 @@ Załóżmy, że pracujesz dla firmy sprzedającej mieszkania w Bostonie.
 Chcesz zwiększać sprzedaż i oferować naszym klientom lepszą jakość usług dzięki nowej aplikacji mobilnej, z której może korzystać nawet 1 000 000 osób jednocześnie.
 Możemy to osiągnąć, udostępniając prognozę wartości domu, gdy użytkownik prosi o wycenę przez Internet.
 
-#### Czym jest serwowanie modelu ML
+### Czym jest serwowanie modelu ML
 
 - Szkolenie dobrego modelu ML to TYLKO pierwsza część całego procesu:
 Musisz udostępnić swój model użytkownikom końcowym.
@@ -62,19 +62,23 @@ Możesz używać narzędzi, takich jak Postman, do wywoływania interfejsów API
 
 > Cała komunikacja jest objęta ustalonymi zasadami i praktykami, które są nazywane protokołem HTTP.
 
-#### Zapytanie - Request
+### Zapytanie - Request
 
 1.  Adres URL (np. _http://mydomain:8000/getapi?&val1=43&val2=3_) zawiera: 
+
         - domenę, 
         - port, 
         - dodatkowe ścieżki, 
         - zapytanie
 2.  Metody HTTP:
+
         - GET, 
         - POST
 3.  Nagłówki HTTP zawierają:
+
         - informacje o autoryzacji, 
         - cookies metadata
+
 Cała informacja zawarta jest w _Content-Type: application/json, text ... Accept: application/json, Authorization: Basic abase64string, Tokens_ 
 4.  Ciało zapytania
 
@@ -86,11 +90,13 @@ Przypomina on pythonowy obiekt słownika - "klucz": "wartość".
 "RAD": 1,
 "PTRATIO": 15.3, "INDUS": 2.31, "B": 396.9,
 "ZN": 18,
-"DIS": 4.09, "CRIM": 0.00632, "RM": 6.575, "AGE": 65.2, "CHAS": 0, "NOX": 0.538, "TAX": 296, "LSTAT": 4.98
+"DIS": 4.09, "CRIM": 0.00632, "RM": 6.575, 
+"AGE": 65.2, "CHAS": 0, "NOX": 0.538, 
+"TAX": 296, "LSTAT": 4.98
 }
 ```
 
-#### Odpowiedź - Response
+### Odpowiedź - Response
 
 1. Treść odpowiedzi przekazywana jest razem z nagłówkiem oraz statusem: 
 ```bash
@@ -108,9 +114,10 @@ Path=/;
 {":input":{"RAD":1,"PTRATIO":15.3,"INDUS":2.31,.....}}, {":prediction":[29.919737211857683]}
 ```
 4. HTTP status code:
-• 200 OK  - prawidłowe wykonanie zapytania,
-• 40X Access Denied
-• 50X Internal server error
+
+- 200 OK  - prawidłowe wykonanie zapytania,
+- 40X Access Denied
+- 50X Internal server error
 
 > Wyszukaj informacje czym jest `REST API`. 
 

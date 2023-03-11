@@ -16,8 +16,10 @@ website:
             text: Wykład 2
           - href: wyklad3.qmd
             text: Wykład 3
-          - href: wyklad1S.qmd
-            text: Wykład SN1
+          # - href: wyklad1S.qmd
+          #   text: Wykład SN1
+          # - href: wyklad2S.qmd
+          #   text: Wykład SN2
           - href: sylabus.qmd
             text: Sylabus
           - href: info.qmd
