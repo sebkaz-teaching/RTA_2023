@@ -231,9 +231,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="python" class="level2">
 <h2 class="anchored" data-anchor-id="python">Python</h2>
 <p>W terminalu (Windows CMD) wpisz</p>
-<pre class="{bash}"><code>python</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Jeśli nie odnaleziono komendy uruchom polecenie:</p>
-<pre class="{bash}"><code>python3</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Zwróć uwagę, aby Twoja wersja nie była niższa niż 3.X Aby wyjść z powłoki pythona użyj funkcji <code>exit()</code></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Python</span> 3.10.9 <span class="er">(</span><span class="ex">main,</span> Dec 15 2022, 17:11:09<span class="kw">)</span> <span class="ex">[Clang</span> 14.0.0 <span class="er">(</span><span class="ex">clang-1400.0.29.202</span><span class="kw">)</span><span class="ex">]</span> on darwin</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Type</span> <span class="st">"help"</span>, <span class="st">"copyright"</span>, <span class="st">"credits"</span> or <span class="st">"license"</span> for more information.</span>
@@ -280,7 +280,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Git możesz pobrać i zainstalować jak zwykły program na dowolnym komputerze. Jednak najczęściej (małe projekty) korzysta się z serwisów z jakimś systemem git. Jednym z najbardziej rozpoznawanych jest <a href="www.github.com">GitHub</a> dzięki któremu możesz korzystać z systemu git bez jego instalacji na swoim komputerze.</p>
 <p>W darmowej wersji serwisu <code>GitHub</code> swoje pliki możesz przechowywać w publicznych (dostęp mają wszyscy) repozytoriach.<br>
 Skupimy się wyłącznie na darmowej wersji serwisu GitHub.</p>
-<pre class="{bash}"><code>git --version</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="struktura-githuba" class="level3">
 <h3 class="anchored" data-anchor-id="struktura-githuba">Struktura GitHuba</h3>
 <p>Na najwyższym poziomie znajdują się konta indywidualne (np <a href="http://github.com/sebkaz">http://github.com/sebkaz</a>, bądź zakładane przez organizacje. Użytkownicy indywidualni mogą tworzyć <strong>repozytoria</strong> publiczne (<code>public</code> ) bądź prywatne (<code>private</code>).</p>
@@ -296,37 +296,37 @@ Skupimy się wyłącznie na darmowej wersji serwisu GitHub.</p>
 <ul>
 <li><em>ściąganie repozytorium z sieci</em></li>
 </ul>
-<pre class="{bash}"><code>git clone https://adres_repo.git</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://adres_repo.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <blockquote class="blockquote">
 <p>W przypadku githuba możesz pobrać repozytorium jako plik zip.</p>
 </blockquote>
 <ul>
 <li><em>Tworzenie repozytorium dla lokalnego katalogu</em></li>
 </ul>
-<pre class="{bash}"><code># tworzenie nowego katalogu
-mkdir datamining
-# przejście do katalogu
-cd datamining
-# inicjalizacja repozytorium w katalogu
-git init
-# powinien pojawić się ukryty katalog .git
-# dodajmy plik
-echo "Info " &gt;&gt; README.md</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tworzenie nowego katalogu</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> datamining</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># przejście do katalogu</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> datamining</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># inicjalizacja repozytorium w katalogu</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># powinien pojawić się ukryty katalog .git</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># dodajmy plik</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Info "</span> <span class="op">&gt;&gt;</span> README.md</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Połącz lokalne repozytorium z kontem na githubie</li>
 </ul>
-<pre class="{bash}"><code>git remote add origin https://github.com/&lt;twojGit&gt;/nazwa.git</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/<span class="op">&lt;</span>twojGit<span class="op">&gt;</span>/nazwa.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Obsługa w 3 krokach</li>
 </ul>
-<pre class="{bash}"><code># sprawdź zmiany jakie zostały dokonane
-git status
-# 1. dodaj wszystkie zmiany
-git add .
-# 2. zapisz bierzący stan wraz z informacją co zrobiłeś
-git commit -m " opis "
-# 3. potem już zostaje tylko
-git push origin master</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sprawdź zmiany jakie zostały dokonane</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. dodaj wszystkie zmiany</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. zapisz bierzący stan wraz z informacją co zrobiłeś</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">" opis "</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. potem już zostaje tylko</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin master</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Warto obejrzeć <a href="https://www.youtube.com/watch?v=HVsySz-h9r4">Youtube course</a>.</p>
 </section>
 </section>
@@ -337,31 +337,31 @@ git push origin master</code></pre>
 <ol type="1">
 <li>Sprawdź zainstalowaną wersję</li>
 </ol>
-<pre class="{bash}"><code>docker --version</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="2" type="1">
 <li>Ściągnij i uruchom obraz <code>Hello World</code> i</li>
 </ol>
-<pre class="{bash}"><code>docker run hello-world</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="3" type="1">
 <li>Przegląd ściągnietych obrazów:</li>
 </ol>
-<pre class="{bash}"><code>docker image ls
-
-docker images</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> image ls</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> images</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="4" type="1">
 <li>Przegląd uruchomionych kontenerów:</li>
 </ol>
-<pre class="{bash}"><code>docker ps 
-
-docker ps -all</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> ps </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> ps <span class="at">-all</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="5" type="1">
 <li>Zatrzymanie uruchomionego kontenera:</li>
 </ol>
-<pre class="{bash}"><code>docker stop &lt;CONTAINER ID&gt;</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> stop <span class="op">&lt;</span>CONTAINER ID<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="6" type="1">
 <li>Usunięcie kontenera</li>
 </ol>
-<pre class="{bash}"><code>docker rm -f &lt;CONTAINER ID&gt;</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> rm <span class="at">-f</span> <span class="op">&lt;</span>CONTAINER ID<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Polecam również <a href="https://medium.com/codingthesmartway-com-blog/docker-beginners-guide-part-1-images-containers-6f3507fffc98">krótkie intro</a></p>
 
 

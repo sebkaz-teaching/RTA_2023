@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Analiza danych w czasie rzeczywistym - Mikroserwisy</title>
+<title>Analiza danych w czasie rzeczywistym - Wykład 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -159,7 +159,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="menu-text">Wykład 2</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./wyklad3.html" aria-current="page">
+    <a class="nav-link" href="./wyklad3.html">
  <span class="menu-text">Wykład 3</span></a>
   </li>  
   <li class="nav-item">
@@ -193,7 +193,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#komunikacja-przez-api" id="toc-komunikacja-przez-api" class="nav-link active" data-scroll-target="#komunikacja-przez-api">Komunikacja przez API</a></li>
+  <li><a href="#batch-vs-stream-processing" id="toc-batch-vs-stream-processing" class="nav-link active" data-scroll-target="#batch-vs-stream-processing">Batch vs Stream Processing</a>
+  <ul class="collapse">
+  <li><a href="#rodzaj-danych" id="toc-rodzaj-danych" class="nav-link" data-scroll-target="#rodzaj-danych">Rodzaj danych</a></li>
+  <li><a href="#czas-uruchomienia-przetwarzania" id="toc-czas-uruchomienia-przetwarzania" class="nav-link" data-scroll-target="#czas-uruchomienia-przetwarzania">Czas uruchomienia przetwarzania</a></li>
+  <li><a href="#ponowne-przetwarzanie" id="toc-ponowne-przetwarzanie" class="nav-link" data-scroll-target="#ponowne-przetwarzanie">Ponowne przetwarzanie</a></li>
+  <li><a href="#etl" id="toc-etl" class="nav-link" data-scroll-target="#etl">ETL</a></li>
+  <li><a href="#hadoop-map-reduce" id="toc-hadoop-map-reduce" class="nav-link" data-scroll-target="#hadoop-map-reduce">Hadoop Map-Reduce</a></li>
+  <li><a href="#apache-spark" id="toc-apache-spark" class="nav-link" data-scroll-target="#apache-spark">APACHE SPARK</a></li>
+  </ul></li>
+  <li><a href="#strumienie-danych" id="toc-strumienie-danych" class="nav-link" data-scroll-target="#strumienie-danych">Strumienie danych</a>
+  <ul class="collapse">
+  <li><a href="#źródła-danych-przesyłanych-strumieniowo-obejmują" id="toc-źródła-danych-przesyłanych-strumieniowo-obejmują" class="nav-link" data-scroll-target="#źródła-danych-przesyłanych-strumieniowo-obejmują">Źródła danych przesyłanych strumieniowo obejmują:</a></li>
+  <li><a href="#przykładowe-biznesowe-zastosowania" id="toc-przykładowe-biznesowe-zastosowania" class="nav-link" data-scroll-target="#przykładowe-biznesowe-zastosowania">Przykładowe biznesowe zastosowania</a></li>
+  </ul></li>
+  <li><a href="#czas-w-analizie-danych-w-czasie-rzeczywistym" id="toc-czas-w-analizie-danych-w-czasie-rzeczywistym" class="nav-link" data-scroll-target="#czas-w-analizie-danych-w-czasie-rzeczywistym">Czas w analizie danych w czasie rzeczywistym</a></li>
+  <li><a href="#okna-czasowe" id="toc-okna-czasowe" class="nav-link" data-scroll-target="#okna-czasowe">okna czasowe</a>
+  <ul class="collapse">
+  <li><a href="#komunikacja-przez-api" id="toc-komunikacja-przez-api" class="nav-link" data-scroll-target="#komunikacja-przez-api">Komunikacja przez API</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -202,7 +220,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Mikroserwisy</h1>
+<h1 class="title">Wykład 2</h1>
 </div>
 
 
@@ -217,6 +235,119 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
+<section id="batch-vs-stream-processing" class="level2">
+<h2 class="anchored" data-anchor-id="batch-vs-stream-processing">Batch vs Stream Processing</h2>
+<p>Oczekiwania vs Rzeczywistość</p>
+<p><img alt="Batch Processing" src="img/batch00.png" class="center"></p>
+<p>Kiedy podjąć decyzję biznesową ?</p>
+<p><img alt="Batch Processing" src="img/batch0.png" class="center"></p>
+<section id="rodzaj-danych" class="level3">
+<h3 class="anchored" data-anchor-id="rodzaj-danych">Rodzaj danych</h3>
+<ol type="1">
+<li>Batch = Duże, historyczne zbiory</li>
+<li>Stream = Strumień danych, on line, przesyłane w trybie ciągłym</li>
+</ol>
+</section>
+<section id="czas-uruchomienia-przetwarzania" class="level3">
+<h3 class="anchored" data-anchor-id="czas-uruchomienia-przetwarzania">Czas uruchomienia przetwarzania</h3>
+<ol type="1">
+<li>Batch = minuty, godziny, dni (patrz Hurtownie danych)</li>
+<li>Stream = Real-time/near-real-time</li>
+</ol>
+</section>
+<section id="ponowne-przetwarzanie" class="level3">
+<h3 class="anchored" data-anchor-id="ponowne-przetwarzanie">Ponowne przetwarzanie</h3>
+<ol type="1">
+<li>Batch = możliwe i stosowane bardzo czesto</li>
+<li>Stream = ,,niemożliwe’’</li>
+</ol>
+<p><img alt="Batch Processing" src="img/batch1.png" class="center"></p>
+</section>
+<section id="etl" class="level3">
+<h3 class="anchored" data-anchor-id="etl">ETL</h3>
+<p>Extract, Transform, Load is a basic pattern for data processing, commonly known in data warehousing. It’s all about <em>extracting</em> data from a source, <em>transforming</em> the data (business rules) and at the end <em>writing/loading</em> everything to a target (Hadoop, Relational Database, Data Warehouse etc.)</p>
+</section>
+<section id="hadoop-map-reduce" class="level3">
+<h3 class="anchored" data-anchor-id="hadoop-map-reduce">Hadoop Map-Reduce</h3>
+<p>Gdy mówimy o skali (nie o języku Scala), najczęściej przychodzi nam na myśl przeglądarka Google. Przeszukuje ona ogromne zbiory danychz dużą prędkością. Sama nazwa Goolge wskasuje na skalę (colowo przyjęto błędną nazwę w zapisie <code>googol</code> co oznacza 1 i 100 zer).</p>
+<blockquote class="blockquote">
+<p>Sprawdź czy do końca zajęć uda Ci się zapisać liczbę googol na kartce.</p>
+</blockquote>
+<p>Powinno być dla Ciebie jasne, że żadne tradycyjne systemy, np relacyjne systemy baz danych, ani programowanie imperatywne nie są w stanie obłużyć przeszukiwania takiej ilości danych. Problemy te doprowadziły do budowy rozproszonych systemów plików <code>Google File System</code>, <code>MapReduce</code> (paradygmat programowania równoległego), czy <code>Bigtable</code> (skalowalna pamięć masowa ustrukturyzowanych danych znajdujących się na GFS).</p>
+<p><img alt="Batch Processing" src="img/batch3.png" class="center"></p>
+<blockquote class="blockquote">
+<p>Znajdź prosty algorytm map reduce w dowolnym języku programowania i uruchom go.</p>
+</blockquote>
+<p><img alt="Batch Processing" src="img/batch4.png" class="center"></p>
+<p>Jak poprawić ?</p>
+</section>
+<section id="apache-spark" class="level3">
+<h3 class="anchored" data-anchor-id="apache-spark">APACHE SPARK</h3>
+<p><img alt="Batch Processing" src="img/batch5.png" class="center"></p>
+<p><br> <img alt="Batch Processing" src="img/batch6.png" class="center"></p>
+</section>
+</section>
+<section id="strumienie-danych" class="level2">
+<h2 class="anchored" data-anchor-id="strumienie-danych">Strumienie danych</h2>
+<p>Strumieniowanie możesz kojarzyć z serwisów przesyłających video w trybie online. Gdy oglądasz swój ulubiony serial (tak jak teraz na zajęciach) serwis odpowiadający za strumieniowanie w nieprzerwany sposób przesyła do ciebie kolejne “porcje” video. Identycznie koncepcja ta realizowana jest w przypadku danych strumieniowych. Format przesyłanych porcji nie musi być plikiem video, wszystko zależy od celu realizowanego biznesowo. Np. ciągły pomiar z różnego rodzaju czujników w farbykach, elektrowniach itp. Warto odnotować, że masz do czynienia z ciągłym strumieniem danych, które przetwarzać musisz w czasie rzeczywistym. Nie możesz czekać do zatrzymania linii produkcyjnych w celu wykonania analizy, wszystkie pojawiające się problemy chcesz rejestrować natychmiast i jak najszybciej na nie reagować.</p>
+<blockquote class="blockquote">
+<p>Analiza strumieni danych to ciągłe przetwarzanie i analiza dużych zbiorów danych w ruchu.</p>
+</blockquote>
+<p>Porównuj to do wsakazanych powyżej elementów Big Data. Przetwarzanie Batchowe jest przeciwieństwem do przetwarzania strumieniowego. Najpierw zbierasz duże ilości danych a potem realizujesz analizy. Możesz oczywiście zawsze pobrać video w całości zanim je obejrzysz, ale czy miałoby to sens? Istnieją przypadki gdy takie podejście nie stanowi problemu, ale już tu widzisz, że przetwarzanie strumieniowe może przynieść dla biznesu dodatkowe wartości dodane, których trudno oczekiwać przy wsadowym przetwarzaniu.</p>
+<p><a href="https://aws.amazon.com/streaming-data/">ciekawe informacje</a></p>
+<section id="źródła-danych-przesyłanych-strumieniowo-obejmują" class="level3">
+<h3 class="anchored" data-anchor-id="źródła-danych-przesyłanych-strumieniowo-obejmują">Źródła danych przesyłanych strumieniowo obejmują:</h3>
+<ul>
+<li>czujniki sprzętu,</li>
+<li>strumienie kliknięć,</li>
+<li>śledzenie lokalizacji</li>
+<li>interackcja z użytkownikiem: co robią użytkownicy Twojej witryny?</li>
+<li>kanały mediów społecznościowych,</li>
+<li>notowania giełdowe,</li>
+<li>aktywność w aplikacjach</li>
+<li>inne.</li>
+</ul>
+<p>Firmy wykorzystują analitykę strumieniową do odkrywania i interpretowania wzorców, tworzenia wizualizacji, przekazywania spostrzeżeń i alertów oraz uruchamiania procesów w czasie rzeczywistym lub zbliżonym do rzeczywistego.</p>
+</section>
+<section id="przykładowe-biznesowe-zastosowania" class="level3">
+<h3 class="anchored" data-anchor-id="przykładowe-biznesowe-zastosowania">Przykładowe biznesowe zastosowania</h3>
+<ol type="1">
+<li><p>Dane z sensorów IoT i detekcja anomalii</p></li>
+<li><p>Stock Trading (problemy regresyjne) - czas reagowania na zmiany i czas zakupy i sprzedaży akcji.</p></li>
+<li><p>Clickstream for websites (problem klasyfikacji) - śledzenie i analiza gości na stronie serwisu internetowego - personalizacja strony i treści.</p></li>
+</ol>
+<p><a href="https://www.linkedin.com/pulse/8-best-examples-real-time-data-analytics-bernard-marr/">8 najlepszych przykładów analizy w czasie rzeczywistym</a></p>
+<p><a href="https://www.forbes.com/sites/forbestechcouncil/2021/10/26/how-to-build-a-strong-business-case-for-streaming-analytics/?sh=eee8eaa465d0">Biznesowe zastosowania</a></p>
+<blockquote class="blockquote">
+<p><strong>Przedsiębiorstwo to organizacja, która generuje i odpowiada na ciągły strumień zdarzeń</strong>.</p>
+</blockquote>
+<p><strong>Analityka strumieniowa</strong> (ang. <em>stream analytics</em>) nazywana jest również przetwarzaniem strumieniowym zdarzeń (ang. <em>event stream processing</em>) - przetwarzanie dużej ilości danych już na etapie ich generowania.</p>
+<p>Niezależnie od zastosowanej technologi wszystkie dane powstają jako ciągły strumień zdarzeń (działania użytkowników na stronie www, logi systemowe, pomiary z sensorów).</p>
+</section>
+</section>
+<section id="czas-w-analizie-danych-w-czasie-rzeczywistym" class="level2">
+<h2 class="anchored" data-anchor-id="czas-w-analizie-danych-w-czasie-rzeczywistym">Czas w analizie danych w czasie rzeczywistym</h2>
+<p>W przypadku przetwarzania wsadowego przetwarzamy dane historyczne i czas uruchomienia procesu przetwarzania nie ma nic wspólnego z czasem występowania analizowanych zdarzeń.</p>
+<p>Dla danych strumieniowych mamy dwie koncepcje czasu:</p>
+<ol type="1">
+<li>czas zdarzenia (<code>event time</code>) - czas w którym zdarzenie się wydarzyło.</li>
+<li>czas przetwarzania (<code>processing time</code>) - czas w którym system przetwarza zdarzenie.</li>
+</ol>
+<p>W przypadku idealnej sytuacji:</p>
+<p><img alt="Batch Processing" src="img/rys2_1.png" class="center"></p>
+<p>W rzeczywistości przetwarzanie danych zawsze odbywa się z pewnym opóźnieniem, co reprezentowane jest przez punkty pojawiające się poniżej funkcji dla sytuacji idealnej (poniżej diagonalnej).</p>
+<p><img alt="Batch Processing" src="img/rys2_2.png" class="center"></p>
+<p>W aplikacjach przetwarzania strumieniowego istotne okazują się różnice miedzy czasem powstania zdarzenia i jego procesowania. Do najczęstszych przyczyn opóźnienia wyszczególnia się przesyłanie danych przez sieć czy brak komunikacji między urządzeniem a siecią. Prostym przykładem jest tu przejazd samochodem przez tunel i śledzenie położenia przez aplikację GPS.</p>
+<p>Możesz oczywiście zliczać ilość takich pominiętych zdarzeń i uruchomić alarm w sytuacji gdy takich odrzutów będzie za dużo. Drugim (chyba częściej) wykorzystywanym sposobem jest zastosowanie korekty z wykorzystaniem tzw. <em>watermarkingu</em>.</p>
+<p>Proces przetwarzania zdarzeń w czasie rzeczywistym można przedstawić w postaci funkcji schodkowej, reprezentowanej na rysunku:<br> <img alt="Batch Processing" src="img/rys2_3.png" class="center"></p>
+<p>Jak można zauważyć nie wszystkie zdarzenia wnoszą wkład do analizy i przetwarzania. Realizację procesu przetwarzania wraz z uwzględnieniem dodatkowego czasu na pojawienie się zdarzeń (watermark) można przedstawić jako proces obejmujący wszystkie zdarzenia powyżej przerywanej linii. Dodatkowy czas pozwolił na przetworzenie dodatkowych zdarzeń, natomiast nadal mogą zdarzyć się punkty, które nie będą brane pod uwagę. <br> <img alt="Batch Processing" src="img/rys2_4.png" class="center"></p>
+<p>Przedstawione na wykresach sytuacje jawnie wskazują dlaczego pojęcie czasu jest istotnym czynnikiem i wymaga ścisłego określenia już na poziomie definiowania potrzeb biznesowych. Przypisywanie znaczników czasu do danych (zdarzeń) to trudne zadanie.</p>
+</section>
+<section id="okna-czasowe" class="level2">
+<h2 class="anchored" data-anchor-id="okna-czasowe">okna czasowe</h2>
+<p><strong>Okno rozłączne</strong> (ang. <em>tumbling window</em>) czyli okno o stałej długości. Jego cechą charakterystyczną jest to, iż każde zdarzenie należy tylko do jednego okna. <br> <img alt="Batch Processing" src="img/rys2_5.png" class="center"></p>
+<p><strong>Okno przesuwne</strong> (ang. <em>sliding window</em>) obejmuje wszystkie zdarzenia następujące w określonej długości między sobą. <br> <img alt="Batch Processing" src="img/rys2_6.png" class="center"></p>
+<p><strong>Okno skokowe</strong> (ang. <em>hopping window</em>) tak jak okno rozłączne ma stałą długość, ale pozwala się w nim na zachodzenie jednych okien na inne. Stosowane zazwyczaj do wygładzenia danych. <br> <img alt="Batch Processing" src="img/rys2_7.png" class="center"></p>
 <p>Komunikacja sieciowa, relacyjne bazy danych, rozwiązania chmurowe i big data znacząco zmieniły sposób budowania systemów informatycznych i wykonywnia na niach pracy.</p>
 <p>Porównaj to jak “narzędzia” do realizacji przekazu (gazeta, radio, telewizja, internet, komunikatory, media społecznościowe) zmieniły interakcje międzyludzkie i struktury społeczne.</p>
 <blockquote class="blockquote">
@@ -297,24 +428,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Wiedza:</p>
 <ul>
 <li>Zna możliwości i obszary zastosowania procesowania danych w czasie rzeczywistym</li>
-<li>Umie wybrać strukturę IT dla danego problemu biznesowego</li>
 <li>Rozumie potrzeby biznesowe podejmowania decyzji w bardzo krótkim czasie</li>
 </ul>
 </blockquote>
 <blockquote class="blockquote">
 <p>Umiejętności:</p>
 <ul>
-<li>Rozróżnia typy danych strukturyzowanych jak i niestrukturyzowanych</li>
+<li>Rozumie ograniczenia wynikające z czasu przetwarzania przez urządzenia oraz systemy informatyczne</li>
 </ul>
 </blockquote>
 <blockquote class="blockquote">
 <p>Kompetencje:</p>
 <ul>
 <li>Utrwala umiejętność samodzielnego uzupełniania wiedzy teoretycznej jak i praktycznej w zakresie programowania, modelowania, nowych technologii informatycznych z wykorzystaniem analizy w czasie rzeczywistym.</li>
+<li>Formułuje problem analityczny wraz z jego informatycznym rozwiązaniem</li>
 </ul>
 </blockquote>
 
 
+</section>
 </section>
 </section>
 
