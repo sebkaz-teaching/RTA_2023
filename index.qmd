@@ -108,6 +108,6 @@ Uczestnicząc w zajęciach musisz opanować i przynajmniej w podstawowym zakresi
 
 1. [GIT](https://sebkaz-teaching.github.io/RTA_2023/info.html#git) 
 2. Python, Jupyter notebook, Jupyter lab, Colab
-3. [Docker](https://sebkaz-teaching.github.io/RTA_2023/info.html#)
+3. [Docker](https://sebkaz-teaching.github.io/RTA_2023/info.html#docker)
 4. **Apache Spark**, Apache Flink, **Apache Kafka**, Apache Beam
 5. Databricks Community edition [Web page](https://community.cloud.databricks.com/login.html).
