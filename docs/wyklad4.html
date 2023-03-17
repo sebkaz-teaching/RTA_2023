@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Analiza danych w czasie rzeczywistym - Informacje ogólne</title>
+<title>Analiza danych w czasie rzeczywistym – wyklad4</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">
+    <a class="nav-link" href="./index.html">
  <span class="menu-text">222890-D</span></a>
   </li>  
   <li class="nav-item">
@@ -126,145 +126,74 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#analiza-danych-w-czasie-rzeczywistym" id="toc-analiza-danych-w-czasie-rzeczywistym" class="nav-link active" data-scroll-target="#analiza-danych-w-czasie-rzeczywistym">Analiza danych w czasie rzeczywistym</a></li>
-  <li><a href="#kalendarz" id="toc-kalendarz" class="nav-link" data-scroll-target="#kalendarz">Kalendarz</a></li>
-  <li><a href="#technologie" id="toc-technologie" class="nav-link" data-scroll-target="#technologie">Technologie</a></li>
+  <li><a href="#architektury-strumieniowania-danych" id="toc-architektury-strumieniowania-danych" class="nav-link active" data-scroll-target="#architektury-strumieniowania-danych">Architektury strumieniowania danych</a>
+  <ul class="collapse">
+  <li><a href="#architektura-lambda" id="toc-architektura-lambda" class="nav-link" data-scroll-target="#architektura-lambda">Architektura lambda</a></li>
+  <li><a href="#architektura-kappa" id="toc-architektura-kappa" class="nav-link" data-scroll-target="#architektura-kappa">Architektura kappa</a></li>
+  <li><a href="#plusy" id="toc-plusy" class="nav-link" data-scroll-target="#plusy">Plusy</a></li>
+  <li><a href="#trudności" id="toc-trudności" class="nav-link" data-scroll-target="#trudności">Trudności</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Informacje ogólne</h1>
-</div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
-
-<section id="analiza-danych-w-czasie-rzeczywistym" class="level2">
-<h2 class="anchored" data-anchor-id="analiza-danych-w-czasie-rzeczywistym">Analiza danych w czasie rzeczywistym</h2>
-<p>Kod: 222890-D</p>
-<p>Semestr zimowy 2022/2023, SGH Szkoła Główna Handlowa w Warszawie</p>
-<p>Podstawowe informacje znajdziesz w <a href="./RTA_2023/sylabus">sylabusie</a>.</p>
-<p>Ciekawe książki i strony internetowe zamieszczone zostały w zakładce <a href="./RTA_2023/ksiazki">książki</a>. Jeśli chciał(a)byś coś dodać prześlij informację przez MS teams.</p>
-</section>
-<section id="kalendarz" class="level2">
-<h2 class="anchored" data-anchor-id="kalendarz">Kalendarz</h2>
-<section id="wykład" class="level4">
-<h4 class="anchored" data-anchor-id="wykład">Wykład</h4>
-<p>Wykład jest realizowany w trybie hybrydowym. Jest on NIEOBOWIĄZKOWY i odbywa się w Auli I bud G</p>
+<section id="architektury-strumieniowania-danych" class="level2">
+<h2 class="anchored" data-anchor-id="architektury-strumieniowania-danych">Architektury strumieniowania danych</h2>
+<p>Architektura przesyłania strumieniowego to określony zestaw technologii, które współpracują ze sobą w celu obsługi przetwarzania strumieniowego, co jest praktyką podejmowania działań na serii danych w momencie ich tworzenia. W wielu nowoczesnych wdrożeniach Apache Kafka działa jako magazyn danych przesyłanych strumieniowo, a następnie wiele procesorów strumieniowych może działać na danych przechowywanych w Kafce w celu wygenerowania wielu danych wyjściowych. Niektóre architektury przesyłania strumieniowego obejmują przepływy pracy zarówno do przetwarzania strumieniowego, jak i przetwarzania wsadowego, które obejmują inne technologie do obsługi przetwarzania wsadowego na dużą skalę lub wykorzystują Kafkę jako magazyn centralny, jak określono w architekturze Kappa.</p>
+<p>Doskonała architektura przetwarzania danych w czasie rzeczywistym musi być odporna na błędy i skalowalna; musi obsługiwać aktualizacje wsadowe i przyrostowe oraz być rozszerzalna.</p>
+<p>Na początku badamy dwie podstawowe architektury przetwarzania danych, <code>Lambda</code> i <code>Kappa</code>, które stanowią podstawę różnych aplikacji korporacyjnych.</p>
+<section id="architektura-lambda" class="level3">
+<h3 class="anchored" data-anchor-id="architektura-lambda">Architektura lambda</h3>
+<p>Architektura Lambda obejmuje <code>warstwę wsadową</code> (batch layer), <code>warstwę strumieniowa</code> (stream layer) i <code>warstwę serwowania</code>.</p>
+<p>Warstwa wsadowa działa na pełnych danych, dzięki czemu system może generować najdokładniejsze wyniki. Jednak wyniki są okupione dużymi opóźnieniami wynikającymi z długiego czasu obliczeń. Warstwa wsadowa przechowuje surowe dane w miarę ich nadejścia i oblicza widoki wsadowe do wykorzystania. Naturalnie procesy wsadowe będą występować w pewnych odstępach czasu i będą długotrwałe. Zakres danych wynosi od godzin do kilku lat.</p>
+<p>Warstwa strumieniowa:</p>
 <ol type="1">
-<li><del>
-20-02-2023 (poniedziałek) 09:50-11:30 - Wykład 1
-</del>
-Tematy zrealizowane na wykładzie:
-<ul>
-<li>Dane ustrukturyzowane i nieustrukturyzowane</li>
-<li>Procesy generowania danych</li>
-<li>Big Data</li>
-<li>Modele przetwarzania danych OLTP, OLAP</li>
-</ul></li>
-<li><del>
-27-02-2023 (poniedziałek) 09:50-11:30 - Wykład 2
-</del>
-Tematy zrealizowane na wykładzie:
-<ul>
-<li>Przetwarzanie wsadowe vs Przetwarzanie strumieni danych</li>
-<li>ETL</li>
-<li>Wzorzec MapReduce</li>
-<li>Biznesowe wymagania dla strumieni danych</li>
-<li>Definicje: Zdarzenie, strumień zdarzeń, analiza i przetwarzanie strumieni zdarzeń,</li>
-<li>Narzędzie i aplikacje przetwarzania strumieniowego</li>
-</ul></li>
-<li><del>
-06-03-2023 (poniedziałek) 09:50-11:30 - Wykład 3
-</del>
-Tematy reazlizowane na wykładzie:
-<ul>
-<li>Czas w przetwarzaniu danych strumieniowych<br>
-</li>
-<li>Działanie systemu klient-serwer: REST API</li>
-</ul></li>
-<li><del>
-13-03-2023 (poniedziałek) 09:50-11:30 - Wykład 4
-</del>
-Tematy realizowane na wykładzie:
-<ul>
-<li>TEST 10 pytań!</li>
-<li>Działanie systemu pub-sub: Apache Kafka</li>
-<li>Architektura Lammbda i Kappa</li>
-</ul></li>
+<li>generuje wyniki z małymi opóźnieniami i w czasie zbliżonym do rzeczywistego.</li>
+<li>oblicza widoki w czasie rzeczywistym w celu uzupełnienia widoków wsadowych.</li>
+<li>odbiera napływające dane i aktualizuje wyniki warstwy wsadowej. Koszt obliczeń jest znacznie obniżony dzięki algorytmom przyrostowym zaimplementowanym w warstwie szybkości.</li>
 </ol>
-<p>Wykłady kończą się TESTEM: 10 pytań - 20 minut. Test przeprowadzany jest za pośrednictwem MS Teams.</p>
-</section>
-<section id="laboratoria" class="level4">
-<h4 class="anchored" data-anchor-id="laboratoria">Laboratoria</h4>
+<p>Widoki wsadowe mogą być przetwarzane przy użyciu bardziej złożonych lub kosztownych reguł i mogą mieć lepszą jakość danych i mniej przekrzywień, podczas gdy widoki w czasie rzeczywistym zapewniają bieżący dostęp do najnowszych możliwych danych.</p>
+<p>Wreszcie warstwa serwująca umożliwia różne zapytania o wyniki przesłane z warstw wsadowych i szybkich. Dane wyjściowe z warstwy wsadowej w postaci widoków wsadowych i warstwy szybkości w postaci opinii w czasie zbliżonym do rzeczywistego są przekazywane do warstwy obsługującej, która wykorzystuje te dane do obsługi oczekujących zapytań na zasadzie ad-hoc.</p>
+<p><br> <img src="img/lambda_arch.png" class="center"> Implementacja: <br> <img src="img/lambda_app.png" class="center"></p>
+<p><strong>Dobre bo:</strong></p>
 <ol type="1">
-<li><p>20-03-2023 (poniedziałek) 08:00-13:30 - C4D 3 grupy</p></li>
-<li><p>21-03-2023 (wtorek) 11:40-17:00 - C4D 3 grupy To do - Przygotowanie środowiska</p></li>
-<li><p>27-03-2023 (poniedziałek) 08:00-13:30 - C4D, 3 grupy</p></li>
-<li><p>28-03-2023 (wtorek) 11:40-17:00 - C4D, 3 grupy</p></li>
-<li><p>03-04-2023 (poniedziałek) 08:00-13:30 - C4D, 3 grupy</p></li>
-<li><p>04-04-2023 (wtorek) 11:40-17:00 - C4D, 3 grupy</p></li>
-<li><p>17-04-2023 (poniedziałek) 08:00-13:30 - C4D, 3 grupy</p></li>
-<li><p>18-04-2023 (wtorek) 11:40-17:00 - C4D, 3 grupy</p></li>
-<li><p>24-04-2023 (poniedziałek) 08:00-13:30 - C4D, 3 grupy</p></li>
-<li><p>25-04-2023 (wtorek) 11:40-17:00 - C4D, 3 grupy</p></li>
-<li><p>08-05-2023 (poniedziałek) 08:00-13:30 - C4D, 3 grupy</p></li>
-<li><p>09-05-2023 (wtorek) 11:40-17:00 - C4D, 3 grupy</p></li>
-<li><p>15-05-2023 (poniedziałek) 08:00-13:30 - C4D, 3 grupy</p></li>
-<li><p>16-05-2023 (wtorek) 11:40-17:00 - C4D, 3 grupy</p></li>
-<li><p>22-05-2023 (poniedziałek) 08:00-13:30 - C4D, 3 grupy</p></li>
-<li><p>23-05-2023 (wtorek) 11:40-17:00 - C4D, 3 grupy</p></li>
-<li><p>29-05-2023 (poniedziałek) 08:00-13:30 - C4D, 3 grupy</p></li>
-<li><p>30-05-2023 (wtorek) 11:40-17:00 - C4D, 3 grupy</p></li>
-<li><p>05-06-2023 (poniedziałek) 08:00-13:30 - C4D, 3 grupy</p></li>
-<li><p>06-06-2023 (wtorek) 11:40-17:00 - C4D, 3 grupy</p></li>
+<li>Dobra równowaga między szybkością, niezawodnością i skalowalnością.</li>
+<li>Dostęp do wyników zarówno w czasie rzeczywistym, jak i offline, bardzo dobrze pokrywa wiele scenariuszy analizy danych.</li>
+<li>Dostęp do pełnego zestawu danych w oknie wsadowym może przynieść określone optymalizacje, które sprawią, że Lambda będzie wydajniejsza i jeszcze prostsza do wdrożenia.</li>
+</ol>
+<p><strong>Kiepskie gdy:</strong></p>
+<ol type="1">
+<li>Wewnętrzna logika przetwarzania jest taka sama (warstwy wsadowe i warstwy czasu rzeczywistego) - wiele zduplikowanych modułów i kodowania.</li>
+<li>Zbiór danych modelowany za pomocą architektury Lambda jest trudny do migracji i reorganizacji.</li>
 </ol>
 </section>
-<section id="miejsce" class="level4">
-<h4 class="anchored" data-anchor-id="miejsce">Miejsce</h4>
-<p>Wykłady 1-5: G-Aula I Laboratorium 1-9: C-4D</p>
+<section id="architektura-kappa" class="level3">
+<h3 class="anchored" data-anchor-id="architektura-kappa">Architektura kappa</h3>
+<p>Architektura Kappa to architektura oprogramowania używana do przetwarzania danych przesyłanych strumieniowo. Głównym założeniem Architektury Kappa jest możliwość wykonywania przetwarzania w czasie rzeczywistym i przetwarzania wsadowego, zwłaszcza w celach analitycznych, za pomocą jednego stosu technologicznego. Opiera się na architekturze przesyłania strumieniowego, w której przychodzące serie danych są najpierw przechowywane w silniku przesyłania wiadomości, takim jak Apache Kafka. Stamtąd silnik przetwarzania strumienia odczyta dane, przekształci je w format nadający się do analizy, a następnie zapisze je w analitycznej bazie danych, aby użytkownicy końcowi mogli wyszukiwać.</p>
+<p>Architektura Kappa obsługuje analizy (prawie) w czasie rzeczywistym, gdy dane są odczytywane i przekształcane natychmiast po umieszczeniu ich w silniku przesyłania komunikatów. Dzięki temu najnowsze dane są szybko dostępne dla zapytań użytkowników końcowych. Obsługuje również analizę historyczną, odczytując zapisane dane przesyłane strumieniowo z mechanizmu przesyłania wiadomości później w sposób wsadowy, aby utworzyć dodatkowe możliwe do analizy dane wyjściowe dla większej liczby typów analiz.</p>
+<p>Architektura Kappa jest prostszą alternatywą dla architektury Lambda, ponieważ wykorzystuje ten sam stos technologii do obsługi strumienia w czasie rzeczywistym i historycznego przetwarzania wsadowego. Obie architektury obejmują przechowywanie danych historycznych w celu umożliwienia analiz na dużą skalę. Obie architektury są również pomocne w rozwiązywaniu problemów związanych z „tolerancją błędów ludzkich”, w których problemy z kodem przetwarzania (błędy lub znane ograniczenia) można przezwyciężyć, aktualizując kod i ponownie uruchamiając go na danych historycznych. Główna różnica w stosunku do architektury Kappa polega na tym, że wszystkie dane są traktowane jako strumień, więc silnik przetwarzania strumienia działa jako jedyny silnik transformacji danych.</p>
+<p><br> <img src="img/kappa1.png" class="center"></p>
+<p>Implementation Example: <br> <img src="img/kappa2.png" class="center"></p>
 </section>
-<section id="zaliczenie-i-egzamin" class="level4">
-<h4 class="anchored" data-anchor-id="zaliczenie-i-egzamin">Zaliczenie i Egzamin</h4>
-<p>Wykłady zakończone zostaną testem (ostatnie zajęcia). Pozytywna ocena z testu (powyżej 13 pkt) upoważnia do realizacji ćwiczeń.</p>
-<p>Po ćwiczeniach realizowane będą zadania domowe przekazywane za pośrednictwem platformy teams.<br>
-Zaliczenie wszystkich ćwiczeń i zadań upoważnia do realizacji projektu.</p>
-<p>Projekt powinien być realizowany w grupach max 5 osobowych.</p>
-<p>Wymagania projektu:</p>
-<ul>
-<li>Projekt powinien przedstawiać BIZNESOWY PROBLEM, który można realizować wykorzystując informacje podawane w trybie online. (Nie oznacza to, że nie można korzystać z procesowania batchowego np w celu wygenerowania modelu).</li>
-<li>Dane powinny być przesyłane do Apache Kafki i stamtąd poddawane dalszemu procesowaniu i analizie.</li>
-<li>Język programowania jest dowolny - dotyczy każdego komponentu projektu.</li>
-<li>Można wykorzystać narzędzia BI</li>
-<li>Źródłem danych może być tabela, sztucznie generowane dane, IoT itp.</li>
-</ul>
-</section>
-</section>
-<section id="technologie" class="level2">
-<h2 class="anchored" data-anchor-id="technologie">Technologie</h2>
-<p>Uczestnicząc w zajęciach musisz opanować i przynajmniej w podstawowym zakresie posługiwać się następującymi technologiami informatycznymi:</p>
+<section id="plusy" class="level3">
+<h3 class="anchored" data-anchor-id="plusy">Plusy</h3>
 <ol type="1">
-<li><a href="https://sebkaz-teaching.github.io/RTA_2023/info.html#git">GIT</a></li>
-<li>Python, Jupyter notebook, Jupyter lab, Colab</li>
-<li><a href="https://sebkaz-teaching.github.io/RTA_2023/info.html#docker">Docker</a></li>
-<li><strong>Apache Spark</strong>, Apache Flink, <strong>Apache Kafka</strong>, Apache Beam</li>
-<li>Databricks Community edition <a href="https://community.cloud.databricks.com/login.html">Web page</a>.</li>
+<li>Aplikacje mogą odczytywać i zapisywać bezpośrednio do Kafki zgodnie z rozwojem. W przypadku istniejących źródeł zdarzeń detektory są teraz przyzwyczajone do przesyłania strumieniowego raportów z dzienników bazy danych, co eliminuje konieczność przetwarzania wsadowego podczas ruchu przychodzącego, co skutkuje mniejszą liczbą zasobów.</li>
+<li>Zapytania muszą uwzględniać tylko jedną lokalizację serwowania, zamiast sprawdzać widoki partii i szybkości.</li>
+</ol>
+</section>
+<section id="trudności" class="level3">
+<h3 class="anchored" data-anchor-id="trudności">Trudności</h3>
+<ol type="1">
+<li>niełatwe do wdrożenia, zwłaszcza w przypadku odtwarzania danych.</li>
 </ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

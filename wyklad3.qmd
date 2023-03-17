@@ -121,6 +121,7 @@ Path=/;
 
 > Wyszukaj informacje czym jest `REST API`. 
 
+
 > Wiedza: 
 > 
 > - Zna możliwości i obszary zastosowania procesowania danych w czasie rzeczywistym

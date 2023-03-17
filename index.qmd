@@ -38,10 +38,11 @@ Tematy zrealizowane na wykładzie:
 Tematy reazlizowane na wykładzie: 
     - Czas w przetwarzaniu danych strumieniowych  
     - Działanie systemu klient-serwer: REST API
-4. 13-03-2023 (poniedziałek) 09:50-11:30 - Wykład 4
+4. <del>13-03-2023 (poniedziałek) 09:50-11:30 - Wykład 4</del>
 Tematy realizowane na wykładzie:
     - TEST 10 pytań!
-    - Działanie systemu pub-sub: Apache Kafka 
+    - Działanie systemu pub-sub: Apache Kafka
+    - Architektura Lammbda i Kappa
 
     
 Wykłady kończą się TESTEM: 10 pytań - 20 minut. 
@@ -51,6 +52,7 @@ Test przeprowadzany jest za pośrednictwem MS Teams.
 
 1. 20-03-2023 (poniedziałek) 08:00-13:30 - C4D 3 grupy
 1. 21-03-2023 (wtorek) 11:40-17:00 - C4D 3 grupy
+To do - Przygotowanie środowiska 
 
 2. 27-03-2023 (poniedziałek) 08:00-13:30 - C4D, 3 grupy
 2. 28-03-2023 (wtorek) 11:40-17:00 - C4D, 3 grupy
