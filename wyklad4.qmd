@@ -202,4 +202,4 @@ Ideałem jest posiadanie takiej samej liczby konsumentów w grupie, jaką mamy j
 Podczas dodawania konsumentów do grupy należy uważać, jeśli liczba konsumentów jest większa niż liczba partycji, niektórzy konsumenci nie będą czytać z żadnego tematu i pozostaną bezczynni.
 
 </br>
-<img src="img/kafka4.png" class="center" />
+<img src="img/kafka4.png" class="center" /> 
