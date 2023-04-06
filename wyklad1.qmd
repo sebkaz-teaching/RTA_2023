@@ -1,8 +1,6 @@
 ---
-title: "Wykład 1"
+title: "Od plików płaskich do Data Mash"
 ---
-
-## Od plików płaskich do Data Lake
 
 Rozwój technologii informatycznych spowodował dostęp do niewyobrażalnych ilości nowego zasobu jakim są **ustrukturyzowane** jak i **nieustrukturyzowane** dane.
 
@@ -37,12 +35,12 @@ Dzięki tak otrzymanym tabelom cech możemy stosować algorytmy  tj. `XGBoost` l
 
 Podstawowe systemy bazodanowe związane z językiem SQL również realizują modele danych, w których dane ładnowane są do (ustrukturyzowanych) tabel.
 
-**Dane nieustrukturyzowane** to takie, które nie są ułożone w~tabelarycznej postaci.
+**Dane nieustrukturyzowane** to takie, które nie są ułożone wtabelarycznej postaci.
 
-> !Uwaga - nie oznacza to, iż dane nie możemy przetworzyć do jakiejś postaci tabelarzycnzej.
+> !Uwaga - nie oznacza to, iż dane nie możemy przetworzyć do jakiejś postaci tabelarzycznej.
 
 Przykładem może być `dźwięk`, `obraz`czy `tekst`.
-Poszczególne litery, częstotliwości~czy piksele nie niosą ze sobą żadnych informacji.
+Poszczególne litery, częstotliwości czy piksele nie niosą ze sobą żadnych informacji.
 Nie tworzą osobnych cech, co jest kluczowe dla odróżnienia ich od danych ustrukturyzowanych.
 
 > Zna typy danych ustrukturyzowanych jak i nieustrukturyzowanych (K2A_W02, K2A_W04, O2_W04, O2_W07)
@@ -51,7 +49,7 @@ Nie tworzą osobnych cech, co jest kluczowe dla odróżnienia ich od danych ustr
 
 Do trzech największych "generatorów" danych należą:
 
-- `dane społeczne` w formie tekstów (tweety, wpisy w~portalach społecznościowych, komentarze), zdjęć czy plików wideo.
+- `dane społeczne` w formie tekstów (tweety, wpisy w portalach społecznościowych, komentarze), zdjęć czy plików wideo.
     Przydatne do problemów biznesowych realizujących ocenę zachowań i nastrojów konsumentów w analizach marketingowych.
 - `IoT`: dane pochodzące z czujników, czy też logi działania urządzeń i użytkowników (np. na stronie www).
 - `dane transakcyjne`: czyli ogólnie to co w każdej chwili generowane jest jako transakcje pojawiające się zarówno w trybie online jak i w trybie offline.

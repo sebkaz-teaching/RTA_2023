@@ -32,8 +32,11 @@ Tematy reazlizowane na wykładzie:
 
 #### ćwiczenia
 
-1. 25-03-2022 (sobota) 08:00-15:00 - G116 4 grupy
-1. 26-03-2022 (niedziela) 09:50-17.00 - G116 4 grupy
+1. <del>25-03-2022 (sobota) 08:00-15:00 - G116 4 grupy </del>
+1. <del>26-03-2022 (niedziela) 09:50-17.00 - G116 4 grupy</del>
+
+- uruchomienie środowiska 
+- dane ustrukturyzowane i nieustrukturyzowane
 
 2. 15-04-2022 (sobota) 08:00-15:00 - G116 4 grupy
 2. 16-04-2022 (niedziela) 09:50-17.00 - G116 4 grupy

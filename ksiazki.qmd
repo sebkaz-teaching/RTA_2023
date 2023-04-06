@@ -174,3 +174,5 @@ title: Książki i strony WWW
 ### kursy ML
 
 1. [Kurs Machine Learning - Andrew Ng, Stanford](https://www.youtube.com/watch?v=PPLop4L2eGk&list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN)
+2. [Kurs Machine Learning - Andrew Ng, Stanford](https://www.coursera.org/learn/machine-learning)
+3. [Python programming for data science](https://www.tomasbeuzen.com/python-programming-for-data-science/README.html)

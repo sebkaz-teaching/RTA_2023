@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Analiza danych w czasie rzeczywistym - Wykład 1</title>
+<title>Analiza danych w czasie rzeczywistym - Od plików płaskich do Data Mash</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -130,8 +130,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#od-plikow-płaskich-do-data-lake" id="toc-od-plikow-płaskich-do-data-lake" class="nav-link active" data-scroll-target="#od-plikow-płaskich-do-data-lake">Od plików płaskich do Data Lake</a></li>
-  <li><a href="#źródła-danych" id="toc-źródła-danych" class="nav-link" data-scroll-target="#źródła-danych">Źródła danych</a>
+  <li><a href="#źródła-danych" id="toc-źródła-danych" class="nav-link active" data-scroll-target="#źródła-danych">Źródła danych</a>
   <ul class="collapse">
   <li><a href="#rzeczywisty-proces-generowania-danych" id="toc-rzeczywisty-proces-generowania-danych" class="nav-link" data-scroll-target="#rzeczywisty-proces-generowania-danych">Rzeczywisty proces generowania danych</a></li>
   </ul></li>
@@ -153,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Wykład 1</h1>
+<h1 class="title">Od plików płaskich do Data Mash</h1>
 </div>
 
 
@@ -168,8 +167,6 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="od-plikow-płaskich-do-data-lake" class="level2">
-<h2 class="anchored" data-anchor-id="od-plikow-płaskich-do-data-lake">Od plików płaskich do Data Lake</h2>
 <p>Rozwój technologii informatycznych spowodował dostęp do niewyobrażalnych ilości nowego zasobu jakim są <strong>ustrukturyzowane</strong> jak i <strong>nieustrukturyzowane</strong> dane.</p>
 <p><img src="img/main.jpeg" class="center img-fluid"></p>
 <p>Dane przyczyniły się do powstania tysięcy nowych narzędzi do <code>generowania</code>, <code>zbierania</code>, <code>przechowywania</code> i <code>przetwarzania</code> informacji na niespotykaną dotąd skalę.</p>
@@ -188,20 +185,19 @@ ul.task-list li input[type="checkbox"] {
 <p>Wszystkie algorytmy uczenia maszynowego wymagają <strong>danych ustrukturyzowanych</strong> zapisanych w tabelarycznej postaci (tensory).<br>
 Zorganizowane są one w kolumnach cech charakteryzujących każdą obserwację (wiersze). Przykładem mogą być takie cechy jak: <strong>płeć</strong>, <strong>wzrost</strong> czy <strong>ilość posiadanych samochodów</strong>, na podstawie których można przewidywać czy klient będzie spłacał kredyt czy też nie. Takie przewidywanie również oznaczane jest jako cecha. Zmienne te dobierane są tak, by łatwo można je było pozyskać. Dzięki tak otrzymanym tabelom cech możemy stosować algorytmy tj. <code>XGBoost</code> lub <code>regresji logistycznej</code> w celu wyznaczenia odpowiedniej kombinacji zmiennych wpływających na prawdopodobieństwo dobrego albo i złego klienta.</p>
 <p>Podstawowe systemy bazodanowe związane z językiem SQL również realizują modele danych, w których dane ładnowane są do (ustrukturyzowanych) tabel.</p>
-<p><strong>Dane nieustrukturyzowane</strong> to takie, które nie są ułożone w~tabelarycznej postaci.</p>
+<p><strong>Dane nieustrukturyzowane</strong> to takie, które nie są ułożone wtabelarycznej postaci.</p>
 <blockquote class="blockquote">
-<p>!Uwaga - nie oznacza to, iż dane nie możemy przetworzyć do jakiejś postaci tabelarzycnzej.</p>
+<p>!Uwaga - nie oznacza to, iż dane nie możemy przetworzyć do jakiejś postaci tabelarzycznej.</p>
 </blockquote>
-<p>Przykładem może być <code>dźwięk</code>, <code>obraz</code>czy <code>tekst</code>. Poszczególne litery, częstotliwości~czy piksele nie niosą ze sobą żadnych informacji. Nie tworzą osobnych cech, co jest kluczowe dla odróżnienia ich od danych ustrukturyzowanych.</p>
+<p>Przykładem może być <code>dźwięk</code>, <code>obraz</code>czy <code>tekst</code>. Poszczególne litery, częstotliwości czy piksele nie niosą ze sobą żadnych informacji. Nie tworzą osobnych cech, co jest kluczowe dla odróżnienia ich od danych ustrukturyzowanych.</p>
 <blockquote class="blockquote">
 <p>Zna typy danych ustrukturyzowanych jak i nieustrukturyzowanych (K2A_W02, K2A_W04, O2_W04, O2_W07)</p>
 </blockquote>
-</section>
 <section id="źródła-danych" class="level2">
 <h2 class="anchored" data-anchor-id="źródła-danych">Źródła danych</h2>
 <p>Do trzech największych “generatorów” danych należą:</p>
 <ul>
-<li><code>dane społeczne</code> w formie tekstów (tweety, wpisy w~portalach społecznościowych, komentarze), zdjęć czy plików wideo. Przydatne do problemów biznesowych realizujących ocenę zachowań i nastrojów konsumentów w analizach marketingowych.</li>
+<li><code>dane społeczne</code> w formie tekstów (tweety, wpisy w portalach społecznościowych, komentarze), zdjęć czy plików wideo. Przydatne do problemów biznesowych realizujących ocenę zachowań i nastrojów konsumentów w analizach marketingowych.</li>
 <li><code>IoT</code>: dane pochodzące z czujników, czy też logi działania urządzeń i użytkowników (np. na stronie www).</li>
 <li><code>dane transakcyjne</code>: czyli ogólnie to co w każdej chwili generowane jest jako transakcje pojawiające się zarówno w trybie online jak i w trybie offline.</li>
 </ul>

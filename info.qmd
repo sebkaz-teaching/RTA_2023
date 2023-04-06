@@ -52,6 +52,8 @@ jupyterlab
 ```
 ### Naucz się Pythona w 2 godziny
 
+Kurs podstaw pythona [Tomas Beuzen](https://www.tomasbeuzen.com/python-programming-for-data-science/README.html) polecam.
+
 Utwórz konto na [Kaggle](https://kaggle.com), przejdź do zakładki `Courses` i przerób cały moduł Pythona. Zawiera on: 
 
 - wyrażenia i zmienne
