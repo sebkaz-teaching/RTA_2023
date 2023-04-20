@@ -69,11 +69,18 @@ Test przeprowadzany jest za pośrednictwem MS Teams.
 - Sieci neuronowe dla danych nieustrukturyzowanych
 - Obiektowy model danych w pakiecie scikit-learn 
 
-7. 17-04-2023 (poniedziałek) 08:00-13:30 - C2B, 3 grupy
-8. 18-04-2023 (wtorek) 11:40-17:00 - C2B, 3 grupy 
+7. <del>17-04-2023 (poniedziałek) 08:00-13:30 - C2B, 3 grupy </del>
+8. <del>18-04-2023 (wtorek) 11:40-17:00 - C2B, 3 grupy </del>
+
+- Obiektowe programowanie w pythonie 
+- Perceptron, Adeline klasy dla sieci neuronowych
+
 
 9. 24-04-2023 (poniedziałek) 08:00-13:30 - C2B, 3 grupy
 10.  25-04-2023 (wtorek) 11:40-17:00 - C2B, 3 grupy 
+
+- Flask API
+- Apache Spark wprowadzenie do strumieniowania danych
 
 11. 08-05-2023 (poniedziałek) 08:00-13:30 - C2B, 3 grupy
 12. 09-05-2023 (wtorek) 11:40-17:00 - C2B, 3 grupy 
