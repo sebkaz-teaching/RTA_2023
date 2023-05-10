@@ -45,8 +45,10 @@ Tematy reazlizowane na wykładzie:
 - Flask API 
 - Programowanie obiektowe
 
-3. 06-05-2022 (sobota) 08:00-15:00 - G116 4 grupy
-3. 07-05-2022 (niedziela) 09:50-17.00 - G116 4 grupy
+3. <del>06-05-2022 (sobota) 08:00-15:00 - G116 4 grupy</del>
+3. <del>07-05-2022 (niedziela) 09:50-17.00 - G116 4 grupy</del>
+
+- Spark Streaming 
 
 4. 20-05-2022 (sobota) 08:00-15:00 - G116 4 grupy
 4. 21-05-2022 (niedziela) 09:50-17.00 - G116 4 grupy
@@ -56,6 +58,9 @@ Tematy reazlizowane na wykładzie:
 
 5. 10-06-2022 (sobota) 08:00-15:00 - G116 4 grupy
 5. 11-06-2022 (niedziela) 09:50-17.00 - G116 4 grupy
+
+- Apache Kafka
+
 
 #### Miejsce
 

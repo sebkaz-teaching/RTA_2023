@@ -76,26 +76,33 @@ Test przeprowadzany jest za pośrednictwem MS Teams.
 - Perceptron, Adeline klasy dla sieci neuronowych
 
 
-9. 24-04-2023 (poniedziałek) 08:00-13:30 - C2B, 3 grupy
-10.  25-04-2023 (wtorek) 11:40-17:00 - C2B, 3 grupy 
+9. <del>24-04-2023 (poniedziałek) 08:00-13:30 - C2B, 3 grupy</del>
+10. <del> 25-04-2023 (wtorek) 11:40-17:00 - C2B, 3 grupy </del>
 
 - Flask API
-- Apache Spark wprowadzenie do strumieniowania danych
+- Model ML w Flask API
 
-11. 08-05-2023 (poniedziałek) 08:00-13:30 - C2B, 3 grupy
-12. 09-05-2023 (wtorek) 11:40-17:00 - C2B, 3 grupy 
+11. <del>08-05-2023 (poniedziałek) 08:00-13:30 - C2B, 3 grupy</del>
+12. <del>09-05-2023 (wtorek) 11:40-17:00 - C2B, 3 grupy </del>
+- Wprowadzenie do Apache Spark 
+- Apache Spark Streaming DStream i Ramki danych
+
 
 13. 15-05-2023 (poniedziałek) 08:00-13:30 - C2B, 3 grupy
 14. 16-05-2023 (wtorek) 11:40-17:00 - C2B, 3 grupy 
+- Praca w domu nad projektem
 
 15. 22-05-2023 (poniedziałek) 08:00-13:30 - C2B, 3 grupy
 16. 23-05-2023 (wtorek) 11:40-17:00 - C2B, 3 grupy 
+- Praca w domu nad projektem
 
 17. 29-05-2023 (poniedziałek) 08:00-13:30 - C2B, 3 grupy
 18. 30-05-2023 (wtorek) 11:40-17:00 - C2B, 3 grupy
+- Apache Kafka i Apache Spark Streaming
 
 19. 05-06-2023 (poniedziałek) 08:00-13:30 - C2B, 3 grupy
 20. 06-06-2023 (wtorek) 11:40-17:00 - C2B, 3 grupy 
+- Apache Kafka i Apache Spark Streaming
 
 #### Miejsce
 

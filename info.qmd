@@ -143,6 +143,7 @@ git push origin master
 ```
 Warto obejrzeć [Youtube course](https://www.youtube.com/watch?v=HVsySz-h9r4).
 
+Ciekawe i proste wprowadzenie mozna znaleźć [tutaj](http://rogerdudler.github.io/git-guide/index.pl.html)
 
 ## Zacznij korzystać z Dockera
 <div id="docker"></div>
