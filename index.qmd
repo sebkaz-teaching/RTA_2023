@@ -88,12 +88,12 @@ Test przeprowadzany jest za pośrednictwem MS Teams.
 - Apache Spark Streaming DStream i Ramki danych
 
 
-13. 15-05-2023 (poniedziałek) 08:00-13:30 - C2B, 3 grupy
-14. 16-05-2023 (wtorek) 11:40-17:00 - C2B, 3 grupy 
+13. <del>15-05-2023 (poniedziałek) 08:00-13:30 - C2B, 3 grupy</del>
+14. <del>16-05-2023 (wtorek) 11:40-17:00 - C2B, 3 grupy</del>
 - Praca w domu nad projektem
 
-15. 22-05-2023 (poniedziałek) 08:00-13:30 - C2B, 3 grupy
-16. 23-05-2023 (wtorek) 11:40-17:00 - C2B, 3 grupy 
+15. <del>22-05-2023 (poniedziałek) 08:00-13:30 - C2B, 3 grupy</del>
+16. <del>23-05-2023 (wtorek) 11:40-17:00 - C2B, 3 grupy </del>
 - Praca w domu nad projektem
 
 17. 29-05-2023 (poniedziałek) 08:00-13:30 - C2B, 3 grupy
