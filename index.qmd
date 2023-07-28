@@ -104,6 +104,19 @@ Test przeprowadzany jest za pośrednictwem MS Teams.
 20. 06-06-2023 (wtorek) 11:40-17:00 - C2B, 3 grupy 
 - Apache Kafka i Apache Spark Streaming
 
+<!-- 
+W przyszłym roku zrobić na ostatnich zajęciach test z ćwiczeń. 
+
+Jako 90 minutowe zadania do realizacji w notatniku.
+Przedstawiający krok po kroku 
+- Przygotowanie danych dla szeregu czasowego 
+- skrypt w pythonie wysyłający dane do Apache Kafka
+- skrypt w pythonie lub Apache Spark odbierający dane z Apache Kafka 
+- obliczenie średniej w oknie i wypisanie wyniku na ekran 
+- gdy wartość > x to zapis do mongodb (to musi być na ćwiczeniach)
+- wizualizacja danych w pythonie z podłączenia mongodb - ile razy pojawia się przekrocznie - to też na ćwiczeniach
+-->
+
 #### Miejsce
 
 Wykłady 1-5: G-Aula I
